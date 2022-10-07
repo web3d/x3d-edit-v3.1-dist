@@ -1,0 +1,905 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>X3D Scene Authoring Hints</title>
+	<meta name="description" content="A collection of authoring tips to improve quality,  consistency and maintainability of X3D scenes." />
+	<link rel="shortcut icon" href="../images/X3DtextIcon16.png" title="X3D">
+
+<style type="text/css">
+ul.box { list-style-type: circle }
+</style>
+
+</head>
+<body>
+
+<!-- =================================================== -->
+
+<table border="0" cellspacing="0" cellpadding="0" summary="" align="center">
+<tr align="center">
+		<td><a href="http://www.web3d.org/x3d"><img src="../images/x3d2-s.gif" width="154" height="97" border="0" title="to X3D home page"></a></td>
+		<td><pre>   </pre></td>
+		<td><h1>X3D Scene Authoring Hints</h1></td>
+		<td><pre>   </pre></td>
+		<td><a href="http://www.web3d.org"><img src="../images/web3d_logo2.png" width="120" height="60" border="0" title="to Web3D home page"></a></td>
+</tr>
+</table>
+
+<h4 align="center">
+		Don Brutzman 
+		(<a href="mailto:brutzman@nps.navy.mil(Don%20Brutzman)?subject=feedback:%20Authoring%20Hints%20for%20X3D%20Scenes">brutzman at nps.navy.mil</a>)
+</h4>
+
+<h4 align="center">A collection of style guidelines and authoring tips to improve the quality, consistency and maintainability of X3D&nbsp;scenes.</h4>
+
+<!-- bookmark index -->
+
+<p align="center"><font size="-1">
+
+<a href="#Authoring">Authoring</a> |
+<a href="#CoordinateSystems">Coordinate&nbsp;Systems</a> |
+<a href="#Credits">Credits</a> |
+<a href="#Dates">Dates</a> |
+<a href="help.html">Help</a> |
+<a href="#HTML">HTML</a> |
+<a href="#Images">Images</a> |
+<a href="#InlinesPrototypes">Inlines/Prototypes</a> |
+<a href="#license">License</a> |
+<a href="#metaTags">meta&nbsp;Tags</a> |
+<a href="#NamingConventions">Naming&nbsp;Conventions</a> |
+<a href="#Scripts">Scripts</a> |
+<a href="#urls">URL&nbsp;Links</a> |
+<a href="#Viewpoints">Viewpoints</a>
+
+</font></p>
+
+<hr width="75%">
+
+<!-- =================================================== -->
+
+<h3><u><a name="Authoring">Authoring practices</a></u></h3>
+
+<ul class="box">
+		<li>
+				Actively fix any X3D-Edit [Error], [Warning] and [Hint] messages in each scene.  
+				Allowing errors and warnings to persist, even when apparently harmless, can mask further problems.
+				[Info] messages are informational and might not need corrective action by the author.
+		</li>
+		<li>
+				Keep a local copy of the 
+				<a href="http://www.web3d.org/x3d/specifications">X3D Specification</a>
+				on your system and refer to it frequently.
+			  	(Local copies of all current specifications are bundled with X3D-Edit.)
+		</li>
+		<li>
+				Utilize the
+				<a href="../X3dTooltips.html" target="_blank">X3D&nbsp;Tooltips</a>.
+				These are embedded in X3D-Edit popups, and are also available separately in
+				<a href="../X3dTooltipsChinese.html" target="_blank">Chinese</a>,
+				<a href="../X3dTooltips.html" target="_blank">English</a>,
+				<a href="../X3dTooltipsFrench.html" target="_blank">French</a>,
+				<a href="../X3dTooltipsGerman.html" target="_blank">German</a>,
+				<a href="../X3dTooltipsItalian.html" target="_blank">Italian</a>,
+				<a href="../X3dTooltipsPortuguese.html" target="_blank">Portuguese</a>
+				and 
+				<a href="../X3dTooltipsSpanish.html" target="_blank">Spanish</a>.
+		</li>
+		<li> 	 If a scene depends on having the default value of a field, it is a good practice to 
+					 enter that default value in your original scene for emphasis.  
+					 Note, however, that some optimizers may remove it again.
+		</li>
+</ul>
+<!-- line break -->
+<ul class="box">
+		<li>Verify that you are using the latest version of <a name="X3D-Edit">X3D-Edit</a> as follows.
+
+		<br />
+				Here is the
+				<a href="../build.date.X3D-Edit.txt">locally installed version number</a> 
+				of X3D-Edit.
+		<br />
+				Here is the 
+				<a href="http://www.web3d.org/x3d/content/build.date.X3D-Edit.txt">latest available version number</a> 
+				of X3D-Edit, online at
+				<a href="http://www.web3d.org/x3d/content/X3D-Edit.zip">http://www.web3d.org/x3d/content/X3D-Edit.zip</a>
+				<!--<ul>
+						<li><a href="http://www.web3d.org/x3d/content/X3D-Edit.zip">http://www.web3d.org/x3d/content/X3D-Edit.zip</a></li>
+						<li><a href="http://www.web3d.org/x3d/content/X3D-Edit.tar.gz">http://www.web3d.org/x3d/content/X3D-Edit.tar.gz</a></li>
+				</ul> -->
+		</li>
+</ul>
+<!-- line break -->
+<ul class="box">
+		<li>
+				<a name="DOCTYPE">Use the correct</a>
+				<a href="http://www.web3d.org/x3d/specifications/ISO-IEC-19776-1-FDIS-X3DEncodings-XML/Part01/concepts.html#Header">X3D version&nbsp;3.0 final specification DOCTYPE/DTD</a>:
+
+<pre style="background-color: #d3d3d3;"><b>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN"
+                     "<a href="http://www.web3d.org/specifications/x3d-3.0.dtd">http://www.web3d.org/specifications/x3d-3.0.dtd</a>"&gt;</b>
+&lt;X3D profile="Immersive" version="3.0"
+  xmlns:xsd="<a href="http://www.w3.org/2001/XMLSchema-instance">http://www.w3.org/2001/XMLSchema-instance</a>" xsd:noNamespaceSchemaLocation="<a href="http://www.web3d.org/specifications/x3d-3.0.xsd">http://www.web3d.org/specifications/x3d-3.0.xsd</a>"&gt;
+</pre>
+
+				The Transitional X3D 3.0 DOCTYPE/DTD is used by some tools:
+<pre style="background-color: #d3d3d3;"><b>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!--Warning:  transitional DOCTYPE in source .x3d file--&gt;
+&lt;!DOCTYPE X3D PUBLIC "<a href="http://www.web3d.org/specifications/x3d-3.0.dtd">http://www.web3d.org/specifications/x3d-3.0.dtd</a>"
+                     "<a href="file:///www.web3d.org/TaskGroups/x3d/translation/x3d-3.0.dtd">file:///www.web3d.org/TaskGroups/x3d/translation/x3d-3.0.dtd</a>"&gt;</b>
+&lt;X3D profile="Immersive" version="3.0"
+  xmlns:xsd="<a href="http://www.w3.org/2001/XMLSchema-instance">http://www.w3.org/2001/XMLSchema-instance</a>" xsd:noNamespaceSchemaLocation="<a href="http://www.web3d.org/specifications/x3d-3.0.xsd">http://www.web3d.org/specifications/x3d-3.0.xsd</a>"&gt;
+</pre>
+				When offline, X3D-Edit can only load scenes containing the proper DTD one at a time.
+				When disconnected from the network, click on a scene (or drag &amp; drop the scene onto the X3D-Edit&nbsp;icon)
+				to launch it - the DOCTYPE will be converted to Transitional&nbsp;DTD upon launch, and restored to Final&nbsp;DTD upon normal exit.
+				Alternatively, use a different X3D/XML/text editor 
+				or the Transitional X3D DOCTYPE/DTD with X3D-Edit.
+				
+		</li>
+</ul>
+<!-- line break -->
+<ul class="box">
+		<li>
+				<a name="DOCTYPE3.1"><i>Preferred</i></a>:
+				<a href="http://www.web3d.org/x3d/specifications/ISO-IEC-19776-1-FDIS-X3DEncodings-XML/Part01/concepts.html#Header">X3D Amendment&nbsp;1 version&nbsp;3.1 specification DOCTYPE/DTD</a>:
+
+<pre style="background-color: #d3d3d3;"><b>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.1//EN"
+                     "<a href="http://www.web3d.org/specifications/x3d-3.1.dtd">http://www.web3d.org/specifications/x3d-3.1.dtd</a>"&gt;</b>
+&lt;X3D profile="Immersive" version="3.1"
+  xmlns:xsd="<a href="http://www.w3.org/2001/XMLSchema-instance">http://www.w3.org/2001/XMLSchema-instance</a>" xsd:noNamespaceSchemaLocation="<a href="http://www.web3d.org/specifications/x3d-3.1.xsd">http://www.web3d.org/specifications/x3d-3.1.xsd</a>"&gt;
+</pre>
+
+				The Transitional X3D 3.1 DOCTYPE/DTD is used by some tools:
+<pre style="background-color: #d3d3d3;"><b>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!--Warning:  transitional DOCTYPE in source .x3d file--&gt;
+&lt;!DOCTYPE X3D PUBLIC "<a href="http://www.web3d.org/specifications/x3d-3.1.dtd">http://www.web3d.org/specifications/x3d-3.1.dtd</a>"
+                     "<a href="file:///www.web3d.org/TaskGroups/x3d/translation/x3d-3.1.dtd">file:///www.web3d.org/TaskGroups/x3d/translation/x3d-3.1.dtd</a>"&gt;</b>
+&lt;X3D profile="Immersive" version="3.1"
+  xmlns:xsd="<a href="http://www.w3.org/2001/XMLSchema-instance">http://www.w3.org/2001/XMLSchema-instance</a>" xsd:noNamespaceSchemaLocation="<a href="http://www.web3d.org/specifications/x3d-3.1.xsd">http://www.web3d.org/specifications/x3d-3.1.xsd</a>"&gt;
+</pre>
+		</li>
+</ul>
+<!-- line break -->
+<ul class="box">
+		<li>
+				<a name="X3dDtdChecker">You can use</a>
+				<a href="../X3dDtdChecker.java">X3dDtdChecker.java</a>
+				to convert from one DOCTYPE to the other:
+				<pre style="background-color: #d3d3d3;">C:\www.web3d.org\x3d\content> <b>java X3dDtdChecker</b>
+
+usage: java X3dDtdChecker sceneName.x3d [-setFinalDTD | -setTransitionalDTD]
+</pre>
+		</li>
+</ul>
+
+<ul class="box">
+		<li>
+				<a name="errata">Errata-correction versions</a> 
+				of the XML Document Type Definition (DOCTYPE DTD) and Schema are provided as part of the
+				<a href="#X3D-Edit">X3D-Edit</a> distribution 
+				or directly online as follows.
+<pre>
+</pre>
+<table summary="X3D DTD and Schema source links" border="1">
+			 <tr>
+    			 <th>X3D XML DOCTYPE (DTD)</th>
+    			 <th>X3D XML Schema</th>
+			 </tr>
+			 <tr>
+			 		 <td><a href="http://www.web3d.org/x3d/content/x3d-dtd-changelog.txt">x3d-dtd-changelog.txt</a></td>
+			 		 <td><a href="http://www.web3d.org/x3d/content/x3d-schema-changelog.txt">x3d-schema-changelog.txt</a></td>
+			 </tr>
+	<tr>
+    <td>
+			<a href="http://www.web3d.org/x3d/content/x3d-3.0.dtd">x3d-3.0.dtd</a>
+			<br />
+			<a href="http://www.web3d.org/x3d/content/x3d-3.0-InputOutputFields.dtd">x3d-3.0-InputOutputFields.dtd</a>
+			<br />
+			<a href="http://www.web3d.org/x3d/content/x3d-3.0-Web3dExtensionsPublic.dtd">x3d-3.0-Web3dExtensionsPublic.dtd</a>
+			<br />
+			<a href="http://www.web3d.org/x3d/content/x3d-3.0-Web3dExtensionsPrivate.dtd">x3d-3.0-Web3dExtensionsPrivate.dtd</a>
+		</td>
+      		<td>
+			<a href="http://www.web3d.org/x3d/content/x3d-3.0.xsd">x3d-3.0.xsd</a> and
+			<a href="http://www.web3d.org/x3d/content/X3dSchemaDocumentation3.0/x3d-3.0.html">documentation</a>
+			<br />
+			<br />
+			<a href="http://www.web3d.org/x3d/content/x3d-3.0-Web3dExtensionsPublic.xsd">x3d-3.0-Web3dExtensionsPublic.xsd</a>
+			<br />
+			<a href="http://www.web3d.org/x3d/content/x3d-3.0-Web3dExtensionsPrivate.xsd">x3d-3.0-Web3dExtensionsPrivate.xsd</a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="http://www.web3d.org/x3d/content/x3d-3.1.dtd">x3d-3.1.dtd</a>
+			<br />
+			<a href="http://www.web3d.org/x3d/content/x3d-3.1-InputOutputFields.dtd">x3d-3.1-InputOutputFields.dtd</a>
+			<br />
+			<a href="http://www.web3d.org/x3d/content/x3d-3.1-Web3dExtensionsPublic.dtd">x3d-3.1-Web3dExtensionsPublic.dtd</a>
+			<br />
+			<a href="http://www.web3d.org/x3d/content/x3d-3.1-Web3dExtensionsPrivate.dtd">x3d-3.1-Web3dExtensionsPrivate.dtd</a>
+		</td>
+		<td>
+			<a href="http://www.web3d.org/x3d/content/x3d-3.1.xsd">x3d-3.1.xsd</a> and
+			<a href="http://www.web3d.org/x3d/content/X3dSchemaDocumentation3.1/x3d-3.1.html">documentation</a>
+			<br />
+			<br />
+			<a href="http://www.web3d.org/x3d/content/x3d-3.1-Web3dExtensionsPublic.xsd">x3d-3.1-Web3dExtensionsPublic.xsd</a>
+			<br />
+			<a href="http://www.web3d.org/x3d/content/x3d-3.1-Web3dExtensionsPrivate.xsd">x3d-3.1-Web3dExtensionsPrivate.xsd</a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+				&nbsp;
+		</td>
+		<td>
+				<a href="http://www.web3d.org/x3d/content/X3dSchemaDocumentation.zip">X3dSchemaDocumentation.zip</a>
+		</td>
+	</tr>
+</table>
+
+		</li>
+</ul>
+
+<!-- =================================================== -->
+
+<h3><u><a name="CoordinateSystems">Coordinate systems for 3D</a></u></h3>
+
+<ul class="box">
+		<li>Always use default scaling, with units in meters.  If any content uses units other than meters,
+				add a parent Transform node to uniformly scale back to meters.</li>
+		<li>Coordinate systems:  <b>+X</b>-axis is nose/North, <b>+Y</b>-axis is vertical/up, <b>+Z</b>-axis is right-hand&nbsp;side&nbsp;(RHS)/East.</li>
+		<li>Entities (planes, trains, automobiles etc.) also must follow these coordinate system conventions.  
+				Example scene:
+								  <a href="course/ModelOrientation.x3d" target="_blank">ModelOrientation.x3d</a>
+								 (<a href="course/ModelOrientation.wrl" target="_blank">.wrl</a>)
+								 (<a href="course/ModelOrientation.html" target="_blank">.html</a>)
+								 (<a href="course/ModelOrientation.jpg" target="_blank">image</a>)
+				</li>
+		<li>Position the default center of airborne, space and underwater entities in the centroid (geometric center) or center of gravity (for physics-based models).
+				Position the default center of ground vehicles so that the bottom touches the ground.
+			  That way the entity can be properly animated by a parent Transform.
+		</li>
+		<li>Coordinate-system example scene:
+								<a href="course/CoordinateAxesNSEW.x3d" target="_blank">CoordinateAxesNSEW.x3d</a> 
+							 (<a href="course/CoordinateAxesNSEW.wrl" target="_blank">.wrl</a>)
+							 (<a href="course/CoordinateAxesNSEW.html" target="_blank">.html</a>)
+							 (<a href="course/CoordinateAxesNSEW.png" target="_blank">image</a>)
+		</li>
+		<li>Coordinate-system gimbals, including DIS axis conversions:
+								<a href="DistributedInteractiveSimulation/Gimbals.x3d" target="_blank">Gimbals.x3d</a> 
+							 (<a href="DistributedInteractiveSimulation/Gimbals.wrl" target="_blank">.wrl</a>)
+							 (<a href="DistributedInteractiveSimulation/Gimbals.html" target="_blank">.html</a>)
+							 (<a href="DistributedInteractiveSimulation/GimbalsExample.png" target="_blank">image</a>)
+		</li>
+		<li>
+				Angular rotations are expressed in radians, using right-hand&nbsp;rule&nbsp;(RHR) 
+				with thumb pointing along positive direction for axis of interest and the 
+				other fingers curling in the direction of positive rotation.
+		</li>
+</ul>
+
+
+<!-- =================================================== -->
+
+<h3><u><a name="Credits">Credits</a></u></h3>
+
+<ul class="box">
+		<li>
+				Ensure that all contributors receive proper credit for content.
+		</li>
+		<li>
+				The 
+				<a href="index.html">Basic&nbsp;X3D&nbsp;Examples</a>, 
+				<a href="Vrml2.0Sourcebook/index.html">VRML&nbsp;2.0&nbsp;Sourcebook</a>, 
+				<a href="http://www.web3d.org/x3d/content/examples/Conformance">X3D&nbsp;Conformance&nbsp;Suite</a> 
+				and 
+				<a href="http://web.nps.navy.mil/~brutzman/Savage">Savage</a> 
+				model archives are free for duplication and further use.
+		</li>
+		<li>
+				Don't add scenes, images or audio files to the archive unless permission has been granted from the owner.
+				This means that there are clear and documented distribution rights attached.  
+				This can be meta tag information, WorldInfo node at the top,
+				or a email/document statement by the owner duplicated locally.
+		</li>
+</ul>
+
+
+<!-- =================================================== -->
+
+<h3><u><a name="Dates">Dates</a></u></h3>
+
+
+<ul class="box">
+		<li>Use meta tags to note the dates when a scene is created and revised:
+				<blockquote style="background-color: #d3d3d3;">
+										&lt;meta name='created' content='18 October 2003'/&gt;
+										<br />
+										&lt;meta name='revised' content='19 October 2004'/&gt;
+				</blockquote> 
+		</li>
+		<li>For consistency and possible parsability, please use the date format
+						<b><code>10&nbsp;July&nbsp;2004</code></b>
+						(rather than other forms such as
+						<b><code>July&nbsp;10,&nbsp;2004</code></b>
+						or
+						<b><code>10/7/2004</code></b>).
+		</li>
+		<li>
+				Leading zeroes on dates are not usually used but are OK.
+		</li>
+		<li>
+				Use full 4-digit numbers for years, e.g.&nbsp;2004.
+		</li>
+</ul>
+
+<!-- =================================================== -->
+
+<h3><u><a name="HTML">HTML</a></u></h3>
+
+
+<ul class="box">
+		<li>
+				Ensure HTML content is valid.
+				<ul>
+						<li><a href="http://validator.w3.org">W3C Markup Validator Service</a></li>
+						<li><a href="http://www.chami.com/html-kit">HTML-Kit</a></li>
+						<li><a href="http://tidy.sourceforge.net">HTML Tidy</a></li>
+						<li><a href="http://www.htmlhelp.com/tools/validator">WDG HTML Validator</a></li>
+				</ul>
+		</li>
+		<li>
+				Encoding values for special characters in XML/HTML files are found under
+				<a href="http://www.w3.org/TR/html4/sgml/entities.html">Character entity references in HTML</a>.
+		</li>
+		<li>
+				Other references:
+				<ul>
+						<li><a href="http://www.w3.org/MarkUp/">HyperText Markup Language (HTML) Home Page</a></li>
+						<li><a href="http://www.w3.org/TR/xhtml1/">XHTML 1.0</a></li>
+						<li><a href="http://www.w3.org/TR/html4">HTML 4.01</a></li>
+						<li><a href="http://www.htmlhelp.com/faq">Web Design Group's FAQ Archives</a></li>
+				</ul>
+				
+		</li>
+		<!-- needed:  plugin object signing -->
+</ul>
+
+<!-- =================================================== -->
+
+<h3><u><a name="Images">Images</a></u></h3>
+
+<ul class="box">
+
+		<li>
+				Do not add images to the archive without proper permissions and 
+				<a href="#Credits">Credits</a>.
+		</li>
+		<li>
+				Follow <a href="#NamingConventions">Naming Conventions</a> for image file names:  no abbreviations, CamelCaseNaming, no embedded whitespace or underscore characters, etc.
+				<ul>
+				     <li>Don't arbitrarily rename images provided from other sources.</li>
+             <li>Starting with the same name as the scene of interest helps directory alphabetization.</li>
+						 <li>Ensure that filename extensions are lower case (e.g. <code>CoolImage<b>.png</b></code> vice <code>CoolImage.<b>PNG</b>)</code>.</li>
+        </ul>
+		</li>
+		<li>
+				<a href="http://www.w3.org/QA/Tips/png-gif" target="_blank">Portable network graphics (PNG)</a> is the preferred image format.
+				<ul>
+						<li>Please avoid use of Graphics Interchange Format (GIF) if possible. </li>
+				    <li>Further tips:  
+												<a href="http://www.w3.org/QA/Tips/png-gif" target="_blank">PNG versus GIF</a>
+												considerations.</li>
+						<li><a href="http://www.jpeg.org/" target="_blank">Joint Photographic Experts Group (JPG)</a> 
+						    format is acceptable, and often does a good job on photographs.  
+						    Be wary of JPG compression quality, which is adjustable (best quality is usually preferred).</li>
+				</ul>
+		</li>
+		<li>
+				Use high-resolution quality (e.g. 300&nbsp;dpi or better).  
+				Try to keep image filesize under 200-300&nbsp;KB, if possible.
+		</li>
+		<li>
+				An image file can be embedded inside an X3D scene by converting it into a 
+				<a href="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-IS-X3DAbstractSpecification/Part01/components/texturing.html#PixelTexture">PixelTexture</a>
+				node.  These will take up more size (often by a factor of 10) but compress well and
+				do not require a separate network fetch.  For an example, see
+				<a href="http://web.nps.navy.mil/~brutzman/Savage/Tools/Authoring/PixelTextureGenerator.java">PixelTextureGenerator.java</a>
+				which was used to create
+				<a href="http://web.nps.navy.mil/~brutzman/Savage/Tools/Authoring/index.html#PixelTextureNavyJackDontTreadOnMe">PixelTextureNavyJackDontTreadOnMe.x3d</a>
+				in the				
+				<a href="http://web.nps.navy.mil/~brutzman/Savage/Tools/Authoring">Savage/Tools/Authoring</a> collection.
+				
+		</li>
+		<li>
+				Use the 
+				<a href="http://cgi.w3.org/cgi-bin/imageinfo">W3C Image Info Service</a> 
+				to check the properties of your online image.
+		</li>
+</ul>
+
+<!-- =================================================== -->
+
+<h3><u><a name="InlinesPrototypes">Inline and Prototype Subscenes</a></u></h3>
+
+<ul> <!-- start section -->
+
+	 <li><a name="Inline"><b>Inline scenes</b></a>
+
+<ul class="box">
+		<li>
+				DEF/USE multiple instances of duplicate <code>Inline</code>, image, audio and video content.
+				This approach is more maintainable, uses less memory and can reduce file-transfer delays.
+		</li>
+		<li>
+				Inlined scenes ought to be interesting enough to stand on their own.
+				If an Inlined scene is unlikely to be reused more than once, then
+				the X3D content probably ought to get incorporated in the parent scene.
+		</li>
+		<li>
+				Provide well-formed
+				<a href="#urls">urls</a>
+				for reliability.
+		</li>
+		<li>
+				Ensure that named
+				<a href="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-IS-X3DAbstractSpecification/Part01/concepts.html#ImportExportsemantics"><code>IMPORT</code>/<code>EXPORT</code></a>
+				connections match.
+		</li>
+		<li>
+				<code>Inline</code>
+				<a href="../X3dTooltips.html#Inline">tooltips</a>
+			  and
+				<a href="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-IS-X3DAbstractSpecification/Part01/components/networking.html#Inline">X3D&nbsp;specification</a>
+		</li>
+</ul>
+<br />
+</li>
+
+		<li><b><a name="ProtoDeclare">Prototype Declarations</a></b> 
+
+<ul class="box">
+		<li>
+				Follow X3D naming conventions for node and <a href="../X3dTooltips.html#field">field</a> definitions.
+		</li>
+		<li>
+				Provide useful/safe default initialization values for each field, 
+				rather than depending on default field values internal to the <code>ProtoBody</code>.
+		</li>
+		<li>
+				Include annotation tooltips for each field.
+		</li>
+		<li>
+				Avoid copying <code>ProtoDeclare</code> definitions into additional scenes,
+				instead copy <code>ExternProtoDeclare</code>/<code>ProtoInstance</code> definitions.
+		</li>
+		<li>
+				Tooltips for
+				<a href="../X3dTooltips.html#ProtoDeclare"><code>ProtoDeclare</code></a>,
+				<a href="../X3dTooltips.html#ProtoInterface"><code>ProtoInterface</code></a> and
+				<a href="../X3dTooltips.html#ProtoBody"><code>ProtoBody</code></a>
+		</li>
+		<li>
+				<a href="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-IS-X3DAbstractSpecification/Part01/concepts.html#PrototypeSemantics">X3D&nbsp;specification</a>
+		</li>
+</ul>
+<br />
+</li>
+		<li><b><a name="ExternProtoDeclare">External Prototype Declarations</a></b>
+
+<ul class="box">
+		<li>
+				For important prototypes, make a separate <i>NewNodeExample.x3d</i> scene
+				that provides copyable/reusable <code>ExternProtoDeclare</code>/<code>ProtoInstance</code> definitions
+				corresponding to each <i>NewNodePrototype.x3d</i> scene.
+				This encourages authors to avoid copying the <code>ProtoDeclare</code> definitions,
+				so that a master version remains stable and improvable.
+		</li>
+		<li>
+				Do not include initialization values in field definitions.  
+				They are illegal since the defaults in the original ProtoDeclare field declarations take precedence.
+		</li>
+		<li>
+				Copy annotation tooltips from the corresponding <code>Protodeclare</code> annotation tooltips for each <code>ExternProtoDeclare</code> <code>field</code>.
+		</li>
+		<li>
+				<code>ExternProtoDeclare</code>
+				<a href="../X3dTooltips.html#ExternProtoDeclare">tooltips</a>
+			  and
+				<a href="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-IS-X3DAbstractSpecification/Part01/concepts.html#Externalprototypesemantics">X3D&nbsp;specification</a>
+		</li>
+</ul>
+<br />
+</li>
+		<li><b><a name="ProtoInstance">Prototype Instances</a></b>
+
+<ul class="box">
+		<li>
+				Explicitly include initialization values, even if they match default values, to ensure proper operation.
+				Sometimes a prototype can have different initialization values than expected, if it is modified elsewhere.
+		</li>
+		<li>
+				Remember to include proper <code>containerField</code> attribute, identifying parent-node field name for this <code>ProtoInstance</code>.
+				Default value:  <code>children</code>.
+				Example values:  <code>color</code>, <code>coord</code>, <code>geometry</code>, <code>fontStyle</code>, <code>proxy</code>, <code>sound</code>, <code>texture</code>, <code>textureTransform</code>. 
+		</li>
+		<li>
+				First debug proper <code>ProtoInstance</code> operation in the scene defining the original <code>ProtoDeclare</code>, rather than
+				using an <code>ExternProtoDeclare</code>.  
+				Why - to make sure they work first!
+				Browser debugging can be more cryptic for externally defined prototypes
+				and different versions may occur in various remote url addresses, making it difficult to determine
+				precisely which <code>ExternProtoDeclare</code> is being referenced.
+		</li>
+		<li>
+				<code>ProtoInstance</code>
+				<a href="../X3dTooltips.html#ProtoInstance">tooltips</a>
+			  and
+				<a href="http://www.web3d.org/x3d/specifications/ISO-IEC-19776-1-FDIS-X3DEncodings-XML/Part01/concepts.html#ProtoInstanceAndFieldValueStatement">X3D&nbsp;specification</a>
+		</li>
+</ul>
+<br />
+</li>
+</ul> <!-- end section -->
+
+<!-- =================================================== -->
+
+<h3><u><a name="license">License</a></u></h3>
+
+<ul class="box">
+		<li>
+				An 
+				<a href="license.html">open-source license</a> 
+				is applied to X3D models and source code produced by NPS (and others)
+				for the various Web3D and Savage model archives.  Typically the following <code>meta</code> tag 
+				is included in archived X3D scenes:
+
+<pre style="background-color: #d3d3d3;"><b>&lt;meta name="license" content="<a href="license.html">../../license.html</a>"&gt;</b>
+</pre>
+			  The license is available as
+				<a href="license.html">license.html</a>
+				and also available in plain-text form as 
+				<a href="license.txt">license.txt</a>
+				for embedding in source-code files.
+				Under the terms of this 
+				<a href="http://opensource.org/licenses/bsd-license.php">BSD open-source license</a>
+				both commercial &amp; noncommercial uses are permitted, and the contributing authors retain original copyright as appropriate. 
+				This license can be adapted for use by other open-source contributors, if desired.
+				Discussion, rationale and references regarding this license are available via the
+				<a href="http://xchat.movesinstitute.org/bugzilla/show_bug.cgi?id=license">XMSF&nbsp;bugtracker&nbsp;license&nbsp;entry</a>.
+		</li>
+</ul>
+
+<!-- =================================================== -->
+
+<h3><u><a name="metaTags"><code>meta</code> tags</a></u></h3>
+
+<ul class="box">
+		<li>
+				Follow meta-tag norms found in 
+				<a href="newScene.x3d" target="_blank">newScene.x3d</a>
+				(<a href="newScene.html" target="_blank">.html</a>)
+		</li>
+		<li>
+				Description tags are used for catalog entries. 
+				Ensure the first sentence provides a good overall description of the scene.
+				Example:
+
+<pre style="background-color: #d3d3d3;">&lt;meta name="description" value="This beautiful model of an actual clean bedroom will impress your mom."/&gt;
+</pre>
+
+		</li>
+		<li>
+				Update or remove meta tags with *default content descriptions*
+		</li>
+		<li>
+				Remove extraneous trailing newline characters.
+		</li>
+		<li>
+				Ensure you include both
+				<code>&lt;meta name="filename"/&gt;</code> 
+				and 
+				<code>&lt;meta name="url"/&gt;</code>
+				tags, with filename values ending in .x3d
+				(rather than .wrl).
+		</li>
+		<li>
+				Default metadata conventions are defined by the 
+				<a href=" 
+http://www.dublincore.org/documents/dcmi-terms">Dublin Core metadata terms</a>.
+
+		<li>
+				Translation programs should indicate that the output file is a conversion by adding a <code>meta</code> tag such as
+				<br />
+				<code>&lt;meta name="generator" content="X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"/&gt;</code>
+				<br />
+				or
+				<br />
+				<code>META "generator" "X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"</code>
+				<br />
+				This matches best practices in XHTML.
+		</li>
+</ul>
+
+<!-- =================================================== -->
+
+<h3><u><a name="NamingConventions">Naming Conventions</a></u></h3>
+
+<ul class="box">
+		<li>
+				CamelCaseNaming:  capitalize each word, never use abbreviations, 
+				strive for clarity, and be brief but complete.
+		</li>
+		<li>
+				<b>s</b>tartWithLowerCaseLetter when defining field names (i.e. attributes) for Prototypes and Scripts.
+		</li>
+		<li>
+				Ensure consistent capitalization throughout.
+				Of note:  the Windows operating system is not case sensitive, but http servers are.
+				Thus mismatched capitalization can hide target files, and
+			  this error only is revealed when placed on a server.
+		</li>
+		<li>
+				Use the underscore character ("<b>_</b>") to indicate subscripts on mathematical variables.
+				Otherwise avoid use of underscores since they look like whitespace when part of a URL address.
+		</li>
+		<li>
+				Avoid use of hyphens ("<b>-</b>") since these are erroneously turned into subtraction operators when converted into class or variable names.
+		</li>
+		<li>
+				Naming conventions apply to .x3d files, image files, and Prototypes.
+				It is also a good idea to follow them for DEF/USE names.
+		</li>
+		<li>
+				Use lower case for filename extensions.  Examples:  .png .jpg .txt
+		</li>
+		<li>
+				Be consistent.
+				When multiple files pertain to a single entity, start with the same name
+				so that they will alphabetize adjacent to each other in the catalog and
+				the directory listings.  Examples:
+				<a href="http://web.nps.navy.mil/~brutzman/Savage/Tools/Animation/WaypointInterpolatorPrototype.x3d" target="_blank">WaypointInterpolatorPrototype.x3d</a>
+				<a href="http://web.nps.navy.mil/~brutzman/Savage/Tools/Animation/WaypointInterpolatorExample.x3d" target="_blank">WaypointInterpolatorExample.x3d</a>
+				<a href="http://web.nps.navy.mil/~brutzman/Savage/Tools/Animation/WaypointInterpolatorExample.png" target="_blank">WaypointInterpolatorExample.png</a>
+		</li>
+		<li>
+				Good choice of directory &amp; subdirectory names can help keep scene names terse.
+		</li>
+</ul>
+
+<p><i>Naming of multiple similar autogenerated files:</i>	
+			Concatenate the following name components as appropriate.
+			Separate components by period characters, since underscores disappear as part of a url and since hyphens will break across a line.
+</p>
+				<ul>
+						<li>	ConsistentDescriptiveName</li>
+						<li>	.PhysicalLocation (for&nbsp;example <i>.KauaiHawaii</i>)</li>
+						<li>	.SequenceNumber</li>
+						<li>	.01Month200x</li>
+						<li>	.ext</li>
+				</ul>
+
+<p><i>General notes on naming conventions:</i>		
+</p>
+
+<ul>
+		<li>
+				These conventions are suitable for X3D scenes, XML tagset design, and corresponding Java classes.
+		</li>
+		<li>
+				This approach matches the node and field naming conventions in the
+				<a href="http://www.web3d.org/x3d/specifications">X3D Specification</a> (and most XML).
+		</li>
+		<li>
+				(Ironic) Success Metric:  when is a name successful?
+				<br/>
+				Answer:  when no one has to discuss that name any more.
+		</li>
+</ul>
+
+
+<!-- =================================================== -->
+
+<h3><u><a name="Scripts">Scripts</a></u></h3>
+
+<ul class="box">
+		<li>
+				Caveat:  many more tips will be added as we begin working on Scene Access Interface (SAI).
+		</li>
+		<li>
+				Be sure to set <b><code>&lt;Script directOutput='true'&gt;</code></b> when using SFNode/MFNode fields.
+		</li>
+		<li>
+				Use <b><code>Browser.print(...)</code></b> rather than a simple <b><code>print(...)</code></b> function
+				when printing to the console.  For backwards compatibility, X3dToVrml97.xslt will strip
+				the preceding <b><code>Browser.</code> </b>class qualifier when converting scripts to VRLM97.
+		</li>
+		<li>
+				Preferred alternative to using the url field for Script nodes: 
+				insert a <b>CDATA</b> section to contain embedded source code.
+				<b>CDATA</b> can protect literals like <code>&lt;</code>&nbsp;and&nbsp;<code>&gt;</code> from undesirable conversions by XML parsers.  
+				Furthermore, it eliminates the need to use <code>&amp;lt;</code> and <code>&amp;gt;</code> escape-character replacements (which make script code nonportable).
+				Example:
+<br />
+<pre style="background-color: #d3d3d3;">
+&lt;Script mustEvaluate="true"&gt;
+    &lt;field name="message" type="SFString" accessType="initializeOnly" value="World!"/&gt;
+<b>&lt;![CDATA[</b>
+ecmascript:
+
+function initialize (timestamp)
+{
+	Browser.print ('Hello ' + message);
+}
+<b>]]&gt;</b>
+&lt;/Script&gt;
+</pre>	
+		</li>
+		<li>
+				For toggle-able tracing in <code>ecmascript:</code> scripts, first add the following field interface to the Script.
+<br />
+<pre style="background-color: #d3d3d3;">
+&lt;field accessType="initializeOnly" name="localTraceEnabled" type="SFBool" value="true"/&gt;
+</pre>	
+				Then, at end of the CDATA section:
+<br />
+<pre style="background-color: #d3d3d3;">
+function tracePrint(outputString)
+{
+    if (localTraceEnabled)
+	Browser.print('[<i>ScriptNameHere</i>] ' + outputString);
+}
+function forcePrint(outputString)
+{
+	Browser.print('[<i>ScriptNameHere</i>] ' + outputString);
+}
+</pre>	
+				This lets the script author use trace-aware output functions as a substitute for <code>Browser.print()</code> as follows.
+<br />
+<pre style="background-color: #d3d3d3;">
+		 tracePrint('Only print when localTraceEnabled is true');
+		 forcePrint('Always print: localTraceEnabled=' + localTraceEnabled);
+</pre>	
+				
+		</li>
+</ul>
+
+<!-- =================================================== -->
+
+<h3><u><a name="urls">URL Links</a></u></h3>
+
+
+<ul class="box">
+		<li>
+				Include both relative and persistent (online) url&nbsp;links.  Use relative links first, since they are most portable
+				and do not require unnecessary use of the network.
+		</li>
+		<li>
+				Special case:  use online links before relative links when updated network versions are preferred.
+		</li>
+		<li>
+				Ensure each url&nbsp;link is valid.  These can be easily checked manually via the pretty-print HTML version of the scene.
+		</li>
+		<li>
+				Look at
+				<a href="index.html">X3D&nbsp;examples</a>
+				and 
+				<a href="http://web.nps.navy.mil/~brutzman/Savage">SAVAGE&nbsp;examples</a>
+				for sample usage of multiple (relative and online) url fields.
+		</li>
+		<li>
+				Run a link checker 
+				to verify URLs are correct.  This step is performed periodically on the X3D/Savage content archives.
+				<ul>
+						<li>
+								<a href="http://validator.w3.org/checklink">W3C Link Checker</a>
+								(with <a href="http://validator.w3.org/docs/checklink.html">documentation</a>)
+						</li>
+						<li><a href="http://home.snafu.de/tilman/xenulink.html" target="_blank">Xenu's Link Sleuth</a></li>
+				</ul>
+		</li>
+		<li>
+				Include <b>&quot;</b>quotation marks<b>&quot;</b> around each individual address, 
+				since <code>url</code> has type <code>MFString</code>. 
+		</li>
+		<li>
+				XML-aware editors may escape each <b>&quot;</b> character as <b>&amp;quot;</b> for proper XML encoding.
+				When using a text editor directly, it may be easiest to enclose the entire field in <b>'</b>apostrophes<b>'</b>
+				as shown next.
+		</li>
+		<li>
+				Usage examples:
+				<pre style="background-color: #d3d3d3;">&lt;ImageTexture url=<b>'</b>
+"<a href="earth-topo.png">earth-topo.png</a>"
+"<a href="earth-topo-small.gif">earth-topo-small.gif</a>"
+"<a href="file:///c:/www.web3d.org/x3d/content/examples/earth-topo.png">file:///c:/www.web3d.org/x3d/content/examples/earth-topo.png</a>"
+"<a href="file:///c:/www.web3d.org/x3d/content/examples/earth-topo-small.gif">file:///c:/www.web3d.org/x3d/content/examples/earth-topo-small.gif</a>"
+"<a href="http://www.web3d.org/x3d/content/examples/earth-topo.png">http://www.web3d.org/x3d/content/examples/earth-topo.png</a>"
+"<a href="http://www.web3d.org/x3d/content/examples/earth-topo-small.gif">http://www.web3d.org/x3d/content/examples/earth-topo-small.gif</a>" <b>'</b> 
+/&gt;
+</pre>
+
+				<pre style="background-color: #d3d3d3;">&lt;ImageTexture url=<b>"</b>&amp;quot;<a href="earth-topo.png">earth-topo.png</a>&amp;quot;&amp;#10;&amp;quot;<a href="earth-topo-small.gif">earth-topo-small.gif</a>&amp;quot;<b>"</b>/&gt;
+</pre>
+
+		</li>
+		<li>
+				References
+				<ul>
+				    <li><a href="../X3dTooltips.html#Anchor">X3D <code>url</code> tooltips</a></li>
+				    <li><a href="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-IS-X3DAbstractSpecification/Part01/components/networking.html#Concepts">X3D&nbsp;specification</a></li>
+				    <li><a href="http://www.ietf.org/rfc/rfc2396.txt">Internet Engineering Task Force (IETF) Requests for Comments (RFC) 2396</a></li>
+				    <li><a href="http://www.w3.org/Addressing">World Wide Web Consortium (W3C):  naming and addressing</a></li>
+        </ul>	
+		</li>
+
+</ul>
+
+<!-- =================================================== -->
+
+<h3><u><a name="Viewpoints">Viewpoints</a></u></h3>
+
+
+<ul class="box">
+		<li>
+				Initial viewpoint is typically on <b>+Z</b>-axis, looking toward origin along <b>-Z</b>-axis.
+				This helps provide consistent catalog viewing.
+		</li>
+		<li>
+				Since the <a href="#CoordinateSystems">default body coordinate system</a> 
+				is aligned along <b>+X</b>-axis with <b>+Y</b>-axis up, 
+				individual entities are typically pointed to right when seen from default view.
+		</li>
+		<li>
+				Use clear, understandable description fields.  Viewpoints are a primary user tool for scene navigation.
+		</li>
+		<li>
+				Use the object's name first when many viewpoints follow, so that they are more easily identified in the viewpoint list.
+		</li>
+		<li>
+				Use whitespace instead of underscores in Viewpoint (and sensor) descriptions.
+		</li>
+		<li>
+				Put objects in the center of a scene for default EXAMINE mode to work properly.
+				Alternatively, use Viewpoint centerOfRotation field to indicate local center.
+		</li>
+		<li>
+				Use <i>Savage/HeadsUpDisplay/CrossHair</i> 
+				<a href="http://web.nps.navy.mil/~brutzman/Savage/Tools/HeadsUpDisplays/index.html#CrossHairExample" target="_blank">online prototype</a> 
+				to put a cross-hair overlay HUD in the center of a viewpoint.  
+		</li>
+		<li>
+				Use <i>development/ViewpointGroup</i> 
+				<a href="development/index.html#ViewpointGroup" target="_blank">prototype</a> 
+				(<a href="http://www.web3d.org/x3d/content/examples/development/index.html#ViewpointGroup" target="_blank">online prototype</a>)
+				to hide high-detail viewpoints from the viewpoint list at long ranges.
+				This allows scalability of many objects in a single scene.  
+		</li>
+		<li>
+				Use <i>Savage/Tools/Authoring/AnimatedViewpointRecorderPrototype</i> 
+				<a href="http://web.nps.navy.mil/~brutzman/Savage/Tools/Authoring/index.html#AnimatedViewpointRecorderPrototype" target="_blank">online prototype</a>
+				to hide high-detail viewpoints from the viewpoint list at long ranges.
+				This allows scalability of many objects in a single scene.  
+		</li>
+</ul>
+
+<!-- =================================================== -->
+
+<hr />
+
+<p>
+	 Updated:  15 March 2007
+	 <br/>
+   Maintained by
+   <a href="http://web.nps.navy.mil/~brutzman">Don&nbsp;Brutzman</a>
+   <a href="mailto:brutzman@nps.edu(Don%20Brutzman)?subject=X3D%20Scene%20Authoring%20Hints%20for%20feedback%20">(<i>brutzman&nbsp;at&nbsp;nps.edu</i>)</a>.
+	 Comments &amp; suggestions are welcome.
+	 <br/>
+	 Online at  
+	 <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html">http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html</a></p>
+
+</body>
+</html>

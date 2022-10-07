@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.1//EN" "http://www.web3d.org/specifications/x3d-3.1.dtd">
+<X3D profile='Immersive' version='3.0'>
+<head>
+   <meta name='title' key='HelloWorld.x3d'></meta>   <meta name='created' key='30 October 2000'></meta>   <meta name='description' key='Simple X3D example'></meta>   <meta name='generator' key='X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html'></meta>   <meta name='license' key='license.html'></meta>   <meta name='identifier' key='http://www.web3d.org/x3d/content/examples/Basic/HelloWorld.x3d'></meta>   <meta name='creator' key='Don Brutzman'></meta>   <meta name='modified' key='29 October 2006'></meta></head>
+<Scene>
+      <NavigationInfo type='"EXAMINE","ANY"'></NavigationInfo>
+      <Group>
+         <Viewpoint position='0.0 -1.0 7.0' description='hello, world!'></Viewpoint>
+         <Transform>
+            <Transform rotation='0.0 1.0 0.0 3.0'>
+               <Shape>
+                  <Appearance>
+                     <ImageTexture url='"earth-topo.png","earth-topo.jpg","earth-topo.gif","earth-topo-small.gif","../earth-topo.png","../earth-topo.jpg","../earth-topo.gif","../earth-topo-small.gif","/www.web3d.org/x3d/content/examples/earth-topo.png","/www.web3d.org/x3d/content/examples/earth-topo.jpg","/www.web3d.org/x3d/content/examples/earth-topo.gif","/www.web3d.org/x3d/content/examples/earth-topo-small.gif","http://www.web3d.org/x3d/content/examples/earth-topo.png","http://www.web3d.org/x3d/content/examples/earth-topo.jpg","http://www.web3d.org/x3d/content/examples/earth-topo.gif","http://www.web3d.org/x3d/content/examples/earth-topo-small.gif"'></ImageTexture>
+                  </Appearance>
+                  <Sphere></Sphere>
+               </Shape>
+            </Transform>
+         </Transform>
+         <Transform translation='0.0 -2.0 0.0'>
+            <Shape>
+               <Appearance>
+                  <Material diffuseColor='0.1 0.5 1.0'></Material>
+               </Appearance>
+               <Text string='"Hello","world!"'>
+                  <FontStyle justify='"MIDDLE","MIDDLE"'></FontStyle>
+               </Text>
+            </Shape>
+         </Transform>
+      </Group>
+</Scene>
+</X3D>

@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!--Generated using XSLT processor: SAXON 8.7 from Saxonica--><html xmlns="http://www.w3.org/TR/xhtml1/strict">
+   <head>
+      <title>LoadSensorPrototype.x3d (X3dToXhtml)</title>
+      <style type="text/css">
+
+
+span.element {color: navy}
+span.attribute {color: green}
+span.value {color: teal}
+span.plain {color: black}
+span.gray  {color: gray}
+span.idName {color: maroon}
+a.idName {color: maroon}
+div.center {text-align: center}
+div.indent {margin-left: 25px}
+
+span.prototype {color: purple}
+a.prototype {color: purple, visited: black}
+span.route {color: red}
+b.warning {color: #CC5500}
+b.error {color: #CC0000}
+
+	</style>
+      <meta name="generator" content="http://www.web3d.org/x3d/content/X3dToXhtml.xslt"/>
+      <link rel="shortcut icon"
+            href="http://www.web3d.org/x3d/content/icons/X3DtextIcon16.png"
+            title="X3D"/>
+   </head>
+   <body>
+      <pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN"   "http://www.web3d.org/specifications/x3d-3.0.dtd"&gt;</pre>
+
+&lt;<span class="element">X3D</span>&#160;<span class="attribute">profile</span>='<span class="value">Immersive</span>'&#160;<span class="attribute">version</span>='<span class="value">3.0</span>'&#160;<span class="attribute">xmlns:xsd</span>='<a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank">http://www.w3.org/2001/XMLSchema-instance</a>' <span class="attribute">xsd:noNamespaceSchemaLocation</span>='
+<a href="http://www.web3d.org/specifications/x3d-3.0.xsd">http://www.web3d.org/specifications/x3d-3.0.xsd</a> '&gt;
+<div class="indent">
+&lt;<span class="element">head</span>&gt;
+<div class="indent">
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">title</span>'&#160;<span class="attribute">content</span>='<a href="LoadSensorPrototype.x3d" target="_blank">LoadSensorPrototype.x3d</a>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">description</span>'&#160;<span class="attribute">content</span>='<span class="plain">LoadSensor prototype for VRML 97 use. Assumes correct loading of resources and provides output events based on timeOut delay.</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">created</span>'&#160;<span class="attribute">content</span>='<span class="value">26 December 2003</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">modified</span>'&#160;<span class="attribute">content</span>='<span class="value">27 December 2003</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">creator</span>'&#160;<span class="attribute">content</span>='<span class="value">Don Brutzman</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">hint</span>'&#160;<span class="attribute">content</span>='<span class="value">Set LoadSensorScript traceEnabled true/false to enable/disable console trace text.</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<b class="warning">warning</b>'&#160;<span class="attribute">content</span>='<b class="warning">This LoadSensor implementation for VRML 97 only emulates LoadSensor events and cannot sense actual loading of watchList resources. Use an X3D-compliant browser for complete LoadSensor capability.</b>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">reference</span>'&#160;<span class="attribute">content</span>='<a href="LoadSensorExample.x3d" target="_blank">LoadSensorExample.x3d</a>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">reference</span>'&#160;<span class="attribute">content</span>='<a href="LoadSensorPrototypeInitializationTrace.txt" target="_blank">LoadSensorPrototypeInitializationTrace.txt</a>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">identifier</span>'&#160;<span class="attribute">content</span>='
+<a href="http://www.web3d.org/x3d/content/examples/Basic/development/LoadSensorPrototype.x3d">http://www.web3d.org/x3d/content/examples/Basic/development/LoadSensorPrototype.x3d</a> '/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">generator</span>'&#160;<span class="attribute">content</span>='<span class="value">X3D-Edit, </span>
+            <a href="http://www.web3d.org/x3d/content/README.X3D-Edit.html" target="_blank">http://www.web3d.org/x3d/content/README.X3D-Edit.html</a>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">license</span>'&#160;<span class="attribute">content</span>='<a href="../../license.html" target="_blank">../../license.html</a>'/&gt;
+</div>&lt;/<span class="element">head</span>&gt;
+<br />
+&lt;!--
+<div class="center">
+            <hr width="100%"/>
+            <i>Index for ProtoDeclare definition</i>: 
+<a href="#ProtoDeclare_LoadSensor" class="prototype">LoadSensor</a>
+<br />
+<i>Index for DEF nodes</i>: 
+<a href="#Clock" class="idName">Clock</a>,
+<a href="#LoadSensorScript" class="idName">LoadSensorScript</a>
+            <hr width="100%"/>
+         </div>
+--&gt;
+<br />
+&lt;<span class="element">Scene</span>&gt;
+<div class="indent">
+            <a name="ProtoDeclare_LoadSensor"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">LoadSensor</span>'&#160;<span class="attribute">appinfo</span>='<span class="value">LoadSensor monitors the progress and success of downloading URL elements over a network. Only nodes that contain a valid URL field (i.e. descendants of X3DUrlObject) may be specified as watchList children. Multiple nodes may be watched with a single LoadSensor.</span>'&#160;<span class="attribute">documentation</span>='
+<a href="http://www.web3d.org/specifications/ISO-IEC-19775/Part01/components/networking.html#LoadSensor">http://www.web3d.org/specifications/ISO-IEC-19775/Part01/components/networking.html#LoadSensor</a> '&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="LoadSensorProtoField_enabled"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">enabled</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Enables/disables the sensor node.</span>'/&gt;
+<br /><a name="LoadSensorProtoField_timeOut"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">timeOut</span>'&#160;<span class="attribute">type</span>='<span class="value">SFTime</span>'&#160;<span class="attribute">value</span>='<span class="value">0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Maximum time for which the LoadSensor will monitor loading starting from when the sensor becomes active. timeOut=0 ordinarily indicates an indefinite time out period; i.e. the LoadSensor will wait until loading has completed either with success or failure timeOut=0 causes immediate loading for this implementation.</span>'/&gt;
+<br /><a name="LoadSensorProtoField_watchList"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">watchList</span>'&#160;<span class="attribute">type</span>='<span class="value">MFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Zero or more nodes with url fields to monitor.</span>'/&gt;
+<br /><a name="LoadSensorProtoField_set_watchList"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_watchList</span>'&#160;<span class="attribute">type</span>='<span class="value">MFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Change watchList MFNode array.</span>'/&gt;
+<br /><a name="LoadSensorProtoField_isActive"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">isActive</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">isActive=true when loading begins isActive=false when loading ends.</span>'/&gt;
+<br /><a name="LoadSensorProtoField_isLoaded"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">isLoaded</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">isLoaded=true when loading succeeds isLoaded=false when loading fails or timeOut reached.</span>'/&gt;
+<br /><a name="LoadSensorProtoField_loadTime"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">loadTime</span>'&#160;<span class="attribute">type</span>='<span class="value">SFTime</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">loadTime event is generated when loading has successfully completed.</span>'/&gt;
+<br /><a name="LoadSensorProtoField_progress"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">progress</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">progress [0..1] indicates fraction of loading complete.</span>'/&gt;
+<br /><a name="LoadSensorProtoField_metadata"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">associated Metadata node.</span>'/&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+                     <a name="Clock"> </a> 
+&lt;!-- <span class="idName">Clock</span> <i>ROUTEs</i>:&#160;
+[<a href="#ROUTE_0"><i>from</i>&#160;<span class="idName">LoadSensorScript</span>.<span class="attribute">loopStart</span>&#160;<i>to</i>&#160;<span class="attribute">startTime</span>
+                     </a>]
+[<a href="#ROUTE_1"><i>from</i>&#160;<span class="idName">LoadSensorScript</span>.<span class="attribute">isActive</span>&#160;<i>to</i>&#160;<span class="attribute">enabled</span>
+                     </a>]
+[<a href="#ROUTE_2"><i>from</i>&#160;<span class="attribute">fraction_changed</span>&#160;<i>to</i>&#160;<span class="idName">LoadSensorScript</span>.<span class="attribute">fraction</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">TimeSensor</span>&#160;<span class="attribute">DEF</span>='<span class="idName">Clock</span>'&#160;<span class="attribute">loop</span>='<span class="value">true</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">enabled</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#LoadSensorProtoField_enabled" class="prototype">enabled</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">cycleInterval</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#LoadSensorProtoField_timeOut" class="prototype">timeOut</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">TimeSensor</span>&gt;
+<br /><a name="LoadSensorScript"> </a> 
+&lt;!-- <span class="idName">LoadSensorScript</span> <i>ROUTEs</i>:&#160;
+[<a href="#ROUTE_2"><i>from</i>&#160;<span class="idName">Clock</span>.<span class="attribute">fraction_changed</span>&#160;<i>to</i>&#160;<span class="attribute">fraction</span>
+                     </a>]
+[<a href="#ROUTE_0"><i>from</i>&#160;<span class="attribute">loopStart</span>&#160;<i>to</i>&#160;<span class="idName">Clock</span>.<span class="attribute">startTime</span>
+                     </a>]
+[<a href="#ROUTE_1"><i>from</i>&#160;<span class="attribute">isActive</span>&#160;<i>to</i>&#160;<span class="idName">Clock</span>.<span class="attribute">enabled</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="idName">LoadSensorScript</span>'&#160;<span class="attribute">directOutput</span>='<span class="value">true</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">ClockNode</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">
+&lt;<span class="element">TimeSensor</span>&#160;<span class="attribute">USE</span>='<a href="#Clock" class="idName">Clock</a>'/&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">loopStart</span>'&#160;<span class="attribute">type</span>='<span class="value">SFTime</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">fraction</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">priorFraction</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">progress</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">watchList</span>'&#160;<span class="attribute">type</span>='<span class="value">MFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_watchList</span>'&#160;<span class="attribute">type</span>='<span class="value">MFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">isActive</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">isLoaded</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">loadTime</span>'&#160;<span class="attribute">type</span>='<span class="value">SFTime</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">traceEnabled</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">false</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">watchList</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#LoadSensorProtoField_watchList" class="prototype">watchList</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">set_watchList</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#LoadSensorProtoField_set_watchList" class="prototype">set_watchList</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">isActive</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#LoadSensorProtoField_isActive" class="prototype">isActive</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">isLoaded</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#LoadSensorProtoField_isLoaded" class="prototype">isLoaded</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">loadTime</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#LoadSensorProtoField_loadTime" class="prototype">loadTime</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">progress</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#LoadSensorProtoField_progress" class="prototype">progress</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            ecmascript:
+
+function initialize (timestamp)
+{
+	enabled = ClockNode.enabled;
+	tracePrint ('initialize() enabled=' + enabled);
+	if (enabled)
+	{
+		isActive = true;
+		// isLoaded event only sent upon completion
+		progress = 0.0;
+		tracePrintEvents ();
+		timeOut = ClockNode.cycleInterval;
+		tracePrint ('timeOut=' + timeOut);
+		if (timeOut &lt;= 0.0) // instantaneous, no loop
+		{
+			isActive = false;
+			isLoaded = true;
+			progress = 1.0;
+			loadTime = timestamp;
+			tracePrintEvents ();
+		}
+	}
+}
+function fraction (value, timestamp)
+{
+	enabled = ClockNode.enabled;
+	if (enabled)
+		tracePrint ('progress=' + value + ', priorFraction=' + priorFraction);
+	// use priorFraction to check for looping, then stop loop
+	if (enabled &amp;&amp; ((value &gt;=1) || (value &lt; priorFraction)))
+	{
+		isActive = false;
+		isLoaded = true;
+		loadTime = timestamp;
+		progress = 1;
+		tracePrintEvents ();
+		tracePrint ('complete');
+	}
+	else progress= value; // output event
+	priorFraction = progress;
+}
+function set_watchList (value, timestamp)
+{
+	watchList = value;
+}
+function tracePrintEvents ()
+{
+	tracePrint ('isActive=' + isActive);
+	tracePrint ('isLoaded=' + isLoaded);
+	tracePrint ('loadTime=' + loadTime);
+	tracePrint ('progress=' + progress);
+}
+function tracePrint (outputString)
+{
+	if (traceEnabled) Browser.print ('[LoadSensor] ' + outputString);
+}
+function forcePrint (outputString)
+{
+	Browser.print ('[LoadSensor] ' + outputString);
+}
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+<br /><a name="ROUTE_0"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#LoadSensorScript" class="idName">LoadSensorScript</a>'&#160;<span class="attribute">fromField</span>='<span class="value">loopStart</span>'&#160;<span class="attribute">toNode</span>='<a href="#Clock" class="idName">Clock</a>'&#160;<span class="attribute">toField</span>='<span class="value">startTime</span>'/&gt;
+<br /><a name="ROUTE_1"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#LoadSensorScript" class="idName">LoadSensorScript</a>'&#160;<span class="attribute">fromField</span>='<span class="value">isActive</span>'&#160;<span class="attribute">toNode</span>='<a href="#Clock" class="idName">Clock</a>'&#160;<span class="attribute">toField</span>='<span class="value">enabled</span>'/&gt;
+<br /><a name="ROUTE_2"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#Clock" class="idName">Clock</a>'&#160;<span class="attribute">fromField</span>='<span class="value">fraction_changed</span>'&#160;<span class="attribute">toNode</span>='<a href="#LoadSensorScript" class="idName">LoadSensorScript</a>'&#160;<span class="attribute">toField</span>='<span class="value">fraction</span>'/&gt;
+<br />
+&lt;<span class="element">Collision</span>&#160;<span class="attribute">enabled</span>='<span class="value">false</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">proxy</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#LoadSensorProtoField_metadata" class="prototype">metadata</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">Collision</span>&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ====================================== --&gt;
+<br />&lt;!-- Example use --&gt;
+<br />
+&lt;<span class="element">Anchor</span>&#160;<span class="attribute">description</span>='<span class="value">LoadSensorExample</span>'&#160;<span class="attribute">parameter</span>='<span class="value">target=_blank</span>'
+<br />
+&#160;&#160;<span class="attribute">url</span>='
+"<a href="LoadSensorExample.wrl">LoadSensorExample.wrl</a>"
+"<a href="http://www.web3d.org/x3d/content/examples/Basic/development/LoadSensorExample.wrl">http://www.web3d.org/x3d/content/examples/Basic/development/LoadSensorExample.wrl</a>"
+"<a href="LoadSensorExample.x3d">LoadSensorExample.x3d</a>"
+"<a href="http://www.web3d.org/x3d/content/examples/Basic/development/LoadSensorExample.x3d">http://www.web3d.org/x3d/content/examples/Basic/development/LoadSensorExample.x3d</a>"
+'&gt;
+<div class="indent">
+&lt;<span class="element">Shape</span>&gt;
+<div class="indent">
+&lt;<span class="element">Text</span>&#160;<span class="attribute">solid</span>='<span class="value">true</span>'&gt;
+<div class="indent">
+&lt;<span class="element">FontStyle</span>&#160;<span class="attribute">justify</span>='<span class="value">"MIDDLE" "MIDDLE"</span>'&#160;<span class="attribute">size</span>='<span class="value">0.7</span>'/&gt;
+</div>&lt;/<span class="element">Text</span>&gt;
+<br />
+&lt;<span class="element">Appearance</span>&gt;
+<div class="indent">
+&lt;<span class="element">Material</span>&#160;<span class="attribute">diffuseColor</span>='<span class="value">1 1 0.2</span>'/&gt;
+</div>&lt;/<span class="element">Appearance</span>&gt;
+</div>&lt;/<span class="element">Shape</span>&gt;
+</div>&lt;/<span class="element">Anchor</span>&gt;
+</div>&lt;/<span class="element">Scene</span>&gt;
+</div>&lt;/<span class="element">X3D</span>&gt;
+<br />
+&lt;!--
+<div class="center">
+         <hr width="100%"/>
+         <i>Index for ProtoDeclare definition</i>: 
+<a href="#ProtoDeclare_LoadSensor" class="prototype">LoadSensor</a>
+<br />
+<i>Index for DEF nodes</i>: 
+<a href="#Clock" class="idName">Clock</a>,
+<a href="#LoadSensorScript" class="idName">LoadSensorScript</a>
+         <hr width="100%"/>
+      </div>
+--&gt;
+<p>
+&lt;!-- Tag color codes:
+&lt;<span class="element">Node</span>
+         <span class="idName"> DEF</span>='<span class="idName">idName</span>' <span class="attribute">attribute</span>='<span class="value">value</span>'/&gt;
+&lt;<span class="prototype">Prototype</span> 
+         <span class="attribute">name</span>='<span class="prototype">ProtoName</span>'&gt;
+	&lt;<span class="prototype">field</span>
+         <span class="attribute">name</span>='<span class="prototype">fieldName</span>'/&gt; &lt;/<span class="prototype">Prototype</span>&gt; --&gt;
+</p>
+   </body>
+</html>

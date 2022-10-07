@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>AwtPduViewer</title>
+</head>
+<body>
+
+<!----	Authors:	Don McGregor, Don Brutzman, Marlon Smith	---->
+<!----	Revised:	9 April 2002		       	---->
+<!----  Revised:	25 August 2003		       	---->
+<!----  Revised:	1 October 98 DMcG multicast options, jar file added ---->
+<!----	URL:		http://web.nps.navy.mil/~brutzman/vrtp/mil/navy/nps/awt/AwtPduViewer.html
+  ---->
+
+<CENTER>
+
+<table>
+<tr>
+<th valign=MIDDLE>
+
+<APPLET
+	codebase=""
+	archive="../../../../dis-java-vrml.jar"
+	code="mil.navy.nps.awt.AwtPduViewer"
+	width ="700"
+	height="700" >
+	<!---- Uncomment the next line and comment the two multicast lines to receive on unicast ---->
+	<!---- param name=PDUSocket value="8006" ---->
+
+	<!---- Uncomment the next two lines and comment the line above to receive on multicast ---->
+	<param name=MulticastGroup value="224.2.181.146">
+	<param name=PDUSocket      value="62040">
+</APPLET>
+
+
+<th valign=MIDDLE>
+
+<H3><i>AwtPduViewer</i></H3>
+<P>
+
+DIS Protocol Data Unit (PDU) Viewer
+<br>
+using Java Abstract Window Toolkit (AWT)
+<P>
+
+Check the Java Console for diagnostics and error messages.
+<P>
+
+Source code:  
+<br>
+
+<a href="AwtPduViewer.java">mil.navy.nps.awt. AwtPduViewer.java</a>
+
+
+</table>
+</CENTER>
+
+</body>
+</html>
+

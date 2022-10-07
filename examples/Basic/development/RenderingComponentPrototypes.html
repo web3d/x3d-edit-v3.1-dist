@@ -1,0 +1,1789 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!--Generated using XSLT processor: SAXON 8.7 from Saxonica--><html xmlns="http://www.w3.org/TR/xhtml1/strict">
+   <head>
+      <title>RenderingComponentPrototypes.x3d (X3dToXhtml)</title>
+      <style type="text/css">
+span.element {color: navy}
+span.attribute {color: green}
+span.value {color: teal}
+span.plain {color: black}
+span.gray  {color: gray}
+span.prototype {color: purple}
+a.prototype {color: purple, visited: black}
+span.route {color: red}
+span.nodeName {color: maroon}
+a.nodeName {color: maroon}
+div.center {text-align: center}
+div.indent {margin-left: 25px}
+b.warning {color: #CC5500}
+b.error {color: #CC0000}
+	</style>
+      <meta name="generator" content="http://www.web3d.org/x3d/content/X3dToXhtml.xslt"/>
+      <link rel="shortcut icon"
+            href="http://www.web3d.org/x3d/content/icons/X3DtextIcon16.png"
+            title="X3D"/>
+   </head>
+   <body>
+      <pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN"   "http://www.web3d.org/specifications/x3d-3.0.dtd"&gt;</pre>
+
+&lt;<span class="element">X3D</span>&#160;<span class="attribute">profile</span>='<span class="value">Immersive</span>'&#160;<span class="attribute">version</span>='<span class="value">3.0</span>'&#160;<span class="attribute">xmlns:xsd</span>='<a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank">http://www.w3.org/2001/XMLSchema-instance</a>' <span class="attribute">xsd:noNamespaceSchemaLocation</span>='
+<a href="http://www.web3d.org/specifications/x3d-3.0.xsd">http://www.web3d.org/specifications/x3d-3.0.xsd</a> '&gt;
+<div class="indent">
+&lt;<span class="element">head</span>&gt;
+<div class="indent">
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">title</span>'&#160;<span class="attribute">content</span>='<a href="RenderingComponentPrototypes.x3d" target="_blank">RenderingComponentPrototypes.x3d</a>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">description</span>'&#160;<span class="attribute">content</span>='<span class="plain">Prototype implementations of X3D Rendering component nodes (IndexedTriangleFanSet IndexedTriangleSet IndexedTriangleStripSet LineSet TriangleFanSet TriangleSet TriangleStripSet) implemented as prototypes for backwards compatibility with VRML 97.</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<b class="warning">warning</b>'&#160;<span class="attribute">content</span>='<b class="warning">Under development.  Need to check Metadata nodes.</b>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">authors</span>'&#160;<span class="attribute">content</span>='<span class="value">Don Brutzman, George Dabrowski, Ken Curtin, Duane Davis, Christos Kalogrias</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">created</span>'&#160;<span class="attribute">content</span>='<span class="value">17 November 2003</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">modified</span>'&#160;<span class="attribute">content</span>='<span class="value">9 July 2006</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">reference</span>'&#160;<span class="attribute">content</span>='<a href="RenderingComponentExamples.x3d" target="_blank">RenderingComponentExamples.x3d</a>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">reference</span>'&#160;<span class="attribute">content</span>='<a href="RenderingComponentExternProtoDefinitions.x3d" target="_blank">RenderingComponentExternProtoDefinitions.x3d</a>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">reference</span>'&#160;<span class="attribute">content</span>='
+<a href="http://www.web3d.org/spec_editors/abstract/Part01/components/rendering.html">http://www.web3d.org/spec_editors/abstract/Part01/components/rendering.html</a> '/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">reference</span>'&#160;<span class="attribute">content</span>='
+<a href="http://www.web3d.org/x3d/content/examples/Basic/Vrml2.0Sourcebook/Chapter13-PointsLinesFaces/Figure13.11IndexedLineSetBoxWireframe.x3d">http://www.web3d.org/x3d/content/examples/Basic/Vrml2.0Sourcebook/Chapter13-PointsLinesFaces/Figure13.11IndexedLineSetBoxWireframe.x3d</a> '/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">subject</span>'&#160;<span class="attribute">content</span>='<span class="value">X3D Rendering component nodes (IndexedTriangleFanSet IndexedTriangleSet IndexedTriangleStripSet LineSet TriangleFanSet TriangleSet TriangleStripSet)</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">identifier</span>'&#160;<span class="attribute">content</span>='
+<a href="http://www.web3d.org/x3d/content/examples/Basic/development/RenderingComponentPrototypes.x3d">http://www.web3d.org/x3d/content/examples/Basic/development/RenderingComponentPrototypes.x3d</a> '/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">generator</span>'&#160;<span class="attribute">content</span>='<span class="value">X3D-Edit, </span>
+            <a href="http://www.web3d.org/x3d/content/README.X3D-Edit.html" target="_blank">http://www.web3d.org/x3d/content/README.X3D-Edit.html</a>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">license</span>'&#160;<span class="attribute">content</span>='<a href="../../license.html" target="_blank">../../license.html</a>'/&gt;
+</div>&lt;/<span class="element">head</span>&gt;
+<br />
+&lt;!--
+<div class="center">
+            <hr width="100%"/>
+            <i>Index for ProtoDeclare definitions</i>: 
+<a href="#ProtoDeclare_ColorRGBA" class="prototype">ColorRGBA</a>,
+<a href="#ProtoDeclare_IndexedTriangleFanSet" class="prototype">IndexedTriangleFanSet</a>,
+<a href="#ProtoDeclare_IndexedTriangleSet" class="prototype">IndexedTriangleSet</a>,
+<a href="#ProtoDeclare_IndexedTriangleStripSet" class="prototype">IndexedTriangleStripSet</a>,
+<a href="#ProtoDeclare_LineSet" class="prototype">LineSet</a>,
+<a href="#ProtoDeclare_TriangleFanSet" class="prototype">TriangleFanSet</a>,
+<a href="#ProtoDeclare_TriangleSet" class="prototype">TriangleSet</a>,
+<a href="#ProtoDeclare_TriangleStripSet" class="prototype">TriangleStripSet</a>
+<br />
+<i>Index for DEF nodes</i>: 
+<a href="#ColorRGB" class="nodeName">ColorRGB</a>,
+<a href="#ColorRGBAholder" class="nodeName">ColorRGBAholder</a>,
+<a href="#ConvertColorRGBAtoRGB" class="nodeName">ConvertColorRGBAtoRGB</a>,
+<a href="#IndexedTriangleFanSetToIndexedFaceSet" class="nodeName">IndexedTriangleFanSetToIndexedFaceSet</a>,
+<a href="#IndexedTriangleSetToIndexedFaceSet" class="nodeName">IndexedTriangleSetToIndexedFaceSet</a>,
+<a href="#IndexedTriangleStripSetToIndexedFaceSet" class="nodeName">IndexedTriangleStripSetToIndexedFaceSet</a>,
+<a href="#LineSetToIndexedLineSet" class="nodeName">LineSetToIndexedLineSet</a>,
+<a href="#LinkToExamples" class="nodeName">LinkToExamples</a>,
+<a href="#NodesHolderILS" class="nodeName">NodesHolderILS</a>,
+<a href="#NodesHolderITFS" class="nodeName">NodesHolderITFS</a>,
+<a href="#NodesHolderITS" class="nodeName">NodesHolderITS</a>,
+<a href="#NodesHolderTFS" class="nodeName">NodesHolderTFS</a>,
+<a href="#NodesHolderTS" class="nodeName">NodesHolderTS</a>,
+<a href="#NodesHolderTSS" class="nodeName">NodesHolderTSS</a>,
+<a href="#RenderedILS" class="nodeName">RenderedILS</a>,
+<a href="#RenderedITFS" class="nodeName">RenderedITFS</a>,
+<a href="#RenderedITS" class="nodeName">RenderedITS</a>,
+<a href="#RenderedTFS" class="nodeName">RenderedTFS</a>,
+<a href="#RenderedTS" class="nodeName">RenderedTS</a>,
+<a href="#RenderedTSS" class="nodeName">RenderedTSS</a>,
+<a href="#TriangleFanSetToIndexedFaceSet" class="nodeName">TriangleFanSetToIndexedFaceSet</a>,
+<a href="#TriangleSetToIndexedFaceSet" class="nodeName">TriangleSetToIndexedFaceSet</a>,
+<a href="#UnrenderedITFS" class="nodeName">UnrenderedITFS</a>,
+<a href="#UnrenderedITS" class="nodeName">UnrenderedITS</a>,
+<a href="#UnrenderedTFS" class="nodeName">UnrenderedTFS</a>,
+<a href="#UnrenderedTS" class="nodeName">UnrenderedTS</a>
+            <hr width="100%"/>
+         </div>
+--&gt;
+<br />
+&lt;<span class="element">Scene</span>&gt;
+<div class="indent">&lt;!-- ==================== --&gt;
+<br /><a name="ProtoDeclare_ColorRGBA"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">ColorRGBA</span>'&#160;<span class="attribute">appinfo</span>='<span class="value">ColorRGBA defines a set of RGBA colors.  Warning:  VRML 97 support, does not include alpha values.</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="ColorRGBAProtoField_color"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">color</span>'&#160;<span class="attribute">type</span>='<span class="value">MFRotation</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">locally override MFColorRGBA type (which is not supported in VRML 97) in order to downgrade to Color RGB</span>'&gt;
+<div class="indent">&lt;!-- The color field is a 4-tuple float array, and so we map it to an MFOrientation for backwards compatibility with VRML 97. --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="ColorRGBAProtoField_metadata"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Metadata node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+                  <a name="ColorRGB"> </a> 
+&lt;<span class="element">Color</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">ColorRGB</span>'/&gt;
+<br />&lt;!-- remaining nodes are not rendered --&gt;
+<br /><a name="ColorRGBAholder"> </a> 
+&lt;<span class="element">OrientationInterpolator</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">ColorRGBAholder</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">keyValue</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_color" class="prototype">color</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">OrientationInterpolator</span>&gt;
+<br /><a name="ConvertColorRGBAtoRGB"> </a> 
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">ConvertColorRGBAtoRGB</span>'&#160;<span class="attribute">directOutput</span>='<span class="value">true</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">colorRGBAnode</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">
+&lt;<span class="element">OrientationInterpolator</span>&#160;<span class="attribute">USE</span>='<a href="#ColorRGBAholder" class="nodeName">ColorRGBAholder</a>'/&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">colorRGBnode</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">
+&lt;<span class="element">Color</span>&#160;<span class="attribute">USE</span>='<a href="#ColorRGB" class="nodeName">ColorRGB</a>'/&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                        <b>&lt;![CDATA[</b>
+                     </code>
+                     <pre>
+          ecmascript:
+
+function initialize () 
+{
+//	Browser.print ('colorRGBAnode.keyValue.length=' + colorRGBAnode.keyValue.length);
+	for (i=0; i&lt;=colorRGBAnode.keyValue.length-1; i++)
+	{
+		// type conversion of each array element
+		// specifically, colorRGBAnode.keyValue[i] is an SFRotation
+		// and individual element values are then extracted from that
+		nextColor = new SFColor (
+			colorRGBAnode.keyValue[i].x,
+			colorRGBAnode.keyValue[i].y,
+			colorRGBAnode.keyValue[i].z);
+		// note colorRGBAnode.keyValue[i].angle holds the alpha value; ignored 
+//		Browser.print ('color[' + i + ']=' + nextColor);
+		colorRGBnode.color[i] = nextColor;
+	}
+}
+        </pre>
+                     <code>
+                        <b>]]&gt;</b>
+                     </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+<br />
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+&lt;<span class="element">MetadataSet</span>&#160;<span class="attribute">containerField</span>='<span class="value">metadata</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_metadata" class="prototype">metadata</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">MetadataSet</span>&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ==================== --&gt;
+<br /><a name="ProtoDeclare_IndexedTriangleFanSet"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">IndexedTriangleFanSet</span>'&#160;<span class="attribute">appinfo</span>='<span class="value">IndexedTriangleFanSet represents a 3D shape composed of triangles that form a fan shape around the first vertex declared in each fan.</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="IndexedTriangleFanSetProtoField_ccw"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">ccw</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="IndexedTriangleFanSetProtoField_colorPerVertex"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">colorPerVertex</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="IndexedTriangleFanSetProtoField_normalPerVertex"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">normalPerVertex</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="IndexedTriangleFanSetProtoField_solid"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">solid</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="IndexedTriangleFanSetProtoField_set_index"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_index</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">[0, infinity] or -1</span>'/&gt;
+<br /><a name="IndexedTriangleFanSetProtoField_index"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">index</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">[0, infinity] or -1</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL array [] to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="IndexedTriangleFanSetProtoField_color"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">color</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Color, ColorRGBA node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="IndexedTriangleFanSetProtoField_coord"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">coord</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Coordinate node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="IndexedTriangleFanSetProtoField_metadata"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Metadata node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="IndexedTriangleFanSetProtoField_normal"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">normal</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Normal node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="IndexedTriangleFanSetProtoField_texCoord"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">texCoord</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">TextureCoordinate node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+                  <a name="RenderedITFS"> </a> 
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">RenderedITFS</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">ccw</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_ccw" class="prototype">ccw</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">normalPerVertex</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_normalPerVertex" class="prototype">normalPerVertex</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">solid</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_solid" class="prototype">solid</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">color</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_color" class="prototype">color</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">coord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_coord" class="prototype">coord</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">normal</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_normal" class="prototype">normal</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">texCoord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_texCoord" class="prototype">texCoord</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">IndexedFaceSet</span>&gt;
+<br /><a name="UnrenderedITFS"> </a> 
+&lt;<span class="element">Group</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">UnrenderedITFS</span>'&gt;
+<div class="indent">
+&lt;<span class="element">Shape</span>&gt;
+<div class="indent">&lt;!-- is this really needed at all?? --&gt;
+<br /><a name="NodesHolderITFS"> </a> 
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">NodesHolderITFS</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">color</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_color" class="prototype">color</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">coord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_coord" class="prototype">coord</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">normal</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_normal" class="prototype">normal</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">texCoord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_texCoord" class="prototype">texCoord</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">IndexedFaceSet</span>&gt;
+</div>&lt;/<span class="element">Shape</span>&gt;
+<br /><a name="IndexedTriangleFanSetToIndexedFaceSet"> </a> 
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">IndexedTriangleFanSetToIndexedFaceSet</span>'&#160;<span class="attribute">directOutput</span>='<span class="value">true</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">index</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_index</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">renderedITFS</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">USE</span>='<a href="#RenderedITFS" class="nodeName">RenderedITFS</a>'/&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">nodesHolder</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">USE</span>='<a href="#NodesHolderITFS" class="nodeName">NodesHolderITFS</a>'/&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">localTraceEnabled</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">coordIndexNew</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">&lt;!-- constructed during initialization --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">index</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_index" class="prototype">index</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">set_index</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_set_index" class="prototype">set_index</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            ecmascript:
+
+function initialize()
+{
+	// index is an array of triangle indices that form a fan shape
+	// around the first vertex declared in each fan. The ordering of
+	// the vertices is ccw (counter-clockwise).
+
+	// ensure terminated by -1
+	if (index[index.length-1] != -1) index[index.length] = -1;
+
+	// ensure legal index values
+	for (i=0; i &lt;= index.length-1; i++)
+	{
+	  if (index[i] &lt; -1)
+	  {
+		forcePrint ('error, index[' + i + ']=' + index[i] +
+		' is illegal value, treated as -1');
+		index[i] = -1;
+	  }
+	}
+	tracePrint ('index.length=' + index.length);
+	tracePrint ('index=' + index);
+
+	if (index.length &lt; 4) 
+	{
+		forcePrint ('warning, index.length=' + index.length + 
+		' insufficient to construct a triangle, ITFS ignored');
+		return;
+	}
+	j = 0; // coordIndexNew counter
+	coordIndexNew = new MFInt32 ();
+
+	// i walks through index array,
+	// goal is to initialize coordIndexNew list to match triangles
+	for (i=2; i &lt;= index.length-1; i++)
+	{
+		if ((index[i] == index[i-1]) || (index[i] == index[i-2]) || (index[i-1] == index[i-2]))
+		{
+			forcePrint ('index=' + index);
+			forcePrint ('error, pair of equal indices in triangle');
+			return;
+		}
+	  if (index[i] &gt;= 0) 
+	  {
+		// add another triangle from latest 3 points of fan set to IFS
+		// swap order to ensure normal is ccw, i.e. in correct halfplane direction
+		coordIndexNew [coordIndexNew.length] = 0;
+		coordIndexNew [coordIndexNew.length] = index[i];
+		coordIndexNew [coordIndexNew.length] = index[i-1];
+		coordIndexNew [coordIndexNew.length] = -1; // terminate
+	  }
+	  else if (index[i] == -1) // finish current triangle, fan
+	  {
+		// ensure done, or sufficient points remain to build another triangle
+		if (	(i!=index.length-1) &amp;&amp; (index.length - i &lt; 2))
+		{
+			forcePrint ('index=' + index);
+			forcePrint ('error, insufficient index values after ' +
+			'index[' + i + ']=-1');
+			return;
+		}
+		// ensure done, or enough legal index values remain to build another triangle
+		if (	(i!=index.length-1) &amp;&amp;
+			((index[i+1] == -1) || (index[i+2] == -1) || (index[i+3] == -1)))
+		{
+			forcePrint ('index=' + index);
+			forcePrint ('error, insufficient non-negative-one index values after ' +
+			'index[' + i + ']=-1');
+			return;
+		}
+		tracePrint ('encountered -1 in index array');
+		// skip ahead to build next fan set, no effect if done
+		if (i!=index.length-1) i = i + 2; 
+	  }
+	  // incremental trace of array being built
+	  tracePrint ('coordIndexNew=' + coordIndexNew);
+	}
+	renderedITFS.set_coordIndex = coordIndexNew;
+	tracePrint ('renderedITFS.coordIndex=' + renderedITFS.coordIndex);
+	// match colorIndex if any Color node exists
+	if (nodesHolder.color)
+	{
+	  if (nodesHolder.color.color.length &gt; 0)
+	  {
+		renderedITFS.set_colorIndex = coordIndexNew;
+		tracePrint ('set_colorIndex=' + coordIndexNew);
+	  }
+	}
+}
+function set_index (value, timestamp)
+{
+	index = value;
+	initialize ();
+}
+function tracePrint(outputString)
+{
+    if (localTraceEnabled)
+	Browser.print ('[IndexedTriangleFanSet] ' + outputString);
+}
+function forcePrint(outputString)
+{
+	Browser.print ('[IndexedTriangleFanSet] ' + outputString);
+}
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+<br />
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+&lt;<span class="element">MetadataString</span>&#160;<span class="attribute">containerField</span>='<span class="value">metadata</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_metadata" class="prototype">metadata</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">MetadataString</span>&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ==================== --&gt;
+<br /><a name="ProtoDeclare_IndexedTriangleSet"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">IndexedTriangleSet</span>'&#160;<span class="attribute">appinfo</span>='<span class="value">IndexedTriangleSet represents a 3D shape composed of a collection of individual triangles.</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="IndexedTriangleSetProtoField_ccw"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">ccw</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="IndexedTriangleSetProtoField_colorPerVertex"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">colorPerVertex</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="IndexedTriangleSetProtoField_normalPerVertex"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">normalPerVertex</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="IndexedTriangleSetProtoField_solid"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">solid</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="IndexedTriangleSetProtoField_set_index"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_index</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">[0, infinity] or -1</span>'/&gt;
+<br /><a name="IndexedTriangleSetProtoField_index"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">index</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">[0, infinity] or -1</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL array [] to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="IndexedTriangleSetProtoField_color"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">color</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Color, ColorRGBA node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="IndexedTriangleSetProtoField_coord"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">coord</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Coordinate node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="IndexedTriangleSetProtoField_normal"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">normal</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Normal node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="IndexedTriangleSetProtoField_texCoord"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">texCoord</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">TextureCoordinate node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="IndexedTriangleSetProtoField_metadata"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Metadata node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+                  <a name="RenderedITS"> </a> 
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">RenderedITS</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">ccw</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_ccw" class="prototype">ccw</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">normalPerVertex</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_normalPerVertex" class="prototype">normalPerVertex</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">solid</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_solid" class="prototype">solid</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">color</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_color" class="prototype">color</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">coord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_coord" class="prototype">coord</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">normal</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_normal" class="prototype">normal</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">texCoord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_texCoord" class="prototype">texCoord</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">IndexedFaceSet</span>&gt;
+<br /><a name="UnrenderedITS"> </a> 
+&lt;<span class="element">Group</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">UnrenderedITS</span>'&gt;
+<div class="indent">
+&lt;<span class="element">Shape</span>&gt;
+<div class="indent">&lt;!-- is this really needed at all?? --&gt;
+<br /><a name="NodesHolderITS"> </a> 
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">NodesHolderITS</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">color</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_color" class="prototype">color</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">coord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_coord" class="prototype">coord</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">normal</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_normal" class="prototype">normal</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">texCoord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_texCoord" class="prototype">texCoord</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">IndexedFaceSet</span>&gt;
+</div>&lt;/<span class="element">Shape</span>&gt;
+<br /><a name="IndexedTriangleSetToIndexedFaceSet"> </a> 
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">IndexedTriangleSetToIndexedFaceSet</span>'&#160;<span class="attribute">directOutput</span>='<span class="value">true</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">index</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_index</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">renderedITS</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">USE</span>='<a href="#RenderedITS" class="nodeName">RenderedITS</a>'/&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">nodesHolder</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">USE</span>='<a href="#NodesHolderITS" class="nodeName">NodesHolderITS</a>'/&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">localTraceEnabled</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">coordIndexNew</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">&lt;!-- constructed during initialization --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">index</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_index" class="prototype">index</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">set_index</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_set_index" class="prototype">set_index</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            ecmascript:
+
+function initialize()
+{
+	// index is an array of triangle indices. The ordering of
+	// the vertices is ccw (counter-clockwise).
+
+	// ensure legal index values
+	for (ii=0; ii &lt;= index.length-1; ii++)
+	{
+	  if (index[ii] &lt; -1)
+	  {
+		forcePrint ('error, index[' + ii + ']=' + index[ii] +
+		' is illegal value');
+		return;
+	  }
+	}
+	tracePrint ('index.length=' + index.length);
+	tracePrint ('index=' + index);
+
+	if (index.length &lt; 3) 
+	{
+		forcePrint ('warning, index.length=' + index.length + 
+		' insufficient to construct a triangle, ITS ignored');
+		return;
+	}
+
+	coordIndexNew = new MFInt32 ();
+
+	// ii walks through index array,
+	// goal is to initialize coordIndexNew list to match triangles
+	for (ii=0; ii &lt;= index.length-1; ii+=3)
+	{
+		if ((index[ii] == index[ii+1]) || (index[ii] == index[ii+2]) || (index[ii+1] == index[ii+2]))
+		{
+			forcePrint ('index=' + index);
+			forcePrint ('error, pair of equal indices in triangle');
+			return;
+		}
+	  
+		if (index[ii] &gt;= 0) 
+		{
+			// add another triangle from latest 3 points of fan set to ITS
+			// order is ccw, i.e. in correct halfplane direction
+			coordIndexNew [coordIndexNew.length] = index[ii];
+			coordIndexNew [coordIndexNew.length] = index[ii+1];
+			coordIndexNew [coordIndexNew.length] = index[ii+2];
+			coordIndexNew [coordIndexNew.length] = -1;
+		}
+
+		if (index.length % 3 != 0) {
+			forcePrint ('error, index field does not contain a multiple ' +
+				'of three coordinate values.');
+			forcePrint ('The remaining vertices shall be ignored');
+			return;
+		}
+
+
+		// ensure done, or sufficient points remain to build another triangle
+//		if (	(i!=index.length-1) &amp;&amp; (index.length - i &lt; 2))
+//		{
+//			forcePrint ('index=' + index);
+//			forcePrint ('error, insufficient index values after ' +
+//			'index[' + i + ']=-1');
+//			return;
+//		}
+		// ensure done, or enough legal index values remain to build another triangle
+//		if (	(i!=index.length-1) &amp;&amp;
+//			((index[i+1] == -1) || (index[i+2] == -1) || (index[i+3] == -1)))
+//		{
+//			forcePrint ('index=' + index);
+//			forcePrint ('error, insufficient non-negative-one index values after ' +
+//			'index[' + i + ']=-1');
+//			return;
+//		}
+	  // incremental trace of array being built
+	  tracePrint ('coordIndexNew=' + coordIndexNew);
+	}
+	renderedITS.coordIndex = coordIndexNew;
+	tracePrint ('renderedITS.coordIndex=' + renderedITS.coordIndex);
+
+	// match colorIndex if any Color node exists
+	if (nodesHolder.color)
+	{
+	  if (nodesHolder.color.color.length &gt; 0)
+	  {
+		renderedITS.set_colorIndex = coordIndexNew;
+		tracePrint ('set_colorIndex=' + coordIndexNew);
+	  }
+	}
+}
+function set_index (value, timestamp)
+{
+	index = value;
+	initialize ();
+}
+function tracePrint(outputString)
+{
+    if (localTraceEnabled)
+	  Browser.print ('[IndexedTriangleSet] ' + outputString);
+}
+function forcePrint(outputString)
+{
+	Browser.print ('[IndexedTriangleSet] ' + outputString);
+}
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+<br />
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+&lt;<span class="element">MetadataString</span>&#160;<span class="attribute">containerField</span>='<span class="value">metadata</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_metadata" class="prototype">metadata</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">MetadataString</span>&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ==================== --&gt;
+<br /><a name="ProtoDeclare_IndexedTriangleStripSet"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">IndexedTriangleStripSet</span>'&#160;<span class="attribute">appinfo</span>='<span class="value">IndexedTriangleStripSet represents a 3D shape composed of strips of triangles.</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="IndexedTriangleStripSetProtoField_ccw"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">ccw</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="IndexedTriangleStripSetProtoField_colorPerVertex"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">colorPerVertex</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="IndexedTriangleStripSetProtoField_normalPerVertex"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">normalPerVertex</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="IndexedTriangleStripSetProtoField_solid"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">solid</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="IndexedTriangleStripSetProtoField_set_index"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_index</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br /><a name="IndexedTriangleStripSetProtoField_index"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">index</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL array [] to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="IndexedTriangleStripSetProtoField_color"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">color</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Color, ColorRGBA node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="IndexedTriangleStripSetProtoField_coord"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">coord</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Coordinate node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="IndexedTriangleStripSetProtoField_normal"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">normal</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Normal node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="IndexedTriangleStripSetProtoField_texCoord"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">texCoord</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">TextureCoordinate node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="IndexedTriangleStripSetProtoField_metadata"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Metadata node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+                  <a name="RenderedTSS"> </a> 
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">RenderedTSS</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">ccw</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_ccw" class="prototype">ccw</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">normalPerVertex</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_normalPerVertex" class="prototype">normalPerVertex</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">solid</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_solid" class="prototype">solid</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">color</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_color" class="prototype">color</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">coord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_coord" class="prototype">coord</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">normal</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_normal" class="prototype">normal</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">texCoord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_texCoord" class="prototype">texCoord</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">IndexedFaceSet</span>&gt;
+<br />
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+&lt;<span class="element">Shape</span>&gt;
+<div class="indent">&lt;!-- is this really needed at all?? --&gt;
+<br /><a name="NodesHolderTSS"> </a> 
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">NodesHolderTSS</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">color</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_color" class="prototype">color</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">coord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_coord" class="prototype">coord</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">normal</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_normal" class="prototype">normal</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">texCoord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_texCoord" class="prototype">texCoord</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">IndexedFaceSet</span>&gt;
+</div>&lt;/<span class="element">Shape</span>&gt;
+<br /><a name="IndexedTriangleStripSetToIndexedFaceSet"> </a> 
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">IndexedTriangleStripSetToIndexedFaceSet</span>'&#160;<span class="attribute">directOutput</span>='<span class="value">true</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">index</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_index</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">renderedTSS</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">USE</span>='<a href="#RenderedTSS" class="nodeName">RenderedTSS</a>'/&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">nodesHolder</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">USE</span>='<a href="#NodesHolderTSS" class="nodeName">NodesHolderTSS</a>'/&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">localTraceEnabled</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">coordIndexNew</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">&lt;!-- constructed during initialization --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">index</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_index" class="prototype">index</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">set_index</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_set_index" class="prototype">set_index</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            ecmascript:
+
+function initialize()
+{
+	// index is an array of triangle indices. The ordering of
+	// the vertices is ccw (counter-clockwise).
+
+	// ensure legal index values
+	for (ii=0; ii &lt;= index.length-1; ii++)
+	{
+	  if (index[ii] &lt; -1)
+	  {
+		forcePrint ('error, index[' + ii + ']=' + index[ii] +
+		' is illegal value');
+		return;
+	  }
+	}
+	tracePrint ('index.length=' + index.length);
+	tracePrint ('index=' + index);
+
+	if (index.length &lt; 3) 
+	{
+		forcePrint ('warning, index.length=' + index.length + 
+		' insufficient to construct a triangle, ITS ignored');
+		return;
+	}
+
+	coordIndexNew = new MFInt32 ();
+
+	// ii walks through index array,
+	// goal is to initialize coordIndexNew list to match triangles
+	for (ii=2; ii &lt;= index.length-1; ii++)
+	{
+		if ((index[ii] == index[ii-1]) || (index[ii] == index[ii-2]) || (index[ii-1] == index[ii-2]))
+		{
+			forcePrint ('index=' + index);
+			forcePrint ('error, pair of equal indices in triangle');
+			return;
+		}
+	  
+		if (index[ii] &gt;= 0) 
+	  {
+			// add another triangle from latest 3 points of fan set to ITS
+			// order is ccw, i.e. in correct halfplane direction
+			coordIndexNew [coordIndexNew.length] = index[ii-2];
+			coordIndexNew [coordIndexNew.length] = index[ii-1];
+			coordIndexNew [coordIndexNew.length] = index[ii];
+			coordIndexNew [coordIndexNew.length] = -1;
+	  }
+
+		// ensure done, or sufficient points remain to build another triangle
+//		if (	(i!=index.length-1) &amp;&amp; (index.length - i &lt; 2))
+//		{
+//			forcePrint ('index=' + index);
+//			forcePrint ('error, insufficient index values after ' +
+//			'index[' + i + ']=-1');
+//			return;
+//		}
+		// ensure done, or enough legal index values remain to build another triangle
+//		if (	(i!=index.length-1) &amp;&amp;
+//			((index[i+1] == -1) || (index[i+2] == -1) || (index[i+3] == -1)))
+//		{
+//			forcePrint ('index=' + index);
+//			forcePrint ('error, insufficient non-negative-one index values after ' +
+//			'index[' + i + ']=-1');
+//			return;
+//		}
+	  // incremental trace of array being built
+	  tracePrint ('TSScoordIndexNew=' + coordIndexNew);
+	}
+	renderedTSS.set_coordIndex = coordIndexNew;
+	tracePrint ('renderedTSS.coordIndex=' + renderedTSS.coordIndex);
+	// match colorIndex if any Color node exists
+	if (nodesHolder.color)
+	{
+	  if (nodesHolder.color.color.length &gt; 0)
+	  {
+		renderedTSS.set_colorIndex = coordIndexNew;
+		tracePrint ('set_colorIndex=' + coordIndexNew);
+	  }
+	}
+}
+function set_index (value, timestamp)
+{
+	index = value;
+	initialize ();
+}
+function tracePrint(outputString)
+{
+    if (localTraceEnabled)
+	  Browser.print ('[IndexedTriangleStripSet] ' + outputString);
+}
+function forcePrint(outputString)
+{
+	  Browser.print ('[IndexedTriangleStripSet] ' + outputString);
+}
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+<br />
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+&lt;<span class="element">MetadataString</span>&#160;<span class="attribute">containerField</span>='<span class="value">metadata</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_metadata" class="prototype">metadata</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">MetadataString</span>&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ==================== --&gt;
+<br /><a name="ProtoDeclare_LineSet"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">LineSet</span>'&#160;<span class="attribute">appinfo</span>='<span class="value">LineSet represents a 3D geometry formed by constructing polylines from 3D vertices.</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="LineSetProtoField_vertexCount"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">vertexCount</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL array [] to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="LineSetProtoField_color"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">color</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Color, ColorRGBA node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="LineSetProtoField_coord"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">coord</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Coordinate node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="LineSetProtoField_metadata"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Metadata node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+                  <a name="RenderedILS"> </a> 
+&lt;<span class="element">IndexedLineSet</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">RenderedILS</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">color</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_color" class="prototype">color</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">IndexedLineSet</span>&gt;
+<br />
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+&lt;<span class="element">Shape</span>&gt;
+<div class="indent">
+                        <a name="NodesHolderILS"> </a> 
+&lt;<span class="element">IndexedLineSet</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">NodesHolderILS</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">color</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_color" class="prototype">color</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">coord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_coord" class="prototype">coord</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">IndexedLineSet</span>&gt;
+</div>&lt;/<span class="element">Shape</span>&gt;
+<br /><a name="LineSetToIndexedLineSet"> </a> 
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">LineSetToIndexedLineSet</span>'&#160;<span class="attribute">directOutput</span>='<span class="value">true</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">vertexCount</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL array [] to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">renderedILS</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IndexedLineSet</span>&#160;<span class="attribute">USE</span>='<a href="#RenderedILS" class="nodeName">RenderedILS</a>'/&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">nodesHolder</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IndexedLineSet</span>&#160;<span class="attribute">USE</span>='<a href="#NodesHolderILS" class="nodeName">NodesHolderILS</a>'/&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">localTraceEnabled</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">coordIndexNew</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">&lt;!-- constructed during initialization --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">vertexCount</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_vertexCount" class="prototype">vertexCount</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            ecmascript:
+
+function initialize()
+{
+	vertexCountSum = 0;
+	tracePrint ('vertexCount=' + vertexCount);
+	for (i=0; i &lt; vertexCount.length; i++)
+	{
+		if (vertexCount[i] &lt; 2)
+		{
+			forcePrint ('error, vertexCount[' + i + ']=' + vertexCount[i] +
+			' is illegal value, must be &gt;= 2');
+			return;
+		}
+		vertexCountSum = vertexCountSum + vertexCountSum[i];
+	}
+	tracePrint ('vertexCountSum=' + vertexCountSum);
+	numberPoints = nodesHolder.coord.point.length;
+
+	if (numberPoints &lt; vertexCountSum) 
+	{
+		forcePrint ('warning, Coordinate.point.length=' + numberPoints  + 
+		' is less than vertexCountSum=' + vertexCountSum + ', LS ignored');
+		return;
+	}
+	coordIndexNew = new MFInt32 ();
+
+	numberSegments = vertexCountSum.length;  // need validity check
+
+	// i walks through array of points to build line-segment indices
+	i = 0;
+	for (seg=0; seg &lt; numberSegments; seg++)
+	{
+	  for (j=0; j &lt; vertexCount[seg]; j++)
+	  {
+		coordIndexNew [coordIndexNew.length] = i;
+		i++;
+	  }
+	  coordIndexNew [coordIndexNew.length] = -1; // terminate current fan
+
+	  // incremental trace of array being built
+	  tracePrint ('coordIndexNew=' + coordIndexNew);
+	} // repeat for all vertices
+
+	renderedILS.coordIndex = coordIndexNew;
+	tracePrint ('renderedILS.coordIndex=' + renderedILS.coordIndex);
+
+	// match colorIndex if any Color node exists
+	if (nodesHolder.color)
+	{
+	  if (nodesHolder.color.color.length &gt; 0)
+	  {
+		renderedILS.colorIndex = coordIndexNew;
+		tracePrint ('set_colorIndex=' + coordIndexNew);
+	  }
+	}
+}
+function tracePrint(outputString)
+{
+    if (localTraceEnabled)
+	Browser.print ('[TriangleFanSet] ' + outputString);
+}
+function forcePrint(outputString)
+{
+	Browser.print ('[TriangleFanSet] ' + outputString);
+}
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+<br />
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+&lt;<span class="element">MetadataString</span>&#160;<span class="attribute">containerField</span>='<span class="value">metadata</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_metadata" class="prototype">metadata</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">MetadataString</span>&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ==================== --&gt;
+<br /><a name="ProtoDeclare_TriangleFanSet"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">TriangleFanSet</span>'&#160;<span class="attribute">appinfo</span>='<span class="value">TriangleFanSet represents a 3D shape composed of triangles that form a fan shape around the first vertex declared in each fan.</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="TriangleFanSetProtoField_fanCount"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">fanCount</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL array [] to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="TriangleFanSetProtoField_ccw"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">ccw</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="TriangleFanSetProtoField_colorPerVertex"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">colorPerVertex</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="TriangleFanSetProtoField_normalPerVertex"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">normalPerVertex</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="TriangleFanSetProtoField_solid"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">solid</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="TriangleFanSetProtoField_color"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">color</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Color, ColorRGBA node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="TriangleFanSetProtoField_coord"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">coord</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Coordinate node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="TriangleFanSetProtoField_normal"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">normal</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Normal node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="TriangleFanSetProtoField_texCoord"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">texCoord</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">TextureCoordinate node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="TriangleFanSetProtoField_metadata"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Metadata node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+                  <a name="RenderedTFS"> </a> 
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">RenderedTFS</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">ccw</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_ccw" class="prototype">ccw</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">colorPerVertex</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_colorPerVertex" class="prototype">colorPerVertex</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">normalPerVertex</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_normalPerVertex" class="prototype">normalPerVertex</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">solid</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_solid" class="prototype">solid</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">color</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_color" class="prototype">color</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">coord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_coord" class="prototype">coord</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">normal</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_normal" class="prototype">normal</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">texCoord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_texCoord" class="prototype">texCoord</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">IndexedFaceSet</span>&gt;
+<br /><a name="UnrenderedTFS"> </a> 
+&lt;<span class="element">Group</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">UnrenderedTFS</span>'&gt;
+<div class="indent">
+&lt;<span class="element">Shape</span>&gt;
+<div class="indent">&lt;!-- is this really needed at all?? --&gt;
+<br /><a name="NodesHolderTFS"> </a> 
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">NodesHolderTFS</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">color</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_color" class="prototype">color</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">coord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_coord" class="prototype">coord</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">normal</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_normal" class="prototype">normal</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">texCoord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_texCoord" class="prototype">texCoord</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">IndexedFaceSet</span>&gt;
+</div>&lt;/<span class="element">Shape</span>&gt;
+<br /><a name="TriangleFanSetToIndexedFaceSet"> </a> 
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">TriangleFanSetToIndexedFaceSet</span>'&#160;<span class="attribute">directOutput</span>='<span class="value">true</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">fanCount</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL array [] to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">renderedTFS</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">USE</span>='<a href="#RenderedTFS" class="nodeName">RenderedTFS</a>'/&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">nodesHolder</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">USE</span>='<a href="#NodesHolderTFS" class="nodeName">NodesHolderTFS</a>'/&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">localTraceEnabled</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">coordIndexNew</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">&lt;!-- constructed during initialization --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">fanCount</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_fanCount" class="prototype">fanCount</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            ecmascript:
+
+function initialize()
+{
+	fanCountSum = 0;
+	tracePrint ('fanCount=' + fanCount);
+	for (i=0; i &lt; fanCount.length; i++)
+	{
+		if (fanCount[i] &lt; 3)
+		{
+			forcePrint ('error, fanCount[' + i + ']=' + fanCount[i] +
+			' is illegal value, must be &gt;= 3');
+			return;
+		}
+		fanCountSum = fanCountSum + fanCount[i];
+	}
+	tracePrint ('fanCountSum=' + fanCountSum);
+	numberPoints = nodesHolder.coord.point.length;
+
+	if (numberPoints &lt; fanCountSum) 
+	{
+		forcePrint ('warning, Coordinate.point.length=' + numberPoints  + 
+		' is less than fanCountSum=' + fanCountSum + ', TFS ignored');
+		return;
+	}
+	coordIndexNew = new MFInt32 ();
+
+	numberFans = fanCount.length;  // need validity check
+
+	// i walks through array of points to build polygon indices
+	i = 0;
+	for (fan=0; fan &lt; numberFans; fan++)
+	{
+	  for (j=0; j &lt; fanCount[fan]; j++)
+	  {
+		coordIndexNew [coordIndexNew.length] = i;
+		i++;
+	  }
+	  coordIndexNew [coordIndexNew.length] = -1; // terminate current fan
+
+	  // incremental trace of array being built
+	  tracePrint ('coordIndexNew=' + coordIndexNew);
+	} // repeat for all fans
+
+	renderedTFS.coordIndex = coordIndexNew;
+	tracePrint ('renderedTFS.coordIndex=' + renderedTFS.coordIndex);
+
+	// match colorIndex if any Color node exists
+	if (nodesHolder.color)
+	{
+	  if (nodesHolder.color.color.length &gt; 0)
+	  {
+		renderedTFS.set_colorIndex = coordIndexNew;
+		tracePrint ('set_colorIndex=' + coordIndexNew);
+	  }
+	}
+}
+function tracePrint(outputString)
+{
+    if (localTraceEnabled)
+	Browser.print ('[TriangleFanSet] ' + outputString);
+}
+function forcePrint(outputString)
+{
+	Browser.print ('[TriangleFanSet] ' + outputString);
+}
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+<br />
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+&lt;<span class="element">MetadataString</span>&#160;<span class="attribute">containerField</span>='<span class="value">metadata</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_metadata" class="prototype">metadata</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">MetadataString</span>&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ==================== --&gt;
+<br /><a name="ProtoDeclare_TriangleSet"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">TriangleSet</span>'&#160;<span class="attribute">appinfo</span>='<span class="value">TriangleSet represents a 3D shape that represents a collection of individual triangles.</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="TriangleSetProtoField_ccw"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">ccw</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="TriangleSetProtoField_colorPerVertex"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">colorPerVertex</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="TriangleSetProtoField_normalPerVertex"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">normalPerVertex</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="TriangleSetProtoField_solid"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">solid</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="TriangleSetProtoField_color"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">color</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Color, ColorRGBA node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="TriangleSetProtoField_coord"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">coord</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Coordinate node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="TriangleSetProtoField_normal"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">normal</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Normal node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="TriangleSetProtoField_texCoord"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">texCoord</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">TextureCoordinate node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="TriangleSetProtoField_metadata"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Metadata node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+                  <a name="RenderedTS"> </a> 
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">RenderedTS</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">ccw</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_ccw" class="prototype">ccw</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">normalPerVertex</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_normalPerVertex" class="prototype">normalPerVertex</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">solid</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_solid" class="prototype">solid</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">color</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_color" class="prototype">color</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">coord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_coord" class="prototype">coord</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">normal</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_normal" class="prototype">normal</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">texCoord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_texCoord" class="prototype">texCoord</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">IndexedFaceSet</span>&gt;
+<br /><a name="UnrenderedTS"> </a> 
+&lt;<span class="element">Group</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">UnrenderedTS</span>'&gt;
+<div class="indent">
+&lt;<span class="element">Shape</span>&gt;
+<div class="indent">&lt;!-- is this really needed at all?? --&gt;
+<br /><a name="NodesHolderTS"> </a> 
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">NodesHolderTS</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">color</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_color" class="prototype">color</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">coord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_coord" class="prototype">coord</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">normal</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_normal" class="prototype">normal</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">texCoord</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_texCoord" class="prototype">texCoord</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">IndexedFaceSet</span>&gt;
+</div>&lt;/<span class="element">Shape</span>&gt;
+<br /><a name="TriangleSetToIndexedFaceSet"> </a> 
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">TriangleSetToIndexedFaceSet</span>'&#160;<span class="attribute">directOutput</span>='<span class="value">true</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">index</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_index</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">renderedTS</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">USE</span>='<a href="#RenderedTS" class="nodeName">RenderedTS</a>'/&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">nodesHolder</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">USE</span>='<a href="#NodesHolderTS" class="nodeName">NodesHolderTS</a>'/&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">localTraceEnabled</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">coordIndexNew</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">&lt;!-- constructed during initialization --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            ecmascript:
+
+function initialize()
+{
+	// index is an array of triangle indices. The ordering of
+	// the vertices is ccw (counter-clockwise).
+
+	// ensure legal index values
+	for (ii=0; ii &lt;= index.length-1; ii++)
+	{
+	  if (index[ii] &lt; -1)
+	  {
+		forcePrint ('error, index[' + ii + ']=' + index[ii] +
+		' is illegal value');
+		return;
+	  }
+	}
+	tracePrint ('index.length=' + index.length);
+	tracePrint ('index=' + index);
+
+	if (index.length &lt; 3) 
+	{
+		forcePrint ('warning, index.length=' + index.length + 
+		' insufficient to construct a triangle, ITS ignored');
+		return;
+	}
+
+	coordIndexNew = new MFInt32 ();
+
+	// ii walks through index array,
+	// goal is to initialize coordIndexNew list to match triangles
+	for (ii=0; ii &lt;= index.length-1; ii+=3)
+	{
+		if ((index[ii] == index[ii+1]) || (index[ii] == index[ii+2]) || (index[ii+1] == index[ii+2]))
+		{
+			forcePrint ('index=' + index);
+			forcePrint ('error, pair of equal indices in triangle');
+			return;
+		}
+	  
+		if (index[ii] &gt;= 0) 
+		{
+			// add another triangle from latest 3 points of fan set to ITS
+			// order is ccw, i.e. in correct halfplane direction
+			coordIndexNew [coordIndexNew.length] = index[ii];
+			coordIndexNew [coordIndexNew.length] = index[ii+1];
+			coordIndexNew [coordIndexNew.length] = index[ii+2];
+			coordIndexNew [coordIndexNew.length] = -1;
+		}
+
+		if (index.length % 3 != 0) {
+			forcePrint ('error, index field does not contain a multiple ' +
+				'of three coordinate values.');
+			forcePrint ('The remaining vertices shall be ignored');
+			return;
+		}
+
+
+		// ensure done, or sufficient points remain to build another triangle
+//		if (	(i!=index.length-1) &amp;&amp; (index.length - i &lt; 2))
+//		{
+//			forcePrint ('index=' + index);
+//			forcePrint ('error, insufficient index values after ' +
+//			'index[' + i + ']=-1');
+//			return;
+//		}
+		// ensure done, or enough legal index values remain to build another triangle
+//		if (	(i!=index.length-1) &amp;&amp;
+//			((index[i+1] == -1) || (index[i+2] == -1) || (index[i+3] == -1)))
+//		{
+//			forcePrint ('index=' + index);
+//			forcePrint ('error, insufficient non-negative-one index values after ' +
+//			'index[' + i + ']=-1');
+//			return;
+//		}
+	  // incremental trace of array being built
+	  tracePrint ('coordIndexNew=' + coordIndexNew);
+	}
+	renderedITS.set_coordIndex = coordIndexNew;
+	tracePrint ('renderedITS.coordIndex=' + renderedITS.coordIndex);
+	// match colorIndex if any Color node exists
+	if (nodesHolder.color)
+	{
+	  if (nodesHolder.color.color.length &gt; 0)
+	  {
+		renderedITS.set_colorIndex = coordIndexNew;
+		tracePrint ('set_colorIndex=' + coordIndexNew);
+	  }
+	}
+}
+function set_index (value, timestamp)
+{
+	index = value;
+	initialize ();
+}
+function tracePrint(outputString)
+{
+    if (localTraceEnabled)
+	Browser.print('[IndexedTriangleSet] ' + outputString);
+}
+function forcePrint(outputString)
+{
+	Browser.print('[IndexedTriangleSet] ' + outputString);
+}
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+<br />
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+&lt;<span class="element">MetadataString</span>&#160;<span class="attribute">containerField</span>='<span class="value">metadata</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#ColorRGBAProtoField_metadata" class="prototype">metadata</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">MetadataString</span>&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ==================== --&gt;
+<br /><a name="ProtoDeclare_TriangleStripSet"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">TriangleStripSet</span>'&#160;<span class="attribute">appinfo</span>='<span class="value">TriangleStripSet represents a 3D shape composed of strips of triangles.</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="TriangleStripSetProtoField_stripCount"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">stripCount</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL array [] to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="TriangleStripSetProtoField_ccw"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">ccw</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="TriangleStripSetProtoField_colorPerVertex"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">colorPerVertex</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="TriangleStripSetProtoField_normalPerVertex"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">normalPerVertex</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="TriangleStripSetProtoField_solid"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">solid</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="TriangleStripSetProtoField_color"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">color</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Color, ColorRGBA node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="TriangleStripSetProtoField_coord"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">coord</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Coordinate node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="TriangleStripSetProtoField_normal"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">normal</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Normal node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="TriangleStripSetProtoField_texCoord"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">texCoord</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">TextureCoordinate node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="TriangleStripSetProtoField_metadata"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Metadata node only</span>'&gt;
+<div class="indent">&lt;!-- default initialization is NULL node to match X3D specification --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+&lt;<span class="element">IndexedFaceSet</span>/&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ==================== --&gt;
+<br />&lt;!-- ProtoInstance examples are found in RenderingComponentExamples.x3d --&gt;
+<br />
+&lt;<span class="element">Background</span>&#160;<span class="attribute">groundColor</span>='<span class="value">0.2 0.2 0.2</span>'&#160;<span class="attribute">skyColor</span>='<span class="value">0.2 0.2 0.2</span>'/&gt;
+<br /><a name="LinkToExamples"> </a> 
+&lt;<span class="element">Anchor</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">LinkToExamples</span>'&#160;<span class="attribute">description</span>='<span class="value">link to examples</span>'
+<br />
+&#160;&#160;<span class="attribute">url</span>='
+"<a href="RenderingComponentExamples.wrl">RenderingComponentExamples.wrl</a>"
+"<a href="http://www.web3d.org/x3d/content/examples/Basic/development/RenderingComponentExamples.wrl">http://www.web3d.org/x3d/content/examples/Basic/development/RenderingComponentExamples.wrl</a>"
+"<a href="RenderingComponentExamples.x3d">RenderingComponentExamples.x3d</a>"
+"<a href="http://www.web3d.org/x3d/content/examples/Basic/development/RenderingComponentExamples.x3d">http://www.web3d.org/x3d/content/examples/Basic/development/RenderingComponentExamples.x3d</a>"
+'&gt;
+<div class="indent">
+&lt;<span class="element">Shape</span>&gt;
+<div class="indent">
+&lt;<span class="element">Appearance</span>&gt;
+<div class="indent">
+&lt;<span class="element">Material</span>&#160;<span class="attribute">diffuseColor</span>='<span class="value">0.8 0.6 0.2</span>'/&gt;
+</div>&lt;/<span class="element">Appearance</span>&gt;
+<br />
+&lt;<span class="element">Text</span>&#160;<span class="attribute">string</span>='<span class="value">"RenderingComponentPrototypes"
+"is a developmental file."
+"Click this text to view"
+"RenderingComponentExamples"</span>'&#160;<span class="attribute">solid</span>='<span class="value">true</span>'&gt;
+<div class="indent">
+&lt;<span class="element">FontStyle</span>&#160;<span class="attribute">justify</span>='<span class="value">"MIDDLE" "MIDDLE"</span>'/&gt;
+</div>&lt;/<span class="element">Text</span>&gt;
+</div>&lt;/<span class="element">Shape</span>&gt;
+</div>&lt;/<span class="element">Anchor</span>&gt;
+</div>&lt;/<span class="element">Scene</span>&gt;
+</div>&lt;/<span class="element">X3D</span>&gt;
+<br />
+&lt;!--
+<div class="center">
+         <hr width="100%"/>
+         <i>Index for ProtoDeclare definitions</i>: 
+<a href="#ProtoDeclare_ColorRGBA" class="prototype">ColorRGBA</a>,
+<a href="#ProtoDeclare_IndexedTriangleFanSet" class="prototype">IndexedTriangleFanSet</a>,
+<a href="#ProtoDeclare_IndexedTriangleSet" class="prototype">IndexedTriangleSet</a>,
+<a href="#ProtoDeclare_IndexedTriangleStripSet" class="prototype">IndexedTriangleStripSet</a>,
+<a href="#ProtoDeclare_LineSet" class="prototype">LineSet</a>,
+<a href="#ProtoDeclare_TriangleFanSet" class="prototype">TriangleFanSet</a>,
+<a href="#ProtoDeclare_TriangleSet" class="prototype">TriangleSet</a>,
+<a href="#ProtoDeclare_TriangleStripSet" class="prototype">TriangleStripSet</a>
+<br />
+<i>Index for DEF nodes</i>: 
+<a href="#ColorRGB" class="nodeName">ColorRGB</a>,
+<a href="#ColorRGBAholder" class="nodeName">ColorRGBAholder</a>,
+<a href="#ConvertColorRGBAtoRGB" class="nodeName">ConvertColorRGBAtoRGB</a>,
+<a href="#IndexedTriangleFanSetToIndexedFaceSet" class="nodeName">IndexedTriangleFanSetToIndexedFaceSet</a>,
+<a href="#IndexedTriangleSetToIndexedFaceSet" class="nodeName">IndexedTriangleSetToIndexedFaceSet</a>,
+<a href="#IndexedTriangleStripSetToIndexedFaceSet" class="nodeName">IndexedTriangleStripSetToIndexedFaceSet</a>,
+<a href="#LineSetToIndexedLineSet" class="nodeName">LineSetToIndexedLineSet</a>,
+<a href="#LinkToExamples" class="nodeName">LinkToExamples</a>,
+<a href="#NodesHolderILS" class="nodeName">NodesHolderILS</a>,
+<a href="#NodesHolderITFS" class="nodeName">NodesHolderITFS</a>,
+<a href="#NodesHolderITS" class="nodeName">NodesHolderITS</a>,
+<a href="#NodesHolderTFS" class="nodeName">NodesHolderTFS</a>,
+<a href="#NodesHolderTS" class="nodeName">NodesHolderTS</a>,
+<a href="#NodesHolderTSS" class="nodeName">NodesHolderTSS</a>,
+<a href="#RenderedILS" class="nodeName">RenderedILS</a>,
+<a href="#RenderedITFS" class="nodeName">RenderedITFS</a>,
+<a href="#RenderedITS" class="nodeName">RenderedITS</a>,
+<a href="#RenderedTFS" class="nodeName">RenderedTFS</a>,
+<a href="#RenderedTS" class="nodeName">RenderedTS</a>,
+<a href="#RenderedTSS" class="nodeName">RenderedTSS</a>,
+<a href="#TriangleFanSetToIndexedFaceSet" class="nodeName">TriangleFanSetToIndexedFaceSet</a>,
+<a href="#TriangleSetToIndexedFaceSet" class="nodeName">TriangleSetToIndexedFaceSet</a>,
+<a href="#UnrenderedITFS" class="nodeName">UnrenderedITFS</a>,
+<a href="#UnrenderedITS" class="nodeName">UnrenderedITS</a>,
+<a href="#UnrenderedTFS" class="nodeName">UnrenderedTFS</a>,
+<a href="#UnrenderedTS" class="nodeName">UnrenderedTS</a>
+         <hr width="100%"/>
+      </div>
+--&gt;
+<p>
+&lt;!-- Tag color codes:
+&lt;<span class="element">Node</span>
+         <span class="nodeName"> DEF</span>='<span class="nodeName">NodeName</span>' <span class="attribute">attribute</span>='<span class="value">value</span>'/&gt;
+&lt;<span class="prototype">Prototype</span> 
+         <span class="attribute">name</span>='<span class="prototype">ProtoName</span>'&gt;
+	&lt;<span class="prototype">field</span>
+         <span class="attribute">name</span>='<span class="prototype">fieldName</span>'/&gt; &lt;/<span class="prototype">Prototype</span>&gt; --&gt;
+</p>
+   </body>
+</html>

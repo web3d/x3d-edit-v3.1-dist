@@ -1,0 +1,142 @@
+===========================================================================
+  <head>
+   <meta name="filename"    content="X3dToXhtmlDiscussion.txt" />
+   <meta name="author"      content="Don Brutzman" />
+   <meta name="created"     content="26 January 2003" />
+   <meta name="revised"     content="16 February 2003" />
+   <meta name="description" content="Discuss evolution details of X3dToXhtml.xslt stylesheet." />
+   <meta name="url"         content="http://www.web3d.org/TaskGroups/x3d/translation/X3dToXhtmlDiscussion.txt" />
+  </head>
+
+===========================================================================
+13 FEB 2003	X3dToXhtml-2.xslt
+
+[Curt Blais] Info on HTML tags div and span:
+	http://www.w3.org/TR/html4/struct/global.html#h-7.5.4
+
+Excerpt:
+	The DIV and SPAN elements, in conjunction with the id and class
+	attributes, offer a generic mechanism for adding structure to
+	documents. These elements define content to be inline (SPAN) or
+	block-level (DIV) but impose no other presentational idioms
+	on the content. Thus, authors may use these elements in
+	conjunction with style sheets, the lang attribute, etc.,
+	to tailor HTML to their own needs and tastes.
+
+Additional reference:
+
+Cascading Style Sheets, level 2, CSS2 Specification
+	http://www.w3.org/TR/REC-CSS2
+	
+Appendix A. A sample style sheet for HTML 4.0
+	http://www.w3.org/TR/REC-CSS2/sample.html
+===========================================================================
+15 FEB 2003	X3dToXhtml-3.xslt
+
+Here is this week's version of the X3dToXhtml-3.xslt stylesheet 
+we developed that handles tags with children, attributes, and 
+an initial case of ordering (for meta tag's attributes).
+
+Comment block added at top.  All of your code/content should
+be sufficiently marked like this.  Feel free to use your own
+layout (this is a bit hoky) but the level of detail matters.
+<!--
+  <head>
+   <meta name="filename"    content="X3dToXhtml-3.xslt" />
+   <meta name="author"      content="Don Brutzman" />
+   <meta name="created"     content="13 February 2003" />
+   <meta name="revised"     content="15 February 2003" />
+   <meta name="description" content="XSL stylesheet to convert X3D source into an easily readable HTML page." />
+   <meta name="url"         content="http://www.web3d.org/TaskGroups/x3d/translation/X3dToHtml.xslt" />
+  </head>
+
+Recommended tools:
+- X3D-Edit http://www.web3d.org/TaskGroups/x3d/translation/README.X3D-Edit.html
+- SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, http://saxon.sourceforge.net
+- XML Spy http://www.xmlspy.com
+--> 
+
+Looking ahead:  the way we handled the difference between 
+open/close has-child tag pair, and no-child singleton tag,
+was a choose/when test.  This gave a clean result, but it
+requires duplication of attribute handling tests.
+
+Since attribute ordering looks to be an important part of
+attribute handling for pretty-printing this tagset, and
+since that is going to be a lot of code, duplicating it
+doesn't make too much sense.
+
+Please note that attribute ordering cannot be handled
+within the attribute @* template.  Why?  Because when
+that is invoked, it gets handed one attribute at a time.
+Any ordering of attribute handling must occur upstream
+of that point.
+
+Design options at this point include
+- rewrite logic of paired/singleton element to somehow 
+  only have one block of attribute-ordering code
+- create a named template that can be directly invoked
+  in the two places where attribute ordering occurs.
+
+Next up:  version 4 will take on that task, plus some more
+styling.
+
+===========================================================================
+15 FEB 2003	X3dToXhtml-4.xslt
+
+Single block of attribute-ordering code achieved through
+callable template named "process-attributes-in-order" which
+allows separate element-handling logic, with a single block
+of code for ordered handling of attributes.  This lets us
+keep the same element-handling code, using native XML
+elements in a well-formed arrangement for reliability.
+
+Similar approach taken for xsl:template name="style-element-name"
+to provide one-stop coding when styling an element name.
+
+Ordered attribute rules derived from original stylesheet X3dToHtml.xslt
+Note how ordered processing is achieved:  explicitly match attributes of
+interest by name, then match other attributes without those names.
+
+Utilized <br/> instead of <p></p> for line breaks, less white space.
+
+Added rule to handle XML comments:  simple unstyled output.
+Note that general apply-templates invocation now changes from
+
+	<xsl:apply-templates select="*" />
+to
+	<xsl:apply-templates select="* | comment()" />
+
+in order to allow the comment() template to fire, in order.
+
+===========================================================================
+16 FEB 2003	X3dToXhtml-5.xslt
+
+Added bookmarks for DEF IDs, ProtoDeclare names and ExernProtoDeclare
+names.  Note that these have different prefixes, since they are in
+different X3D namespaces and repeated names are otherwise OK.
+
+Add table of contents index of each set of bookmarks.  Note that
+this is surrounded by XML comment delimiters, so cutting/pasting
+the rendered HTML output page still results in valid X3D source.
+See <xsl:template name="ID-link-index">
+
+Script node contained code is now handled in order to preserve
+<![CDATA[ ... ]]> delimiters.
+
+Recursive template <xsl:template name="escape-lessthan-characters">
+included to convert < symbols in contained code into &lt; entities
+for satisfactory HTML output.  Tail recursion as follows:  output
+everything up to < character, output &lt; instead, recurse on remainder.
+
+===========================================================================
+17 FEB 2003	X3dToXhtml.xslt  final version
+
+Detect and convert various url values into <a href=""></a> anchor links.
+See recursive template URL-ize-MFString-elements for handling
+multiple urls.
+
+Detects/ignores default attribute values, rather than printing them out.
+
+===========================================================================
+

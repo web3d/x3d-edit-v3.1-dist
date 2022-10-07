@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Warning:  transitional DOCTYPE in source .x3d file-->
+<!DOCTYPE X3D PUBLIC "SchemaDTD/x3d-3.1.dtd" "http://www.web3d.org/specifications/x3d-3.1.dtd">
+<X3D version="3.1" profile="Immersive"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.1.xsd">
+  <head>
+    <meta name="title" content="*enter FileNameWithNoAbbreviations.x3d here*"/>
+    <meta name="description" content="*enter description here, short-sentence summaries preferred*"/>
+    <meta name="creator" content="*enter name of original author here*"/>
+    <meta name="translator" content="*if manually translating VRML-to-X3D, enter name of person translating here*"/>
+    <meta name="created" content="*enter date of initial version here*"/>
+    <meta name="translated" content="*enter date of translation here*"/>
+    <meta name="modified" content="*enter date of latest revision here*"/>
+    <meta name="version" content="*enter version here, if any*"/>
+    <meta name="reference" content="*enter reference citation or relative/online url here*"/>
+    <meta name="reference" content="*enter additional url/bibliographic reference information here*"/>
+    <meta name="requires" content="*enter reference resource here if required to support function, delivery, or coherence of content*"/>
+    <meta name="rights" content="*enter copyright information here* Example:  Copyright (c) Web3D Consortium Inc. 2006"/>
+    <meta name="drawing" content="*enter drawing filename/url here*"/>
+    <meta name="image" content="*enter image filename/url here*"/>
+    <meta name="MovingImage" content="*enter movie filename/url here*"/>
+    <meta name="photo" content="*enter photo filename/url here*"/>
+    <meta name="subject" content="*enter subject keywords here*"/>
+    <meta name="accessRights" content="*enter permission statements or url here*"/>
+    <meta name="warning" content="*insert any known warnings, bugs or errors here*"/>
+    <meta name="identifier"  content="*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*"/>
+    <meta name="generator" content="X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"/>
+    <meta name="license" content="../../license.html"/>
+<!--Additional authoring resources for meta-tags:
+	http://www.dublincore.org/documents/dcmi-terms
+	http://www.dublincore.org/documents/dces
+	http://www.w3.org/TR/html4/struct/global.html#h-7.4.4
+	http://vancouver-webpages.com/META
+	http://vancouver-webpages.com/META/about-mk-metas2.html
+Additional authoring resources for language codes:
+	ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt
+	http://www.loc.gov/standards/iso639-2/langhome.html
+	http://www.iana.org/numbers.html#L-->
+  </head>
+  <Scene>
+    <!--Scene graph nodes are added here -->
+  </Scene>
+</X3D>

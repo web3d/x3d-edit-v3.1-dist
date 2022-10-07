@@ -1,0 +1,488 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>Composing Scene Graph Alternatives</title>
+<meta name="description" content="X3D architectural examination">
+<meta name="author" content="Don Brutzman">
+<meta name="created" content="26 February 2000">
+<meta name="generator" content="HTML-Kit">
+</head>
+<body>
+
+<h2 align="center">Composing Scene Graph Alternatives</h2>
+
+    <center><p><font size="-1">
+				 	<a href="#Summary">Summary</a> |
+				 	<a href="#AbstractSceneGraph">Abstract Scene Graph</a> |
+				 	<a href="#Equivalences">Scene Graph Equivalences</a> |
+				 	<a href="#ObjectModels">Object Models</a> |
+				 	<a href="#WrapperTags">Wrapper Tags</a> |
+				 	<a href="#ParserChoices">Parser/Tagset Choices</a> |
+				 	<a href="#NextSteps">Next Steps</a>
+		</font></p></center>
+
+<!-- - - - - - - - - - - - - - - - -->
+
+<hr width="50%">
+
+<!-- - - - - - - - - - - - - - - - -->
+
+<!-- <hr width="50%"> -->
+
+<h3><a name="Summary">Problem and solution summary</a></h3>
+
+<blockquote>
+"Out of intense complexities, intense simplicities arise."  - Winston Churchill
+</blockquote>
+
+<p>
+Most discussions regarding X3D and VRML assume a single scene graph topology.
+However, people often have different mental models for the abstract scene graph.
+</p>
+
+<p>
+Two scene graph models are both possible and composable.
+Each matches the abstract scene graph definition in the VRML&nbsp;97 specification,
+and each is isomorphic with the other.
+As a result, many different issues regarding object models and wrapper tags 
+are also shown to be resolvable.
+</p>
+
+<p>
+Composing scene graphs and object models resolves a huge number of technical issues.
+This also means that a simpler choice can be made regarding parser/tagset combinations.
+The two simple, clarified alternatives are:
+</p>
+
+<ul>
+	<li>ultralight context-free parsing, with wrapper tags for field names surrounding nodes in all scenes, or</li>
+	<li>slightly more capable parsing (such as Blendo with declaration memory, or XML parsers), with no wrapper tags for field names in any scenes</li>
+</ul>
+<p>
+Either choice acceptably enables both scene graph models.
+Thus all current and foreseen capabilities for X3D appear to be compatibly preserved.
+This development means that rapid progress on all major X3D issues is possible now, regardless of eventual choice.
+</p>
+
+<p>
+Interestingly, this simple choice appears to be a classic computer-science time-space tradeoff:
+pay first with additional parser capability, or pay later with additional information in scene files.
+Determining this choice remains a task for the X3D consensus and assessment efforts.
+</p>
+
+<!-- - - - - - - - - - - - - - - - -->
+
+<hr width="50%">
+
+<h3><a name="AbstractSceneGraph">Abstract scene graph definition</a></h3>
+
+<p>
+Defining the abstract (i.e. implementation-independent) VRML 97 scene graph is fundamentally important.
+<a href="http://www.web3D.org/technicalinfo/specifications/vrml97/part1/concepts.html#4.4.2">Paragraph 4.4.2 "Scene graph hierarchy"</a>
+of the 
+VRML&nbsp;97 specification
+states:
+</p>
+
+<blockquote>
+A VRML file contains a directed acyclic graph. 
+Node statements can contain SFNode or MFNode field statements that, in turn, contain node (or USE) statements. 
+This hierarchy of nodes is called the scene graph. 
+Each arc in the graph from A to B means that node A has an SFNode or MFNode field whose value directly contains node B.
+See 
+<a href="http://www.web3D.org/technicalinfo/specifications/vrml97/part1/bibliography.html#[FOLE]">E.[FOLE]</a> for details on hierarchical scene graphs.
+</blockquote>
+
+<p>
+The sentence beginning "<i>Each arc in the graph from A to B</i>" is correct.
+However the phrasing is somewhat awkward.
+Two different scene graphs can be inferred from this definition.
+</p>
+
+<p>
+Editorial note: 
+<a href="http://www.web3D.org/technicalinfo/specifications/vrml97/part1/bibliography.html#[FOLE]">E.[FOLE]</a> 
+does not contain any details on hierarchical scene graphs.
+</p>
+
+<!-- - - - - - - - - - - - - - - - -->
+
+<hr width="50%">
+
+<h3><a name="Equivalences">Scene graph equivalences</a></h3>
+
+
+<p>
+The following diagram shows two possible interpretations of the abstract scene graph definition.
+</p>
+
+<br>
+<center>
+<a href="../images/SceneGraphEquivalences.png"><img src="../images/SceneGraphEquivalences.7.png" alt="Scene Graph Equivalences" width="664" height="341"></a>
+</center>
+<p>
+Color key:
+</p>
+<ul>
+	<li><font color="#00AA00"><b>Green</b></font>:  generic class type</li>
+	<li><font color="#000077"><b>Blue</b></font>:  VRML 97 node name</li>
+	<li><font color="RED"><b>Red</b></font>:  VRML 97 field name, sometimes referred to as VRML&nbsp;97 wrapper</li>
+</ul>
+
+<p>
+Most (but not all) implementations appear to follow the scene graph diagram on the left, including the
+<a href="http://www.web3D.org/technicalinfo/specifications/vrml97/part1/java.html">Appendix&nbsp;B, Java Script Authoring Interface (JSAI)</a>.
+</p>
+<p>
+The abstract scene graph definitions for arcs and nodes (as defined in the specification excerpt above) 
+correspond most closely to the scene graph diagram on the right, as do a few implementations.
+</p>
+
+<p>
+A major concern has been whether choice of one scene graph precludes another.
+Visual inspection of each graph reveals a one-to-one correspondence between VRML nodes and VRML fields.
+This symmetry means that the two scene graphs are isomorphic when considered from a rendering perspective.
+There is an unambiguous transformation from one scene graph to the other, and vice versa.
+<b>Thus both scene graphs are functionally equivalent.</b>
+</p>
+
+<p>
+No exclusive choice is needed between scene graphs - either implies the other.
+Different compatible applications might choose one or the other scene graph.
+</p>
+
+<p>
+It is likely that lack of clarity regarding these two scene graphs has been a root problem 
+underlying many unresolved discussions.  Since nature of the scene graph is the most fundamental
+issue in the entire VRML&nbsp;97 specification, it is quite understandable that resolving 
+the many issues related to scene graphs is considered so fundamentally important.
+</p>
+
+<!-- - - - - - - - - - - - - - - - -->
+
+<hr width="50%">
+
+<h3><a name="ObjectModels">Object models</a></h3>
+
+<p>
+There appear to be two different object models corresponding to the two scene graphs,
+since the <font color="#00AA00"><b>(FieldObject)</b></font> classes only appear in the left-hand diagram.
+Thus it appears that the object model for the left-hand scene graph is not the same as the object model for the right-hand scene graph.  If that is really the case, incompatible object models present a problematic situation.
+</p>
+
+<p>
+However, when considering the semantics of VRML, not every arbitrary operation within an object model is necessary.
+Only those operations which make sense from a scene graph rendering perspective are necessary.
+For example, when replacing a VRML <font color="#000077"><b>Appearance</b></font> node 
+via the topmost example <font color="#000077"><b>Transform</b></font>, 
+the necessary operation for the left-hand object model might be 
+<br>
+<i>&nbsp;&nbsp;&nbsp;<code>ExampleTransform.getField("children").getNode("Shape").getField("appearance").setNode("Appearance");</code></i>
+<br>
+while the necessary operation on the right-hand object model might be 
+<br>
+<i>&nbsp;&nbsp;&nbsp;<code>ExampleTransform.getNode("Shape").setNode("Appearance");</code></i>
+<br>
+A variety of solutions to problems like child access and disambiguation are possible in each case.
+</p>
+
+<p>
+As a counterpoint, now consider an operation which does not occur.
+For example:  the <font color="RED"><b><code>geometry</code></b></font> field 
+of the <font color="#000077"><b>Shape</b></font> node does not change
+while it still contains a valid <font color="#000077"><b>Box</b></font> node.
+More specifically:  an illogical operation for the left-hand object model would be changing the value of
+<font color="#00AA00"><b>(FieldObject)</b></font> <font color="RED"><b><code>geometry</code></b></font>
+while it contained an <font color="#000077"><b>Box</b></font> node.
+Similarly, an illogical operation for the right-hand object model would be changing the value of
+<font color="RED"><b>----arc----&nbsp;<code>geometry</code></b></font>
+while it contained an <font color="#000077"><b>Box</b></font> node.
+</p>
+
+<p>
+An important constraint emerges from examples like this.  
+<b>Each object model is functionally equivalent
+when considered from the perspective of scene graph semantics.</b>
+Functionally complete Application Programming Interfaces (APIs) for each object model
+will have a direct functional correspondence between each scene graph operation.
+Syntax for the two APIs will certainly be different, and function calls for the two APIs can't be mixed indiscriminately.
+Nevertheless the two APIs will be internally consistent, and the same kinds of scene graph operations will be provided by each. 
+</p>
+
+<p>
+No exclusive choice is needed between object models - either is functionally equivalent to the other.
+Different compatible applications might choose choose one or the other object model.
+</p>
+
+<p>
+This is an important result.  Use of either scene graph permits development of
+functionally equivalent object models.  A promising editorial task while writing the
+VRML&nbsp;200x specification will be elaborating both object models in complete detail,
+as equivalent examples of a single abstract object model.
+</p>
+
+<p>
+<b>Composition of scene graphs and their corresponding object models allows compatible mutual coexistence.</b>
+</p>
+
+<p>
+Nevertheless, some choices remain (of course).
+A single tagset is necessary for X3D, in order to produce a single unambiguous
+Document Object Model (DOM) for X3D.
+<b>The Document Object Model (DOM) for X3D will match the DTD tagset chosen.</b>  
+This X3D DOM will correspond either to the left-hand scene graph object model, or the
+right-hand scene graph object model.
+Selecting one tagset (and therefore one DOM) will enable unambiguous integration
+of X3D events with other DOM-compatible event generators (such as XHTML, SVG, MathML, SMIL, etc.).
+Selecting one DOM will also facilitate elaboration of the forthcoming X3D Script Authoring Interface (SAI).
+</p>
+
+<p>
+<b>Choice of XML parser/tagset can now be posed in much simpler terms.</b> 
+Either choice is a technically acceptable alternative.
+Either choice enables both pairs of scene graphs and object models.
+</p>
+
+<!-- - - - - - - - - - - - - - - - -->
+
+<hr width="50%">
+
+<h3><a name="WrapperTags">Wrapper tags</a></h3>
+
+<p>
+The term "wrapper tags" has commonly referred to tags which wrap the field name for a node
+around the node itself.  An alternate term is "field containers."  For example, 
+<br/>
+<code><b>&nbsp;&nbsp;&nbsp;
+<font color="RED">&lt;appearance&gt;</font><font color="#000077">&lt;Appearance&gt;</font>&nbsp;...&nbsp;<font color="#000077">&lt;/Appearance&gt;</font><font color="RED">&lt;appearance&gt;</font>
+</b></code>
+<br/>
+contains two (lower-case&nbsp;"a") <b><font color="RED"><code>&lt;appearance&gt;</code></font></b> wrapper tags.
+This construct indicates that the wrapped <b><font color="#000077">&lt;Appearance&gt;</font></b> node
+belongs in the <b><font color="RED"><code>&lt;appearance&gt;</code></font></b> field 
+of the parent <b><font color="#000077">&lt;Shape&gt;</font></b> node.
+</p>
+
+<p>
+An example X3D scene with wrapper tags embedded is
+<a href="examples/WrapperTagsExampleStyled.html">WrapperTagsExample.xml</a>
+(autotranslated to VRML as
+<a href="examples/WrapperTagsExampleTranslated.wrl">WrapperTagsExampleTranslated.wrl</a>).
+</p>
+
+<p>
+Wrapper tags are used for initializing <code>ProtoInstance</code>/extension fields in the various
+SONY DTDs.  
+Using wrapper tags for field names means that parsers do not need to remember field-name definitions,
+either for PROTOs or built-in VRML&nbsp;97 nodes.
+</p>
+
+<p>
+The
+"<a href="http://www.web3d.org/TaskGroups/x3d/sony/SonyVRML97.dtd.txt">Sony VRML 97 DTD</a>"
+and the
+"<a href="http://www.web3d.org/TaskGroups/x3d/sony/SonyCompromise.dtd.txt">Sony Compromise DTD</a>"
+show the precise details of two proposed tagset definitions and relationships.
+</p>
+
+<p>
+Initializing <code>ProtoInstance</code> fields occurs in 
+<a href="x3d-draft.dtd.txt">x3d-draft.dtd</a>
+using the <code>&lt;defaultValue&gt;</code> tag instead of wrapper tags.
+This enables disambiguation of contained fields from contained content, just as wrapper tags do.
+An in-depth explanation of this mechanism is provided in
+<a href="examples/QuadTreeExamplesExplanation.html">QuadTreeExamplesExplanation</a>.
+</p>
+
+<p>
+Thus the syntax of prototype field-name definitions can be provided via the following mechanisms:
+</p>
+<ul>
+	<li>untyped/unverifiable wrapper tags which duplicate the field name for each instance, or</li>
+	<li>strongly typed <code>&lt;defaultValue&gt;</code> tags which use the already-declared field name</li>
+</ul>
+
+<p>
+A possible third choice is to avoid wrappers for specification-defined nodes, 
+and use wrappers for extension nodes.  The primary objection to this possibility is
+lack of consistency in treatment of field names, although that objection is
+somewhat offset by broad recognition of the VRML&nbsp;97 specification nodes.
+</p>
+
+<p>
+<b>Interestingly, the two choices to include or avoid wrapper tags corresponds exactly to 
+literal encodings of the two 
+<a href="#Equivalences">equivalent scene graphs</a>.</b>
+</p>
+
+<!-- - - - - - - - - - - - - - - - -->
+
+<hr width="50%">
+
+<h3><a name="ParserChoices">Parser/tagset choices</a></h3>
+
+<p>
+Composition of scene graphs plus functional equivalence of object models provides excellent flexibility.
+Most of the issues in
+the wrapper&nbsp;tag controversy documents articulated by
+<a href="examples/WrapperTagsConsideredHarmful.html">NPS</a>
+and
+<a href="http://www.web3d.org/TaskGroups/x3d/sony/DTDProposal.html">SONY</a>
+now appear composed and compatible through this analysis.  All of the decision points have been
+squeezed down into tradeoffs between parser capability and scene size.
+</p>
+
+<p>
+Thus a simple choice is now possible.  The X3D tagset either 
+</p>
+
+<ul>
+	<li>enables context-free parsers by including wrapper tags in all content, or</li>
+	<li>requires parsers to remember defined field names, and avoid wrapper tags in all content</li>
+</ul>
+
+<p>
+Keeping track of defined field names is a lightweight requirement.
+A total of 14 field names are used by 25 VRML&nbsp;97 nodes.
+The complete list of <code>field-name&nbsp;[Node&nbsp;names]</code> combinations 
+(corresponding to VRML&nbsp;97 wrapper tags) follows:
+</p>
+
+<blockquote>
+<pre>
+appearance [Shape]
+children [Anchor, Billboard, Collision, Group, Transform]
+choice [Switch]
+color [ElevationGrid, IndexedFaceSet, IndexedLineSet, PointSet]
+coord [IndexedFaceSet, IndexedLineSet, PointSet]
+fontStyle [Text]
+geometry [Shape]
+level [LOD]
+material [Appearance]
+normal [ElevationGrid, IndexedFaceSet]
+source [Sound]
+texCoord [ElevationGrid, IndexedFaceSet]
+texture [Appearance]
+textureTransform [Appearance]
+</pre>
+</blockquote>
+
+<p>
+The following table summarizes the requirements for X3D parsing, together with
+the corresponding requirements for X3D scenes.  The left and right columns
+each correspond to literal encoding of the left and right 
+<a href="#Equivalences">equivalent scene graphs</a>, respectively.
+Either the left-side choice or the right-side choice must be made to decide on the 
+X3D tagset Document Type Definition (DTD).
+</p>
+
+
+<table summary="Parser/tagset tradeoff choices" border="1" align="center">
+<!-- <caption><b>Parser/tagset choices</b></caption> -->
+
+<colgroup span="2" />
+
+<tbody>
+
+<tr>
+	<th colspan="2">X3D Parsing Choices</th>
+</tr>
+
+<tr>
+	<td width="50%">
+			<p>can ignore 14 native VRML field name definitions</p>
+			<p>can ignore PROTO/EXTERNPROTO field name definitions</p>
+	</td>
+	<td>	<p>must utilize 14 native VRML field name definitions</p>
+			<p>must utilize PROTO/EXTERNPROTO field name definitions</p>
+	</td>
+</tr>
+
+<tr>
+	<th colspan="2">Corresponding Choices for Scene Authoring</th>
+</tr>
+
+<tr>
+	<td>	<p>additional field-name wrapper tags required in all scenes</p>
+	</td>
+	<td>	<p>no field-name wrapper tags required in all scenes</p>
+	</td>
+</tr>
+
+</tbody>
+</table>
+
+<p>
+It is worth reiterating that choosing either column still enables both scene graphs and both object models.
+</p>
+
+<p>
+<b>All participants are likely to have a qualified opinion on this time-space tradeoff:
+choosing more computation in parsers, versus choosing more tag information in scenes.</b>
+</p>
+
+
+<!-- - - - - - - - - - - - - - - - -->
+
+<hr width="50%">
+
+<h3><a name="NextSteps">Next Steps</a></h3>
+
+<p>
+Several next steps should be considered by the X3D contributors.  
+A "divide and conquer" strategy appears possible since either choice appears to enable
+all major goals.
+Here is a preliminary list of next-step tasks:
+</p>
+
+<ul>
+	<li>Examine and evaluate this analysis
+		(See 
+		<a href="http://www.web3d.org/WorkingGroups/x3d-contributors/hypermail/1999/2561.html">29&nbsp;Feb&nbsp;2000 followup message</a> 
+		regarding which DTDs pertain)
+	</li>
+	<li>Examine computational cost of modifying Blendo and Shout3D parsers to maintain VRML and PROTO field names
+		(experience by blaxxun and Draw may help)
+	</li>
+	<li>Assess consensus on choices by following though on the consensus process</li>
+	<li>Proceed in parallel with specification writing, object model elaboration, Script Authoring Interface (SAI),
+		Component Interface Model (CIM), extensions and other X3D strategic priorities </li>
+	<li>Prepare timeline for X3D implementation completion prior to SIGGRAPH in July 2000</li>
+	<li>Continue W3C and MPEG4 liaison activities, defining specific technical objectives and milestones</li>
+	<li>Renew the Binary Encoding Request for Proposals (RFP) once DTD/tagset is chosen</li>
+	<li>Continue open and community source implementations</li>
+	<li>Evaluate implementations using the NIST conformance suite and post results</li>
+</ul>
+
+<!-- - - - - - - - - - - - - - - - -->
+
+<hr width="50%">
+
+<p>
+<i>Revised</i>:  5 March 2000
+</p>
+
+<p>
+<i>Uniform Resource Locator (URL)</i>:
+ <A HREF = "http://www.web3D.org/TaskGroups/x3d/content/ComposingSceneGraphAlternatives.html">www.web3D.org/TaskGroups/x3d/content/ComposingAlternateSceneGraphs.html</A>
+
+</p>
+
+<p>
+<i>Author</i>:  <a href="mailto:brutzman@nps.navy.mil(Don Brutzman)?subject=Composing Alternate Scene Graphs feedback ">Don Brutzman</a>
+</p>
+
+<p>
+<i>Acknowledgements</i>:
+new ideas in this document emerged during discussions 
+with Paul Diefenbach, Stefan Diehl, Paul Fishwick, Mike Fletcher, 
+Rob Glidden, Rick Goldberg, Holger Grahn, 
+Bryan Housel, Alan Hudson, 
+Chris Marrin, Rob Myers, Dick Puk, Rick Rafey, Sandy Ressler, Bernie Roehl, 
+Auvo Severinkangas, Henry Sowizral, Jim Stewartson, Erick von Schweber, Neil Trevett 
+and other X3D contributors.
+</p>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+#X3D V3.0 utf8
+
+PROFILE Immersive
+
+META "title" "HelloWorld.x3d"
+META "created" "30 October 2000"
+META "description" "Simple X3D example"
+META "generator" "X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"
+META "license" "license.html"
+META "identifier" "http://www.web3d.org/x3d/content/examples/Basic/HelloWorld.x3d"
+META "creator" "Don Brutzman"
+META "modified" "18 December 2006"
+
+Group {
+   children [Viewpoint {
+         position 0.0 -1.0 7.0
+         description "hello, world!"
+   }
+Transform {
+         rotation 0.0 1.0 0.0 3.0
+      children [Shape {
+         appearance Appearance {
+            texture ImageTexture {
+                  url ["earth-topo.png","earth-topo.jpg","earth-topo.gif","earth-topo-small.gif","../earth-topo.png","../earth-topo.jpg","../earth-topo.gif","../earth-topo-small.gif","/www.web3d.org/x3d/content/examples/earth-topo.png","/www.web3d.org/x3d/content/examples/earth-topo.jpg","/www.web3d.org/x3d/content/examples/earth-topo.gif","/www.web3d.org/x3d/content/examples/earth-topo-small.gif","http://www.web3d.org/x3d/content/examples/earth-topo.png","http://www.web3d.org/x3d/content/examples/earth-topo.jpg","http://www.web3d.org/x3d/content/examples/earth-topo.gif","http://www.web3d.org/x3d/content/examples/earth-topo-small.gif"]
+            }
+
+         }
+
+         geometry Sphere {
+         }
+
+      }
+      ]
+   }
+Transform {
+         translation 0.0 -2.0 0.0
+      children [Shape {
+         appearance Appearance {
+            material Material {
+                  diffuseColor 0.1 0.5 1.0
+            }
+
+         }
+
+         geometry Text {
+               string ["Hello","world!"]
+            fontStyle FontStyle {
+                  justify ["MIDDLE","MIDDLE"]
+                  style "PLAIN"
+            }
+
+         }
+
+      }
+      ]
+   }
+   ]
+}

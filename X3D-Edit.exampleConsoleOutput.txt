@@ -1,0 +1,71 @@
+> cd C:\www.web3d.org\x3d\content\
+> x3d-edit examples\HelloWorld.x3d
+
+
+C:\www.web3d.org\x3d\content>x3d-edit examples\HelloWorld.x3d 
+=======================================================================
+X3D-Edit v3.1 using x3d-3.1.dtd (X3D International Specification Amendment 1)
+Tooltips language:  English
+X3D_DTD=C:\www.web3d.org\x3d\content\x3d-3.1.dtd
+=======================================================================
+Support:  e-mail problem summary and command console output to
+          mailto:brutzman@nps.edu or mailto:www-vrml@web3d.org
+          http://www.web3d.org/x3d/content/README.X3D-Edit.html
+=======================================================================
+=======================================================================
+Build date for current version of X3D-Edit      build.date.X3D-Edit.txt
+Latest version http://www.web3d.org/x3d/content/build.date.X3D-Edit.txt
+
+Tue Oct 11 05:56:07 PDT 2005
+
+-rw-rw-rw-  1 brutzman None 8683182 Oct 11 05:52 X3D-Edit.tar.gz
+-rw-rw-rw-+ 1 brutzman None 9846060 Oct 11 05:51 X3D-Edit.zip
+=======================================================================
+=======================================================================
+
+Make default newScene.x3d available just in case network is offline
+[X3dDtdChecker] valid XML declaration found, final X3D 3.0 DOCTYPE found.
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+[X3dDtdChecker] set transitional DTD:  scene reset to transitional X3D DTD.
+<!DOCTYPE X3D PUBLIC "http://www.web3d.org/specifications/x3d-3.1.dtd" "file:///www.web3d.org/TaskGroups/x3d/translation/x3d-3.1.dtd">
+
+X3D-Edit startup using path\files specified by command line,
+  by clicking or by drag + drop:
+[X3dDtdChecker] valid XML declaration found, final X3D 3.0 DOCTYPE found.
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+[X3dDtdChecker] set transitional DTD:  scene reset to transitional X3D DTD.
+<!DOCTYPE X3D PUBLIC "http://www.web3d.org/specifications/x3d-3.1.dtd" "file:///www.web3d.org/TaskGroups/x3d/translation/x3d-3.1.dtd">
+
+ c:\ibm\Xeena\xeena.bat -dtd "C:\www.web3d.org\x3d\content\x3d-3.1.dtd" -root X3D -profile "x3d-3.0.profile.xml" -xml examples\HelloWorld.x3d
+=======================================================================
+XEENA_HOME=C:\Ibm\Xeena
+
+Microsoft Windows XP [Version 5.1.2600]
+JAVA_HOME=C:\Program Files\Java\jdk1.5.0_05
+java version "1.5.0_05"
+Java(TM) 2 Runtime Environment, Standard Edition (build 1.5.0_05-b05)
+Java HotSpot(TM) Client VM (build 1.5.0_05-b05, mixed mode, sharing)
+Default CLASSPATH=
+.;'c:\program files\geovrml\1.1\classes\geovrml.jar';C:\xml\docbook\docbook-xsl-1.67.2\extensions\saxon653.jar;;.
+Xeena extended CLASSPATH= 
+C:\Ibm\Xeena\lib\Vrml97ToX3dImport.jar;C:\Ibm\Xeena\lib\Vrml97ToX3dNist.jar;C:\Ibm\Xeena\lib\xmleditor.jar;C:\Ibm\Xeena\lib\xerces.jar;C:\Ibm\Xeena\lib\jgl3.1.0.jar;C:\Ibm\Xeena\lib\swingall.jar;C:\Ibm\Xeena\lib\xalan.jar;c:\vrtp\dis-java-vrml.jar;"C:\Program Files\GeoVRML\1.1\classes\geovrml.jar";.;;".;'c:\program files\geovrml\1.1\classes\geovrml.jar';C:\xml\docbook\docbook-xsl-1.67.2\extensions\saxon653.jar;;.";
+running Xeena with Java 2:
+Xeena Version 1.2EA1
+Brought to you by the IBM Haifa Research Lab, Israel
+Please send your feedback to helpmap@il.ibm.com
+(C) 1999-2000 IBM Corporation. All Rights Reserved.
+
+Loading Xeena's Profile: C:/www.web3d.org/x3d/content/xeena.profile
+Loading Grammar's Profile: C:/www.web3d.org/x3d/content/x3d-3.0.profile.xml
+Starting with: C:/www.web3d.org/x3d/content/examples/HelloWorld.x3d
+[X3dDtdChecker] valid XML declaration found, transitional X3D 3.1 DOCTYPE found.
+<!DOCTYPE X3D PUBLIC "http://www.web3d.org/specifications/x3d-3.1.dtd" "file:///www.web3d.org/TaskGroups/x3d/translation/x3d-3.1.dtd">
+[X3dDtdChecker] set final DTD:  scene reset to final X3D 3.0 DTD.
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+
+[X3dDtdChecker] valid XML declaration found, transitional X3D 3.1 DOCTYPE found.
+<!DOCTYPE X3D PUBLIC "http://www.web3d.org/specifications/x3d-3.1.dtd" "file:///www.web3d.org/TaskGroups/x3d/translation/x3d-3.1.dtd">
+[X3dDtdChecker] set final DTD:  scene reset to final X3D 3.0 DTD.
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+
+X3D-Edit complete.

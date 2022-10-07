@@ -1,0 +1,1368 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+<head>
+  <link rel="shortcut icon" href="images/X3DtextIcon16.png" title="X3D" > 
+	<title>X3D-Edit for Extensible 3D (X3D) Graphics - README</title>
+	<meta name="author" content="Don Brutzman">
+	<meta name="description" content="README X3D-Edit">
+	<meta name="filename" content="README.X3D-Edit.html">
+	<meta name="url" content="http://www.web3d.org/x3d/content/README.X3D-Edit.html">
+	<meta name="generator" content="HTML-Kit">
+</head>
+
+<body>
+<center>
+
+<table border="0" cellspacing="0" cellpadding="0" summary="">
+<tr align="center">
+		<td><a href="http://www.web3d.org/x3d"><img src="images/x3d2-s.gif" width="154" height="97" border="0" title="to X3D home page"></a></td>
+		<td><pre>   </pre></td>
+		<td>
+				<h1>X3D-Edit for Extensible&nbsp;3D (X3D) Graphics - README</h1>
+		</td>
+		<td><pre>   </pre></td>
+		<td><a href="http://www.web3d.org"><img src="images/web3d_logo2.png" width="120" height="60" border="0" title="to Web3D home page"></a></td>
+</tr>
+</table>
+<p>    
+<a href="http://web.nps.navy.mil/~brutzman">Don&nbsp;Brutzman</a>
+(<i><a href="mailto:brutzman@nps.navy.mil(Don%20Brutzman)?subject=X3D-Edit%20feedback ">brutzman&nbsp;at&nbsp;nps.navy.mil</a></i>)
+</p>
+
+<p><font size="-1">
+
+<a href="http://www.web3d.org/x3d/content/X3D-EditAutoInstall/Web_Installers/install.htm">AutoInstaller</a>  |
+<a href="#Purpose">Purpose</a> |
+<a href="#Status">Status</a> |
+<a href="#i18n">Internationalization (i18n)</a> |
+<a href="#Installation">Installation Setup</a> |
+<a href="#Updates">Download Updates</a> |
+<a href="#Features">Features</a> |
+<a href="#Details">Details</a> |
+<a href="#Usage">Usage</a> |
+<a href="#Compact">Compact Form</a> |
+<a href="#Developers">Developers</a> |
+<a href="#Bugfixes">Bugfixes</a>
+
+</font></p>
+</center>
+<hr width="50%">
+
+<h3><a name="Purpose">Purpose</a></h3>
+<p>
+	 X3D-Edit is a graphics file editor for
+	 <a href="http://www.web3d.org/x3d" target="_blank">Extensible 3D (X3D)</a>
+	 that enables simple error-free editing,
+	 authoring and validation of X3D or VRML scene-graph files.
+   Context-sensitive tooltips provide concise summaries
+   of each VRML node and attribute.  These tooltips simplify authoring and improve
+   understanding for novice and expert users alike.
+</p>
+<p>
+    <a href="http://www.web3d.org/x3d/content/X3D-EditAutoInstall/Web_Installers/install.htm" target="_blank">X3D-Edit Auto Installer</a> 
+    is available online for various operating systems (Windows, Mac, Linux, Solaris and other Unix).
+</p>
+
+<p>	 
+	 X3D-Edit uses the X3D&nbsp;3.1 tagset defined by the
+	 <a href="x3d-3.1.dtd" target="_blank">X3D&nbsp;3.1 Document Type Definition (DTD)</a>
+	 in combination with Sun's 
+	 <a href="http://www.javasoft.com/nav/download" target="_blank">Java</a>, 
+	 IBM's
+	 <a href="http://www.alphaWorks.ibm.com/tech/xeena" target="Xeena">Xeena XML editor</a>,
+	 and editor profile configuration files.
+</p>
+
+<p>See
+	<a href="examples/help.html" target="_blank">X3D Help</a> for further X3D resources.
+</p>
+
+<hr width="50%">
+
+<h3><a name="Status">Status</a></h3>
+<p>
+    X3D-Edit implements the Extensible 3D (X3D)
+    tagset for the next-generation Virtual Reality Modeling Language (VRML&nbsp;200x).  X3D-Edit also exercises
+    various X3D graphics rendering and translation implementations.
+</p>
+<p>
+		Latest <a href="#Updates">updates</a> of software and examples:	 see <a href="build.date.X3D-Edit.txt"><b>build.date.X3D-Edit.txt</b></a>.
+</p>
+	 
+<p>		<b><font color="red">Now version 3.1</font></b>, matching 
+				<a href="http://www.web3d.org/x3d/specifications" target="_blank">X3D&nbsp;3.0 International Specification</a>
+				(Summer&nbsp;2004) and adding components from
+				<a href="http://www.web3d.org/x3d/specifications/ISO-IEC-19775-Amendment1-X3DAbstractSpecification" target="_blank">X3D Amendment 1</a> (Winter 2005).
+</p>
+<p>
+	 Completed v3.1 components:
+<ul>
+		<li>Updated x3d-3.1.dtd</li>
+		<li>CAD component</li>
+		<li>Programmable shaders component</li>
+		<li>Cube map environmental texturing component</li>
+		<li>LocalFog and FogCoordinate</li>
+		<li>Texture3D component</li>
+		<li>Miscellaneous updates</li>
+</ul>
+</p>
+
+<p>
+	 Also ongoing:  testing 
+	 <a href="x3d-3.1.xsd" target="_blank">X3D&nbsp;Schema&nbsp;(x3d-3.1.xsd)</a>
+	 against 
+	 <a href="http://www.web3d.org/x3d/content/examples/help.html#Examples" target="_blank">several thousand X3D examples</a>
+	 using a
+	 <a href="X3D-XmlSpyProject.spp" target="_blank">project&nbsp;file</a> 
+	 for 
+	 <a href="http://www.altova.com" target="_blank">XML&nbsp;Spy</a>.
+	 
+</p>
+	
+<p><font color="green"><b>Functional improvements</b></font>:</p>
+
+<ul>
+  <li>  <a href="http://www.web3d.org/x3d/specifications" target="_blank">Web3D&nbsp;Specifications</a>
+				for
+				Extensible&nbsp;3D&nbsp;(X3D) Graphics,
+				Humanoid&nbsp;Animation (H-Anim)
+				and 
+				the Virtual Reality Modeling Language (VRML&nbsp;97)
+				are now included.
+	</li>
+  <li>  <a href="X3D-EditAuthoringTool.pdf" target="_blank">X3D-Edit&nbsp;Authoring&nbsp;Tool for Extensible&nbsp;3D&nbsp;(X3D) Graphics</a>
+				provides a six-page summary of X3D-Edit features and usage.  
+				Also available online:  
+				<a href="http://www.web3d.org/x3d/content/X3D-EditAuthoringTool.ppt" target="_blank">Powerpoint&nbsp;slides</a>
+				and
+				<a href="http://www.web3d.org/x3d/content/X3D-EditAuthoringTool.html" target="_blank">html&nbsp;slides</a>.
+				This position paper was presented at the 
+				<a href="http://www.agc.fhg.de/campfire" target="_blank"><i>ACM&nbsp;SIGGRAPH/Eurographics Campfire on Production Processes for 3D Computer Graphics Applications</i></a>,
+				Snowbird&nbsp;Utah, June&nbsp;2-4&nbsp;2002.
+	</li>
+  <li>  <b><font color="red"><a name="VRML97Import">VRML Import</a> capability for conversion to X3D</font></b>, using the
+				<a href="http://ovrt.nist.gov/v2_x3d.html">NIST Vrml97ToX3d translator</a>.
+				<ul>
+						<li >
+								Select File then Import to get a file-dialog box:
+						</li>
+						<li>
+								<img src="images/Vrml97ImportFileMenu.png" title="Vrml97 Import File Menu">
+						</li>
+						<li>
+								Select a VRML file (SomeScene.wrl) from the file-dialog box:
+						</li>
+						<li>
+								<img src="images/Vrml97FileSelectionDialogBox.png" title="Vrml97 File Selection Dialog Box">
+						</li>
+						<li>
+								Select option <b>Clipoard</b> or else <b>New&nbsp;Document</b>:
+						</li>
+						<li>
+								<img src="images/Vrml97ImportDialogBox.png" title="Vrml97 Import Dialog Box">
+						</li>
+						<li>
+								Now, depending on your choice, either <b>paste from clipboard on top of an existing scene X3D node</b>, or else select the newly created document.
+								Pasting into a new document on top of the X3D node is preferred because it has a proper DTD attached.
+						</li>
+						<li>
+								Important final step:  <b>Save As</b> a new .x3d scene.  
+								Otherwise you may get an obscure console message (<code>java.lang.StringIndexOutOfBoundsException: String index out of range: -1</code>).
+								Further editing and VRML/HTML stylesheet outputs will now work.
+						</li>
+				</ul>
+	</li>
+  <li>  Tooltip support:
+				<a href="X3dTooltipsChinese.html" target="_blank">Chinese</a>,
+				<a href="X3dTooltips.html" target="_blank">English</a>,
+				<a href="X3dTooltipsFrench.html" target="_blank">French</a>,
+				<a href="X3dTooltipsGerman.html" target="_blank">German</a>,
+				<a href="X3dTooltipsItalian.html" target="_blank">Italian</a>,
+				<a href="X3dTooltipsPortuguese.html" target="_blank">Portuguese</a>
+				and 
+				<a href="X3dTooltipsSpanish.html" target="_blank">Spanish</a>.
+				Work on additional translations is underway to further improve
+				<a href="#i18n">Internationalization&nbsp;(i18n)&nbsp;support</a>
+				for X3D&nbsp;tooltips.
+	</li>
+	<li>  Three XSLT translation buttons now provided:  Internet Explorer VRML, Netscape VRML, Internet Explorer HTML.
+	      This makes it easier to test scenes in multiple browsers, and provides better support for DIS Profile which
+				only runs under Netscape security model.</li>
+  <li>  Added accessType (eventIn/eventOut/field/exposedField) information for all VRML&nbsp;97 nodes.</li>
+	<li>	Now bundling the
+				<a href="http://ovrt.nist.gov/v2_x3d.html">NIST Vrml97ToX3d translator</a>
+				in the x3d/content directory.		This distribution now includes
+				<a href="Vrml97ToX3d.jar">Vrml97ToX3d.jar</a>
+				and
+				<a href="Vrml97ToX3d.bat">Vrml97ToX3d.bat</a>.
+				We have integrated this functionality as a <i>VRML&nbsp;Import</i> button in X3D-Edit.
+	</li>
+	<li>  Updated support for 
+				<a href="http://web.nps.navy.mil/~brutzman/vrtp/dis-java-vrml/ReleaseNotes.txt">recent improvements</a>
+				for the 
+				<a href="http://web.nps.navy.mil/~brutzman/vrtp/dis-java-vrml/download.html">Distributed Interactive Simulation (DIS)</a> 
+				profile.</li>
+	<li>	Attribute validation is now reported during stylesheet translation from X3D to VRML.	</li>
+	<li>	A large set of detected errors and warnings are displayed in the status window.	</li>
+	<li>	Numerous dependency checks reveal semantic errors with
+		<code>Prototype</code>,
+		<code>Script</code>,
+		<code>field</code>,
+		<code>fieldValue</code>,
+		<code>ROUTE</code> scoping
+		and
+		<code>IS</code>
+		constructs.	</li>
+	<li>	Support for revised LatticeXvl (<code>XvlShell</code> tag).	</li>
+	<li>	HTML output has improved color coding, enabling better readability and manual annotation of
+		<code>ROUTE</code>
+		and
+		<code>IS</code>
+		relationships.	</li>
+</ul>	
+
+<p>		<font color="green"><b><a name="i18n">Internationalization (i18n)</a></b></font>: </p>
+
+<ul>
+	<li>	<b>Tooltip pages</b> are now available for 
+				<a href="X3dTooltipsChinese.html" target="_blank">Chinese</a>,
+				<a href="X3dTooltips.html" target="_blank">English</a>,
+				<a href="X3dTooltipsFrench.html" target="_blank">French</a>,
+				<a href="X3dTooltipsGerman.html" target="_blank">German</a>,
+				<a href="X3dTooltipsItalian.html" target="_blank">Italian</a>,
+				<a href="X3dTooltipsPortuguese.html" target="_blank">Portuguese</a>
+				and 
+				<a href="X3dTooltipsSpanish.html" target="_blank">Spanish</a>.</li>
+				
+	<li>	The tooltip translations
+		are recorded using XML configuration files, meaning that our future
+		deliverables for VRML 200x/X3D can contain standards-based 
+		internationalization&nbsp;(i18n) support. </li>
+
+	<li>	<i>X3d-Edit-Chinese.bat</i> launches X3D-Edit using tooltips in Chinese.	</li>
+	
+	<li>	<i>X3d-Edit-French.bat</i> launches X3D-Edit using tooltips in French.	</li>
+
+	<li>	<i>X3d-Edit-German.bat</i> launches X3D-Edit using tooltips in German.	</li>
+
+	<li>	<i>X3d-Edit-Italian.bat</i> launches X3D-Edit using tooltips in Italian.	</li>
+
+	<li>	<i>X3d-Edit-Spanish.bat</i> launches X3D-Edit using tooltips in Spanish.	</li>
+	
+	<li>	Alternatively, modify your environment variable with 
+		<code>SET&nbsp;X3dLanguagePreference=Chinese</code>
+		or
+		<code>SET&nbsp;X3dLanguagePreference=French</code>
+		or
+		<code>SET&nbsp;X3dLanguagePreference=German</code>
+		or
+		<code>SET&nbsp;X3dLanguagePreference=Italian</code>
+		or
+		<code>SET&nbsp;X3dLanguagePreference=Spanish</code>.
+		
+		The regular X3D-Edit icons then execute <i>en&nbsp;Fran&#231;ais</i> or <i>en&nbsp;Espa&#241;ol</i> etc.	</li>
+		
+	<li>	<i>X3d-Edit-English.bat</i> launches X3D-Edit using tooltips in English (overriding any other preference setting).	</li>
+	<li>	Many thanks to our translators.
+	  <ul>
+		<li>	
+			<a href="X3dTooltipsChinese.html">Chinese tooltips</a>:
+			<a href="mailto:m17design@hotmail.com(yiqi%20meng)?subject=X3D-Edit%20language%20feedback ">yiqi meng</a> of
+      <a href="http://m17design.myetang.com/x3d" target="blank">Nanjing Art Institute</a>, Nanjing China.	</li>
+		<li>	
+			<a href="X3dTooltipsFrench.html">French tooltips</a>:
+			<a href="mailto:froussille@yahoo.com(Frederic%20Roussille)?subject=X3D-Edit%20language%20feedback ">Frederic Roussille</a> of 
+				Ecole Nationale des Ingenieurs de Tarbes (ENIT), Tarbe France	</li>
+		<li>	
+			<a href="X3dTooltipsGerman.html">German tooltips</a>:  
+			<a href="mailto:dachselt@inf.tu-dresden.de(Raimund%20Dachselt)?subject=X3D%20tooltips%20translation%20feedback%20">Raimund Dachselt</a> and 
+			<a href="mailto:johnnyri@web.de(Johannes%20Richter)?subject=X3D%20tooltips%20translation%20feedback%20">Johannes Richter</a> of the 
+			<a href="http://www-mmt.inf.tu-dresden.de" target="blank">Multimedia Technology Group</a>, 
+			<a href="http://www.tu-dresden.de" target="blank">Dresden University of Technology</a>, Germany.	</li>
+		<li><a href="X3dTooltipsItalian.html">Italian tooltips</a>:  
+		 <a href="mailto:ranon@dimi.uniud.it(Roberto Ranon)?subject=X3D tooltips translation feedback ">Roberto Ranon</a> of the 
+			<a href="http://www.uniud.it" target="blank">L'Universita degli Studi di Udine</a>, Italy.
+       </li>
+       <li>	
+			<a href="X3dTooltipsSpanish.html">Spanish tooltips</a>:
+			<a href="mailto:gmunoz@escet.urjc.es(Guadalupe%20Muñoz%20Martín)?subject=X3D-Edit%20language%20feedback%20">Guadalupe Muñoz Martín</a> of 
+			of University Rey Juan Carlos, Madrid España.	</li>
+	  </ul>
+	</li>
+	
+	<li>
+		 Editor profile configuration files:
+	 <ul>
+	 	<li>	<a href="x3d-3.0.profile.xml" target="_blank" type="text/plain">x3d-3.0.profile.xml</a> </li>
+	 	<li>	<a href="x3d-3.0.profileChinese.xml" target="_blank" type="text/plain">x3d-3.0.profileChinese.xml</a> </li>
+	 	<li>	<a href="x3d-3.0.profileFrench.xml" target="_blank" type="text/plain">x3d-3.0.profileFrench.xml</a> </li>
+	 	<li>	<a href="x3d-3.0.profileGerman.xml" target="_blank" type="text/plain">x3d-3.0.profileGerman.xml</a> </li>
+	 	<li>	<a href="x3d-3.0.profileItalian.xml" target="_blank" type="text/plain">x3d-3.0.profileItalian.xml</a> </li>
+	 	<li>	<a href="x3d-3.0.profilePortuguese.xml" target="_blank" type="text/plain">x3d-3.0.profilePortuguese.xml</a> </li>
+	 	<li>	<a href="x3d-3.0.profileSpanish.xml" target="_blank" type="text/plain">x3d-3.0.profileSpanish.xml</a> </li>
+	 </ul>
+	</li>
+
+	<li>	Of interest:
+		<a href="http://www.w3.org/International">World Wide Web Consortium (W3C) Internationalization&nbsp;(i18n)</a></li>
+	<li>Candidate translators:  please 
+	      subscribe 
+				and advise
+			  <a href="mailto:www-vrml@web3d.org?subject=X3D%20tooltip%20translation%20interest%20">www-vrml@web3d.org</a>
+		    of your intentions so we can avoid duplication of effort.  There is plenty of good work to share!</li>
+  <li>Translators (and authors) please note that any special characters need to be translated into 
+"character&nbsp;entities" which are well described in the 
+<a href="http://www.w3.org/TR/html4">HTML 4.01 Recommendation</a>, 
+chapter&nbsp;24 "Character entity references in HTML 4,"
+<a href="http://www.w3.org/TR/html4/sgml/entities.html">http://www.w3.org/TR/html4/sgml/entities.html</a> </li>
+	<li> 	Upcoming work:  place all tooltips under CVS control for better maintenance. </li>
+	<li> 	Upcoming work:  integrate tooltips with X3D Schema. </li>
+	<li>	Other language translations are welcome.  Please contact 
+		<a href="mailto:brutzman@nps.navy.mil(Don%20Brutzman)?subject=X3D-Edit%20translation%20feedback ">Don&nbsp;Brutzman (<i>brutzman&nbsp;at&nbsp;nps.navy.mil</i>)</a>
+		for further details about how to volunteer - you'll be in good company.	</li>
+
+</ul>
+
+<p><font color="green"><b>"How are tools put together" diagram</b></font>:
+<a href="XmlToolRelationshipsForX3d.pdf" target="_blank">XML Tool Relationships for X3D</a>.	
+</p>
+
+<p><font color="green"><b>Education</b></font>:
+    We're using X3D-Edit to teach a 
+		<a href="http://web.nps.navy.mil/~brutzman/vrml" target="_blank">VRML/X3D&nbsp;course</a>.
+		Reducing content bugs and eliminating the syntax idiosyncracies of VRML really helps!  
+		Using the beta version January-March 2000, we got
+		through the material in the
+		<a href="http://www.wiley.com/compbooks/vrml2sbk/cover/cover.htm" target="_blank">VRML 2.0 Sourcebook</a>
+		one week faster than in previous versions of this course.
+		We are making similarly excellent progress using the current version of X3D-Edit.
+		X3D versions of sourcebook examples (270 total!) are available on the
+		<A href="examples/Vrml2.0Sourcebook">X3D Examples for Vrml&nbsp;2.0 Sourcebook</A>
+		site.
+</p>
+		
+<p>
+		<a href="mailto:brutzman@nps.navy.mil(Don%20Brutzman)?subject=X3D-Edit%20feedback%20">Suggestions</a>
+    and improvements regarding X3D-Edit installation/usability are welcome.
+		Discussion of this tool occurs on the 
+		<a href="mailto:www-vrml@web3d.org?subject=X3D-Edit%20feedback " target="_blank">www-vrml mail&nbsp;list</a>.
+</p>
+<p>
+    Additional instructions for Mac are available in 
+		<a href="README.X3D-Edit.Mac.txt">README.X3D-Edit.Mac.txt</a>
+    thanks to the ever mac-nificent 
+		<a href="mailto:guynups@gra.com(Steve%20Guynup)?subject=README.X3D-Edit.Mac.txt%20feedback%20">Steve Guynup</a> 
+		(<a href="mailto:guynups@gra.com(Steve%20Guynup)?subject=README.X3D-Edit.Mac.txt%20feedback%20">guynups@gra.com</a>)
+</p>
+
+
+<hr width="50%">
+
+<h3><a name="Installation">Installation Setup</a></h3>
+
+<p>You will need to be logged&nbsp;in with administrator permissions to perform some of these installations.
+</p>
+<!-- 
+<blockquote>
+This software is available on the 
+<b><a href="http://sdk.web3d.org/">X3D&nbsp;Software Development Kit&nbsp;(SDK)</a></b>,
+ <b>CD&nbsp;volume&nbsp;I</b> under <b>Tools</b>.
+</blockquote>
+<p align="center">
+<a href="http://sdk.web3d.org/summer2002disk1" target="SDK"><img src="images/SdkVolumeI-Tools.jpg" title="SDK Volume I - Tools" width="462" height="551"></a> <!-- width="617" height="689" -->
+
+<!--
+<a href="http://sdk.web3d.org/summer2002disk1/tools" target="SDK"><img src="images/SdkVolumeI-Tools.X3D-Edit.jpg" title="SDK Volume I - Tools - X3D-Edit" width="462" height="551"></a>
+</p>
+
+<blockquote>If you are inside the NPS firewall, 
+this software is also available at
+<a href="file:\\troy\brutzman$\public\">\\airborne\brutzman</a>
+</blockquote>
+ -->
+ 
+	
+  <p>  <b><font color="green"><i>Recommended installation</i>:  <a name="autoinstaller">AutoInstaller</a></font></b>.	
+				<a href="http://www.web3d.org/x3d/content/X3D-EditAutoInstall/Web_Installers/install.htm" target="_blank">X3D-Edit AutoInstaller</a> 
+				for various operating systems (Windows, Mac, Linux, Unix/Solaris).
+	</p>
+	<p>
+				Once installed, and once you have a VRML plugin (step&nbsp;1 which follows), you can  
+				<a href="#Updates">update to new revisions by skipping ahead to step&nbsp;7</a>
+				and simply extracting the <a href="#Updates">updates</a> on top.
+	</p>
+	
+	<p>If you prefer to install X3D-Edit manually, follow steps 1-6 instead of using the autoinstaller.</p>
+<ol>
+<li>
+    Install one of these free Virtual Reality Modeling Language (VRML) plugins in your web browsers.
+		These plugins can work with any combination of 
+		<a href="http://www.netscape.com/download">Netscape</a>
+		and 
+		<a href="http://www.microsoft.com/windows/ie/">Internet&nbsp;Explorer</a>.
+<ul>
+<!-- 		<li>
+			<A HREF="http://www.nexternet.com/download" target="VRML"><IMG SRC = "images/pivoron_90x30.gif" align="MIDDLE" BORDER="1" width=90 height=30 title="Download Pivoron"></A>
+			<A HREF="http://www.nexternet.com/download" target="VRML">Pivoron</A>
+			by
+			<a href="http://www.nexternet.com" target="VRML">Nexternet</a>
+		</li> -->
+		<li>
+			<A HREF="http://www.parallelgraphics.com/cortona" target="VRML"><IMG SRC = "images/cortbest.gif" align="MIDDLE" BORDER="1" width=88 height=31 title="Download Cortona"></A>
+			<A HREF="http://www.parallelgraphics.com/cortona" target="VRML">Cortona 3.1</A>
+			by
+			<A HREF="http://www.parallelgraphics.com/cortona" target="VRML">Parallel Graphics</a>
+		</li>
+		<li>
+			<A HREF="http://www.cosmosoftware.com/download" target="VRML"><IMG SRC = "images/cplayer21.gif" align="MIDDLE" BORDER="1" width=88 height=31 title="Download CosmoPlayer"></A>
+			<A HREF="http://www.cosmosoftware.com/download" target="VRML">CosmoPlayer 2.1.1</A>  (~3MB)
+		</li>
+		<li>
+			<A HREF="http://www.karmanaut.com/cosmo/player" target="VRML"><IMG SRC = "images/cplayer21.gif" align="MIDDLE" BORDER="1" width=88 height=31 title="Download CosmoPlayer"></A>
+			<A HREF="http://www.karmanaut.com/cosmo/player" target="VRML">Karmanaut mirror site:  CosmoPlayer 2.1.1</A> plugin for Netscape or Internet Explorer.  (~3MB)
+		</li>
+		<li>	<a href="http://www.MediaMachines.com" target="_blank">MediaMachines Flux</a> X3D/VRML97 plugin for Internet Explorer.
+				Experimental, now SIGGRAPH&nbsp;2004 Beta&nbsp;2 release.
+		</li>
+<!-- 		<li>
+			<A HREF="http://www.blaxxun.com/products/contact" target="VRML"><IMG SRC = "images/contactbtn.gif" align="MIDDLE" BORDER="1" width=90 height=30 title="Download Contact"></A>
+			<A HREF="http://www.blaxxun.com/products/contact" target="VRML">Contact 5.0</A>
+			by
+			<a href="http://www.blaxxun.com" target="VRML">blaxxun interactive</a>
+		</li> -->
+</ul>
+
+
+  		
+<table summary="">
+<tr><td>
+<a href="examples/HelloWorld.wrl" target="VRML"><IMG SRC = "examples/HelloWorld.gif" align="MIDDLE" BORDER="0" width="80" height="80" title="Hello World"></a>
+</td>
+<td>
+To see if your VRML-browser installation worked, 
+try viewing the
+<a href="examples/HelloWorld.wrl" target="VRML">HelloWorld.wrl</a> example scene.
+</td>
+</tr>
+</table>
+
+
+</li>
+
+<li>
+    <a name="Java">Install <b>Java</b></a> 
+		using one of the 
+		<a href="http://java.sun.com/j2se/1.4/download.html" target="_blank">online distributions</a>.
+		(Java is needed in order to run the Xeena tool.)
+		When installing, you will need to acknowledge the nonrestrictive Java license.
+<br/>
+<br/>
+		You might save a download if Java is is already installed.
+			You can test whether Java is installed by opening a 
+		<code>command</code> window and typing 
+		<pre>
+		c:\>  <b>java -version</b>
+</pre>
+
+<!--
+ 		<ul>
+				<li><b>Java JRE 1.3.1</b> (also called Java Run-Time Environment Version 1.3.1) or higher.
+				  <ul>
+						<li>~5MB</li>
+						<li><a href="http://java.sun.com/j2se/1.3.1/jre" target="_blank">http://java.sun.com/j2se/1.3.1/jre</a></li>
+						<li>Usually Java goes in <code><b>c:\Program Files\JavaSoft\JRE\1.3.1_09</b></code> (or similar directory)</li>
+						<li>Only allows running Java classes, which is sufficient to run X3D-Edit/Xeena</li>
+				  </ul>
+				<p>
+					<font color="green">OR</font>
+				</p>
+				</li>
+				<li><b>Java JDK 1.3.1</b> (also called Java 2 SDK, Standard Edition Version 1.3.1) or higher.
+				  <ul>
+						<li>~30MB</li>
+						<li><a href="http://java.sun.com/j2se/1.3.1" target="_blank">http://java.sun.com/j2se/1.3.1</a></li>
+						<li>Usually Java goes in <code><b>c:\jdk1.3.1_09</b></code> (or similar directory)</li>
+						<li>Also provides development environment for compilation, debugging etc.</li>
+				  </ul>
+				</li>
+		</ul>
+</li>
+ -->
+<li>
+    <a name="Xeena">Download and install <b>Xeena</b> from IBM Alphaworks</a>
+    <a href="http://www.alphaWorks.ibm.com/tech/xeena" target="Xeena">http://www.alphaWorks.ibm.com/tech/xeena</a>  (~5MB).
+<br/>
+<br/>
+
+  		Make sure that you retrieve <b>version&nbsp;1.2EA</b>, <u>not</u> version&nbsp;1.1.
+			Xeena is used to build to the X3D-Edit tool.
+<br/>
+<br/>
+
+		<ul>
+				<li>  You need to acknowledge the nonrestrictive licenses.</li>
+				<li>  It is best to stick with the default installation 
+							<code><b>C:\IBM\Xeena</b></code> subdirectory.</li>
+				<li>	When Xeena asks for which version of Java to use, select
+							<code><b>Java&nbsp;2 (Runtime Environment or SDK)</b></code>.</li>
+				<li>	Then point the installer to the destination directory where you installed Java 
+							(typically <code><b><font color="GREEN">C:\jdk1.3.1</font></b></code>,
+							not <code><b><font color="RED">C:\jdk1.3.1\bin</font></b></code>).
+							You might also find the JRE installed in a directory like
+							<code><b><font color="GREEN">C:\Program Files\JavaSoft\JRE\1.3.1_09</font></b></code>
+							</li>
+				<li>	No "proxy host" entry is needed, this is for use behind restrictive firewalls.</li>
+				<li>	Default values on other entries work fine.</li>
+				<li>	Go ahead and view the example "addressbook" example.
+							If you get an "Out of environment space" error, see the 
+							<a href="#XeenaEnvironmentSpaceBugfix">bugfix&nbsp;below</a>.
+				</li>
+				<li>
+    		Once installed,
+		<b>Xeena details</b> can be found on the
+		<a href="file://c:/IBM/Xeena/help/index.html" target="Xeena">Help (user guide)</a> page,
+		<a href="file://c:/IBM/Xeena/README.html" target="Xeena">installation README</a> page,
+		and
+		<a href="file://c:/IBM/Xeena/FAQ.html" target="Xeena">Frequently Asked Questions (FAQ)</a>
+		pages.
+				</li>
+				<li>
+    		Once installed,
+		test installation by running the
+    		<A href="file://c:/IBM/Xeena/sample_dtd.bat">Xeena AddressBook DTD Example</A>.
+				</li>
+		</ul>
+</li>
+
+<li>
+    If you need an unzip program, get 
+		<a href="http://www.pkware.com" target="_blank">PKZIP</a> (from 
+		<a href="http://www.pkware.com" target="_blank">http://www.pkware.com</a>).
+<br/>
+<br/>
+
+    Make sure your unzip program's preferences
+    <B><font color="RED">install the zip into your top-level directory on C:\</font></b>
+    and preserve all subdirectory folder names
+    (the X3D-Edit code unravels/merges everything into <code><b>C:\www.web3d.org\x3d\content\*</b></code>&nbsp;)
+
+<br/>
+<br/>
+  You can also unzip a zipfile using Java as follows.  Be sure to run this from your topmost (root) subdirectory.
+    <br>
+		<code>&nbsp;&nbsp;&nbsp;C:\> <b>jar -xvf X3D-Edit.zip</b></code>
+
+<li>
+	For GeoVRML extension support, you may need to also
+	<A href="http://www.geovrml.org/1.0/download/">install GeoVRML</A>.
+</li>
+
+
+<li>
+	For DIS-Java-VRML extension support, you may need to also
+	<A href="http://www.web3d.org/WorkingGroups/vrtp/dis-java-vrml/download.html">install DIS-Java-VRML</A>.
+</li>
+
+<h3><a name="Updates">Download Updates</a></h3>
+</li>
+
+<li>
+    Download the X3D-Edit distribution (~30&nbsp;MB) from
+    <br>
+    <a href="http://www.web3d.org/x3d/content/X3D-Edit.zip">http://www.web3d.org/x3d/content/X3D-Edit.zip</a>
+<!-- 	or
+    <br>
+    <a href="http://www.web3d.org/x3d/content/X3D-Edit.tar.gz">http://www.web3d.org/x3d/content/X3D-Edit.tar.gz</a> -->
+<br/>
+<br/>
+</li>
+
+<li>
+    <b>Recommended installation</b>:  
+		download the 
+		<a href="help.#examples">X3dExamples</a> distributions
+
+<br/>
+<br/>
+    Unzip from your top-level directory as follows:
+    <br>
+		<code>   C:\> <b>jar -xvf X3D-Examples.zip</b></code>
+
+<br/>
+<br/>
+    Again, make sure your unzip preferences preserve the subdirectory folder names and
+    <B><font color="RED">install the zip into your top-level directory on C:\</font></b>
+    (it unravels into <code>C:\www.web3d.org\x3d\content\*</code>&nbsp;)
+<br/>
+<br/>
+    The 
+		<a href="http://www.web3d.org/x3d/content/examples">X3D Examples</a>
+		are also viewable online at
+		<br />
+		<a href="http://www.web3d.org/x3d/content/examples">http://www.web3d.org/x3d/content/examples</a> and
+		<br />
+		<a href="http://www.web3d.org/x3d/content/examples/Vrml2.0Sourcebook">http://www.web3d.org/x3d/content/examples/Vrml2.0Sourcebook</a>.
+<br/>
+<br/>
+
+</li>
+
+<li>
+    <b>Recommended installation</b>:  
+		download the <b>ConformanceNist Examples</b> distribution&nbsp;(~150&nbsp;MB) from
+		<br>
+    <a href="http://www.web3d.org/x3d/content/examples/ConformanceNistSuite.zip">http://www.web3d.org/x3d/content/examples/ConformanceNistSuite.zip</a>
+
+<br/>
+<br/>
+    The 
+		<a href="http://www.web3d.org/x3d/content/examples/ConformanceNist">ConformanceNist Examples</a>
+		are also viewable online at
+		<a href="http://www.web3d.org/x3d/content/examples/ConformanceNist">http://www.web3d.org/x3d/content/examples/ConformanceNist</a>.
+
+<br/>
+<br/>
+    Unzip from your top-level directory as follows:
+    <br>
+		<code>   C:\> <b>jar -xvf ConformanceNistExamples.zip</b></code>
+</li>
+
+<li>	<font color="GREEN"><b>All done!</b></font>  
+<ul>
+  <li>Time to 
+	<a href="file://c:/www.web3d.org/x3d/content/X3D-Edit.bat">run&nbsp;X3D-Edit</a>.</li>
+	<li>See
+	<a href="#Usage">Usage</a> for further X3D-Edit directions.</li>
+	<li>See
+	<a href="#Bugfixes">Bugfixes</a> if you've encountered trouble with X3D-Edit.</li>
+	<li>See
+	<a href="examples/help.html" target="_blank">X3D/VRML Help</a> for further X3D resources.</li>
+	<li><a href="mailto:brutzman@nps.navy.mil(Don%20Brutzman)?subject=X3D-Edit%20Auto-Installer%20feedback%20">Feedback</a>
+				welcome!</li>
+
+
+</ul>	
+</li>
+</ol>
+
+
+<hr width="50%">
+
+<h3><a name="Features">Features</a></h3>
+<ul>
+    <li>Intuitive, powerful <a href="X3D-EditSampleScreenSnapshot.png">user interface</a></li>
+    <li>Always creates well-formed scene graphs:  nodes only fit where allowed</li>
+    <li>Validates X3D scenes for VRML 97 profile and Core profile</li>
+    <li>Automatically translate X3D scene into VRML and launch browser to view results</li>
+    <li>A huge set of <a href="#examples">example X3D scenes</a></li>
+    <li>Tool tips and hints pop up for each element and attribute, helping you learn how VRML/X3D scene graphs really work</li>
+    <li>Platform independence using Java</li>
+    <li>Extensible Style Sheet for Transformations (XSLT) translation:
+		<a href="X3dToVrml97.xslt" target="_blank">X3dToVrml97.xslt</a> (backwards compatibility with VRML&nbsp;97),
+		<a href="X3dToXhtml.xslt" target="_blank">X3dToXhtml.xslt</a> (tagset pretty printing), and
+		<a href="X3dWrap.xsl" target="_blank">X3dWrap.xsl</a>&nbsp;/&nbsp;<a href="X3dUnwrap.xsl">X3dUnwrap.xsl</a>
+		(for "wrapper&nbsp;tag" addition/removal)</li>
+    <li>Support for 
+    		<a href="X3D-EditSampleScreenSnapshot-DIS-Java-VRML.png">DIS-Java-VRML</a>
+    		extension nodes, specified by the 
+    		<a href="http://www.web3d.org/WorkingGroups/vrtp/dis-java-vrml/dis-java-vrml.html" target="_blank">DIS-Java-VRML Working Group</a>
+    		(<a href="http://www.web3d.org/WorkingGroups/vrtp/dis-java-vrml/dis-java-vrml.html" target="_blank">http://www.web3d.org/WorkingGroups/vrtp/dis-java-vrml</a>)
+    		with ongoing design testing &amp; evaluation.
+    <li>Support for editing georeferenced
+				<A href="examples/GeoSpatial/newGeoSpatialScene.png">GeoVRML nodes</a>,
+				specified by the
+				<A href="http://www.geovrml.org/1.0/doc" target="_blank">GeoVRML&nbsp;1.0</a> profile  
+				(<A href="http://www.geovrml.org/1.0/doc" target="_blank">http://www.geovrml.org/1.0/doc</a>).
+		</li>
+    <li>Support for draft
+		<a href="http://www.h-anim.org/Specifications/H-Anim2001">H-Anim&nbsp;2001 Humanoid Animation Specification</a>
+		and editing avatar
+				<a href="examples/HumanoidAnimation/NancyNativeTags.png">Humanoid Animation nodes</a>.
+	Also support for
+				<a href="http://ece.uwaterloo.ca:80/~h-anim/spec1.1" target="_blank">H-Anim&nbsp;1.1</a> profile 
+				(<a href="http://ece.uwaterloo.ca:80/~h-anim/spec1.1" target="_blank">http://ece.uwaterloo.ca:80/~h-anim/spec1.1</a>)
+		</li>
+    <li>Support for proposed new nodes
+    		<a href="http://www.web3d.org/x3d/specification/part1/nodesDef.html#KeySensor" target="_blank">KeySensor</a>
+    		and
+    		<a href="http://www.web3d.org/x3d/specification/part2/nodesDef.html#StringSensor" target="_blank">StringSensor</a>.
+    		However, note that Prototype support is not yet implemented for keyboard nodes.
+    <li>Support for proposed
+    		<a href="http://www.blaxxun.com/support/developerguide/developer/contact/3d/nurbs/spec/nurbsproposal.html" target="_blank">Non-Uniform Rational B-Spline (NURBS) Surface</a>
+    		extension nodes, proposed by 
+    		<a href="http://www.blaxxun.com" target="_blank">blaxxun interactive</a>
+    		with ongoing development &amp; evaluation.
+    		However, note that complete Prototype support is not yet implemented for Nurbs nodes.
+    <li>Scene graph printing using tags or icons (on some printers, anyway... this Xeena feature is buggy)</li>
+</ul>
+
+<hr width="50%">
+
+<h3><a name="Details">Details</a></h3>
+
+	 <p><b>X3D-Edit</b> uses the compact XML tagset defined by the X3D Compact Document Type Definition (DTD) </p>
+	 <ul>
+		<li>	<a href="x3d-compact.dtd">x3d-compact.dtd</a></li>
+		<li>	<a href="x3d-3.0-InputOutputFields.dtd">x3d-3.0-InputOutputFields.dtd</a></li>
+		<li>	<a href="x3d-3.0-Web3dExtensions.dtd">x3d-3.0-Web3dExtensions</a></li>
+	 </ul>
+
+<dl>
+version3.0</font></b> with
+<dt><b>Versions</b></dt>
+
+<dd>
+		<font color="GREEN"><b>X3D-Edit Version&nbsp;3.0</b></font>
+		X3D Draft International Specification.
+		Modifications described in the
+		<a href="x3d-dtd-changelog.txt" target="_blank">x3d-dtd-changelog.txt</a>.
+</dd>
+
+<dd>
+		<font color="GREEN"><b>X3D-Edit Version&nbsp;2.4</b></font>
+		includes 
+		DTD renumbering to 3.0 for final testing of the 
+		X3D Final Committee Draft (FCD) Specification.
+		Version&nbsp;2.4 also includes several significant tagset changes:
+		ProtoInterface/ProtoBody, containerField, 
+		fields with accessType inputOnly/outputOnly cannot be set,
+		plus further strict X3dToVrml97.xslt conversion validity checks.
+</dd>
+
+<dd>
+		<font color="GREEN"><b>X3D-Edit Version&nbsp;2.3</b></font>
+		includes addition of Geometry2D, MultiTexture and Event Utility nodes, 
+		plus significant tagset changes to IS/connect, field/fieldValue&nbsp;USE, type and accessType renames, etc.
+</dd>
+<dd>
+		<font color="GREEN"><b>X3D-Edit Version&nbsp;2.2</b></font>
+		includes 
+		VRML Import capabiltity.
+</dd>
+<dd>
+		<font color="GREEN"><b>X3D-Edit Version&nbsp;2.1</b></font>
+		includes 
+		<ul>
+
+		<li>more compact tagset:  <code>&lt;proxy&gt;</code> eliminated while
+		attribute <code>containerField</code> denotes default parent-child relationship names,
+		<code>&lt;proxy&gt;</code> node illegal (employ <code>USE="nameTargetDEF"</code> attribute instead).</li>
+		<li>Global 'class' attribute reserved for future use by XML Cascading Style Sheets (CSS), similar to HTML stylesheet use.</li>
+		<li>IMPORT/EXPORT experimental support provided for routing values into and out of Inline nodes.</li>
+		<li><code>&lt;USE&gt;</code> element no longer allowed, due to lack of type checking on node and attribute values, as well as redundant functionality.
+		Utilize @USE attributes instead, for example &lt;Shape USE="MyShapeNode"/></li>
+		
+		</ul>
+		X3D-Edit uses the 
+		<a href="http://www.alphaWorks.ibm.com/tech/xeena" target="Xeena">Xeena&nbsp;1.2&nbsp;EA</a> release.
+</dd>
+<dd>
+		<b>X3D-Edit Version&nbsp;2.0</b>
+		includes changes to nodeType and accessType attributes,
+		as well as
+		<font color="GREEN">validation of attribute values.</font>
+</dd>
+<dd>
+		<b>X3D-Edit Version&nbsp;1.8</b>
+		includes changes to the header tagset.
+</dd>
+<dd>
+		<b>X3D-Edit Version&nbsp;1.7</b>
+		includes DIS-Java-VRML, GeoVRML and H-Anim node support. 
+		<br>
+		&nbsp;&nbsp;&nbsp;Now using the
+		<a href="x3d-compact.dtd">x3d-compact.dtd</a>
+		tagset (no wrapper&nbsp;tags).
+</dd>
+<dd>    <b>Version 1.6</b> corresponds to x3d-compromise.dtd (October 2000) + full Sourcebook examples, KeySensor + StringSensor + NURBS. 
+		<br>
+		&nbsp;&nbsp;&nbsp;This version and corresponding examples both use the
+		<a href="x3d-compromise.dtd">x3d-compromise.dtd</a>
+		with wrapper&nbsp;tags.  Available at
+		<a href="X3D-Edit-1.6.zip">X3D-Edit-1.6.zip</a>
+		with
+		<a href="X3D-Examples-1.6.zip">X3D-Examples-1.6.zip</a>.</dd>
+<dd>    <b>Version 1.5</b> corresponds to x3d-compromise.dtd (September 2000) + GeoSpatial + H-Anim + DIS-Java-VRML + extensions</dd>
+<dd>    <b>Version 1.4</b> corresponds to x3d-compromise.dtd (July      2000) + extensions</dd>
+<dd>    <b>Version 1.3</b> corresponds to x3d-compromise.dtd (May       2000)</dd>
+<dd>    <b>Version 1.2</b> corresponds to x3d-compromise.dtd (April     2000)</dd>
+<dd>    <b>Version 1.1</b> corresponds to x3d-draft.dtd      (February  2000)</dd>
+<dd>	<b>Original release</b>:  1 November 1999</dd>
+
+<dt><b>Author</b></dt>
+<dd>
+		<a href="http://web.nps.navy.mil/~brutzman/">Don Brutzman</a>
+		<a href="mailto:brutzman@nps.navy.mil(Don%20Brutzman)?subject=X3D-Edit%20feedback%20">brutzman&nbsp;at&nbsp;nps.navy.mil</a>
+</dd>
+
+<dt><b>Distribution</b></dt>
+<dd><a href="http://www.web3d.org/x3d/content/X3D-Edit.zip">http://www.web3d.org/x3d/content/X3D-Edit.zip</a></dd>
+
+<dt><b><a name="examples">Example content</a></b></dt>
+<dd>X3D-Edit is a thoroughly tested tool.
+		X3D-Edit has been used to author a diverse set of X3D/VRML scenes as follows.
+</dd>
+<dd><a href="http://www.web3d.org/x3d/content/examples/help.html" target="_blank">Examples help</a></dd>
+<dd><a href="http://www.web3d.org/x3d/content/examples" target="_blank">http://www.web3d.org/x3d/content/examples</a></dd>
+<dd><a href="http://www.web3d.org/x3d/content/examples/Vrml2.0Sourcebook">http://www.web3d.org/x3d/content/examples/Vrml2.0Sourcebook</a></dd>
+<dd><a href="http://www.web3d.org/x3d/content/examples/ConformanceNist">http://www.web3d.org/x3d/content/examples/ConformanceNist</a></dd>
+<dd><a href="http://web.nps.navy.mil/~brutzman/Savage">http://savage.nps.edu/Savage</a></dd>
+
+<dt><b>Screen snapshots</b></dt>
+<dd><a href="X3D-EditSampleScreenSnapshot.png">X3D-EditSampleScreenSnapshot.png</a> user interface</dd>
+<dd><a href="examples/GeoSpatial/newGeoSpatialScene.png">examples/GeoSpatial/newGeoSpatialScene.png</a> GeoVRML nodes</dd>
+<dd><a href="examples/HumanoidAnimation/NancyNativeTags.png">examples/HumanoidAnimation/NancyNativeTags.png</a> Humanoid Animation nodes</dd>
+
+<dt><b>Icon summary diagrams</b></dt>
+<dd><a href="icons/IconSheet-1.pdf">IconSheet-1.pdf</a>,
+    <a href="icons/IconSheet-2.pdf">IconSheet-2.pdf</a>,
+    <a href="icons/IconSheet-3.pdf">IconSheet-3.pdf</a>,
+    <a href="icons/IconSheet-4.pdf">IconSheet-4.pdf</a></dd>
+
+<dt><b>Licensing</b></dt>
+<dd>X3D-Edit files are open-source public-domain products from the X3D
+    Task Group.</dd>
+<dd>The nonrestrictive Sun
+    <a href="http://java.sun.com/j2se/1.3/j2sdk1_3_0.license" target="_blank">license for Java</a>
+		and the nonrestrictive IBM license for 
+    <a href="http://www.alphaWorks.ibm.com/tech/xeena" target="Xeena">Xeena</a>
+		are provided when downloading/installing each of those tools.</dd>
+<dd><a href="http://www.ibm.com">IBM</a> 
+    has generously agreed to allow the
+		<a href="http://www.web3d.org">Web3D Consortium</a>
+		include
+		Xeena on the
+		Web3D/X3D
+		<a href="http://sdk.web3d.org" target="_blank">Software Development Kit&nbsp;(SDK)</a>.
+    </dd>
+
+</dl>
+    
+<hr width="50%">
+
+<h3><a name="Usage">Usage</a></h3>
+
+<ol>
+
+<li>
+<p>
+<a href="X3D-Edit.bat"><img src="images/x3d2-s.gif" width="77" height="49" align="middle" border="0" title=""></a> 
+		Launch icons for
+		<a href="X3D-Edit.bat">X3D-Edit</a>
+		are placed on the Windows&nbsp;95, 98, NT and 2000 desktops.
+</p>
+<p>
+		A copy of the 
+		<a href="X3D-Edit.bat">X3D-Edit</a>
+		launch icon is also available in the
+		<a href="file://C:\www.web3d.org\x3d\content"><code>C:\www.web3d.org\x3d\content</code></a>
+		subdirectory.
+</p>
+
+</li>
+
+
+<li>
+<p>
+<b>Windows shell invocation</b>:
+</p>
+
+<pre>
+    D:> <b>C:</b>
+    C:> <b>cd \www.web3d.org\x3d\content</b>
+    C:\www.web3d.org\x3d\content> <b><a href="X3D-Edit.bat">X3D-Edit.bat</a></b>
+</pre>
+</li>
+
+<li>
+<p>
+<b>Unix shell invocation</b>:
+<!--     <b>source xeena.sh</b> -->
+</p>
+
+<pre>
+    % <b>source x3d-edit.sh</b>
+</pre>
+</li>
+
+<li>
+<p>
+    <b>Xeena details</b>.
+		Good things still worth checking out:
+		local copy of the 
+		<a href="file:///C|/IBM/Xeena/README.html" target="Xeena">installation README</a> 
+		helps troubleshoot installation problems.
+		You can learn all about the user interface by reading the 
+		<a href="file:///C|/IBM/Xeena/help/index.html" target="Xeena">Help (user guide)</a>.
+		Anything else might be found on the
+		<a href="file:///C|/IBM/Xeena/FAQ.html" target="Xeena">Frequently Asked Questions (FAQ)</a>
+		page.
+</p>
+</li>
+
+</ol>
+
+<hr width="50%">
+
+<h3><a name="Compact">Compact Form</a></h3>
+
+<p><i>This section no longer pertains to the current version of X3D.
+You can safely ignore it, documentation of the compact and compromise forms is retained for archival purposes only.</i></p>
+
+<p>
+You can easily simplify legacy content to remove "wrapper&nbsp;tags" 
+(<code>&lt;children&gt; &lt;appearance&gt; &lt;geometry&gt;</code> etc.) by using <code><b>X3dUnwrap</b></code>.
+This also lets you upgrade to <b>X3D-Edit version&nbsp;1.7</b> from earlier versions.
+</p>
+
+<p>
+Select <b>Tools</b> then <b>Process XSL</b> from the top menu.  
+Use the <code>X3dUnwrap.xsl</code> stylesheet as shown to unwrap your scene.
+Backing up your original file (or saving to a different filename) is a good idea.
+The <b>Process XSL</b> window can be stretched left-right for easier reading.
+</p>
+
+<img src="images/X3D-Edit.LaunchX3dUnwrap.xsl.png" title="X3D-Edit launch X3dUnwrap.xsl stylesheet" width="831" height="383" border="0">
+
+<p>
+The stylesheet also updates the tagset document type definition (DTD) from 
+<a href="x3d-compromise.dtd"><code>x3d-compromise.dtd</code></a>
+to
+<a href="x3d-compact.dtd"><code>x3d-compact.dtd</code></a>.
+</p>
+
+<p>
+Example screen snapshots show
+<a href="images/CoordinateAxesSceneGraph-CompromiseWrapped.png" target="_blank">"before" (compromise wrapper tags, X3D-Edit version 1.6)</a>
+and
+<a href="images/CoordinateAxesSceneGraph-CompactUnwrapped.png" target="_blank">"after" (compact unwrapped, X3D-Edit version 1.7)</a>
+scene graphs.
+</p>
+
+<hr width="50%">
+
+<h3><a name="Developers">Developers</a></h3>
+
+<p>
+Some miniscule detail about this project follows.
+This is primarily for documentation purposes and is not needed for regular use.
+</p>
+
+<h4>Alternate Usage for Developers</h4>
+    
+<p>
+Besides X3D-Edit.bat, example Xeena editor invocations under Windows follow.
+Edit to match your your locally installed subdirectories as needed.
+</p>
+
+<pre>
+C:\ibm\Xeena> xeena.bat  -dtd c:\www.web3d.org\x3d\content\x3d-compromise.dtd  -root X3D
+
+
+C:\ibm\Xeena> xeena.bat  -dtd c:\www.web3d.org\x3d\content\x3d-compromise.dtd  -root X3D  -xml c:\www.web3d.org\x3d\content\examples\AllVrml97Nodes.xml
+</pre>
+<p>
+There are many example invocations and shortcuts in the 
+<a href="Makefile">Makefile</a>.
+</p>
+
+
+<h4>Alternate Installation Directory</h4>
+<p>
+    <u>Not recommended</u> (which means "<u>skip this section</u>").
+		If you insist on changing the installation directory (!) 
+    then you will need to edit the second line (DOCTYPE) of
+    <a href="x3d-compromise.dtd">x3d-compromise.dtd</a>,
+    and you will also need to edit the following files:
+    <a href="x3d-compromise.profile.X3D-Edit1.6">x3d-compromise.profile.X3D-Edit-1.6</a>,
+    <a href="x3d-compromise.profile">x3d-compromise.profile</a>,
+    <a href="X3D-Edit-1.6.bat">X3D-Edit-1.6.bat</a>,
+    <a href="X3D-Edit.bat">X3D-Edit.bat</a> and
+    <a href="Makefile">Makefile</a> (if used)
+    to match your local directory structure.  
+	You will likely have to edit the examples as well, though if you are connected to the network,
+	Xeena will try to find the website version of the DTD.
+</p>
+
+
+<h4>XSL Stylesheets and Translation Utilities</h4>
+
+<ul>
+
+<li>
+<p>
+    X3D to VRML 97 translation is via XSLT script 
+    <a href="X3dToVrml97.xslt">X3dToVrml97.xslt</a>
+		and batch file
+    <a href="X3dToVrml97.bat">X3dToVrml97.bat</a>
+</p>
+</li>
+
+<li>
+<p>
+    There are several compliant Extensible Stylesheet Language (XSL)
+    processors available because the 
+		<a href="http://www.w3.org/TR/xslt" target="_blank">W3C XSL&nbsp;Recommendation</a>
+    (<a href="http://www.w3.org/TR/xslt" target="_blank">http://www.w3.org/TR/xslt</a>)
+		is stable (November&nbsp;1999).
+</p>	
+</li>		
+
+<li>
+<p>
+    One excellent XSL transformation engine is 
+		<a href="http://saxon.sourceforge.net" target="_blank">SAXON</a>
+		at
+    <a href="http://saxon.sourceforge.net">http://saxon.sourceforge.net</a> - this includes
+    "<i>Instant Saxon</i>," 
+		a 250KB Windows command-line executable.
+</p>
+</li>
+
+<li>
+<p>
+    <a href="X3dToVrml97.bat">X3dToVrml97.bat</a> shows how to invoke saxon and the following tools.
+</p>		
+</li>
+
+<li>
+<p>
+    X3D to HTML translation is also provided (for pretty printing) via
+    <a href="X3dToXhtml.xslt">X3dToXhtml.xslt</a>
+		and
+    <a href="X3dToXhtml.bat">X3dToXhtml.bat</a>
+</p>
+</li>
+ 
+<li>
+<p>
+    Trapezium's vorlon tool for VRML syntax checking is available at
+    <a href="http://www.trapezium.com" target="_blank">http://www.trapezium.com</a>
+</p>
+</li>
+
+<li>
+<p>
+    <a href="mailto:Robert.Crispen@HSV.Boeing.com()?subject=vpp%20for%20X3D-Edit%20comment%20">Bob Crispen</a>'s 
+  	<i>vpp</i> tool at
+		<a href="http://hiwaay.net/~crispen/vrml" target="_blank">http://hiwaay.net/~crispen/vrml</a>
+  	for VRML pretty printing.  An edited copy of <i>vpp</i> is included in this
+  	distribution with bigger MAXBUFSIZE for our big test-file comments.  Thanks Bob!
+</p>
+</li>
+
+</ul>
+
+<h3><a name="Bugfixes">Bugfixes</a></h3>
+
+
+<p>
+<font color="color">Many bugs are avoided altogether</font> (especially Windows ME and 98) by using the
+<a href="http://www.web3d.org/x3d/content/X3D-EditAutoInstall/Web_Installers/install.htm">X3D-Edit Auto Installer</a>
+for various operating systems (Windows, Mac, Linux, Unix/Solaris). 
+</p>
+<p>
+<a name="bug0"><b>0.  X3D-Edit can't open example scenes due to being disconnected from the network.</b>
+
+The underlying Xeena tool can't be modified to substitute local DTDs for online DTDs, causing a validation error when opening most scenes when offline.
+The best correction to this problem is simply to connect to the network.
+<ul>
+		<li><i>Windows workaround #1</i>:  open X3D scenes one at a time by invoking X3D-Edit via the command line.  Example:
+		<pre>C:\www.web3d.org\x3d\content>x3d-edit examples\HelloWorld.x3d</pre>
+		
+		<p><a href="X3D-Edit.exampleConsoleOutput.txt">Example console output</a> shows normal X3D-Edit operation.
+      A normal program exit allows the executing batch file to convert the DOCTYPE back to final form.
+		</p>
+		</li>
+		<li><i>Windows workaround #2</i>:  open X3D scenes one at a time by clicking on them from Windows Explorer.
+				Configure Windows Explorer to recognize .x3d files via the Tools menu, selecting Folder Options and entering the .x3d file type as follows.
+				<p>
+				<img src="images/WindowsExplorerToolsFolderOptionsX3D.png" alt="Windows Explorer -> Tools -> Folder Options -> X3D"/>
+				<img src="images/WindowsExplorerToolsFolderOptionsX3D.EditFileType.png" alt="Edit File Type"/>
+				</p>
+		</li>
+		<li><i>Java-based workaround #3</i>:  use the <a href="examples/X3dSceneAuthoringHints.html#X3dDtdChecker"><code>X3dDtdChecker</code></a> tool
+				to convert DTD references.
+		</li>
+		<li><i>Manual workaround #4</i>:  refer to the <a href="examples/X3dSceneAuthoringHints.html#DOCTYPE">X3D Scene Authoring Hints</a> 
+				and use a text editor to manually change the DOCTYPE.
+		</li>
+</ul>
+ 
+</p>
+
+
+<p>
+<a name="bug1"><b>1.  Xeena/X3D-Edit works under JDK&nbsp;1.4</b></a>, except for the "Allowed&nbsp;Nodes" pane.
+Workarounds:  use the other panes,
+install the 
+<a href="http://www.web3d.org/x3d/content/X3D-EditAutoInstall/Web_Installers/install.htm" target="_blank">X3D-Edit Auto Installer</a> version, 
+or supplement JDK&nbsp;1.4 with
+<a href="#Java">JDK&nbsp;1.3.1_09</a> 
+instead.
+</p>
+
+<p>
+<a name="bug2"><b>2.  A common installation problem follows.</b></a>
+This can occur under Windows&nbsp;95, Windows&nbsp;98 or Windows&nbsp;Millenium&nbsp;(ME).
+The fix is the same either way.
+</p>
+<pre>
+] If you're running Windows 95/98/ME, and encounter an "Out of environment space" 
+] error, then you'll need to increase the size of the environment table.  
+] You can do this at the command line (which is temporary) or by editing 
+] a configuration file to make a permanent change (which requires restarting 
+] your computer). 
+] 
+]      To temporarily increase environment space for X3D-Edit.bat, 
+]      first enter the following command at the DOS prompt: 
+] 
+]         <code>C:\www.web3d.org\x3d\content&gt;   <b>command /e:8192 </b></code>
+] 
+]         <code>C:\www.web3d.org\x3d\content&gt;   <b>X3D-Edit </b></code>
+] 
+]      <font color="GREEN"><b>To permanently increase environment space</b></font>, 
+]      add the following line to your <code>C:\CONFIG.SYS</code> file,
+]      save all files, and then restart (reboot) your system: 
+] 
+]          <b>shell=command.com /e:8192 /p </b>
+] 
+]      Once you've increased the size of the environment table,
+]      try running Xeena again.  If there is still a problem,
+]      please cut/paste the command-window text into an email and
+]      <a href="mailto:brutzman@nps.navy.mil(Don%20Brutzman),clblais@nps.navy.mil(Curt%20Blais)?subject=X3D-Edit%%20">report the problem</a>.
+
+</pre>
+
+<p>Alternative for Windows&nbsp;Millenium&nbsp;(ME) from Tom Greenwald, NPS.
+</p>
+
+<pre>
+] For both Xeena and X3D-Edit I had to right click on the icon, left click
+] on properties, click the memory tab, set the initial environment to
+] 4096, set extended (XMS) memory to 8192, and set MS-DOS protected mode
+] (DPMI) memory to 8192.
+</pre>
+
+
+<p>You may need to reboot your computer for these changes to take effect.
+You will also have to repeat this step whenever you update X3D-Edit, so you
+may prefer the permanent change above.</p>
+
+<p>
+<a name="bug3"><b>3.  If you use the older version&nbsp;1.1 of Xeena (instead of 1.2EA), the following errors appear:</b></a>
+</p>
+<pre>
+<font color="RED">
+	C:\www.web3d.org\x3d\content>c:\ibm\Xeena\xeena.bat 
+	  -dtd "c:\www.web3d.org\x3d\content\x3d-compromise.dtd"
+	  -root X3D 
+	  -xml "c:\www.web3d.org\x3d\content\examples\newScene.xml"
+	
+	Syntax error
+	Syntax error
+	running Xeena with Java 2
+	Exception in thread "main" java.lang.NoClassDefFoundError:
+	com/ibm/hrl/xmleditor/Xeena
+</font>
+</pre>
+
+<p>
+To fix this problem:  uninstall Xeeena&nbsp;1.1,
+install
+<a href="http://www.alphaWorks.ibm.com/tech/xeena" target="Xeena">Xeena&nbsp;1.2&nbsp;EA</a>,
+and again extract 
+<a href="X3D-Edit.zip">X3D-Edit.zip</a>
+(to correct the Xeena CLASSPATH bug).
+Or simply uninstall X3D-Edit and use the
+<a href="#autoinstaller">autoinstaller</a>
+instead.
+</p>
+
+<p>
+<a name="bug4"><b>4.  After importing a VRML97 scene, the XSL buttons do not work.</b></a>
+</p>
+
+<p>
+ The following obscure message may appear in the console:
+</p>
+<pre>
+ java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+</pre>
+<p>
+Fix:  save the imported scene as a file.  
+This may require renaming your scene if it was originally a read-only file (such as <code>newScene.x3d</code>).
+The XSL buttons now work.
+See above for more instructions on using the 
+<a href="#VRML97Import">VRML97 Import capability</a>.
+</p>
+
+<p>
+<a name="bug5"><b>5.  Insufficient memory.</b></a>
+</p>
+
+<p>
+   You will need 128MB of RAM or more.  Yes, 128.
+</p>
+
+<p>
+    <a name="bug6"><b><a name="OfflineDTDproblem">6.  The window goes blank and locks up before displaying a scene.</a></b></a>
+</p>
+
+<p>
+    This is likely a 
+		<a href="examples/X3dSceneAuthoringHints.html#Authoring">DOCTYPE/DTD problem</a>:  
+		Xeena is attempting to retrieve the DOCTYPE/DTD via the network,
+		without success.  
+		When using Java&nbsp;1.3 or earlier, this problem can only be fixed by 
+		replacing the DOCTYPE/DTD or else by connecting to the network, thus gaining access to the final DTD url.
+</p>
+<p>
+		Fixes and workarounds:  
+		<ul>
+				<li>upgrade to 
+				    Java&nbsp;1.4, 1.5
+						or later
+				    so that 
+						<a href="X3dDtdChecker.java">X3dDtdChecker.java</a>
+						can fix this problem at launch time (drag/drop or clicking on file icon)</li> 
+				<li>connect to the network for X3D scenes using the final X3D DOCTYPE/DTD</li> 
+				<li>manually edit the scene first (in another XML/text editor) to use the X3D Transitional DTD.
+						See the
+						<a href="examples/X3dSceneAuthoringHints.html#Authoring">X3D Scene Authoring Hints</a>
+			 			for further details on DOCTYPE.</li> 
+	 </ul>
+</p>
+
+<p>
+<a name="bug7"><b>7.  You want to use an http proxy server.</b></a>
+</p>
+
+
+<p>	The http proxy server feature is for loading a file via the Web.  Not a very common setting, but nice to have nevertheless.
+</p>
+<p>	You will need to uncomment and update the line in X3D-Edit's modified 
+<a href="C:\IBM\Xeena\Xeena.bat">C:\IBM\Xeena\Xeena.bat</a>
+for 
+<code>set PROXY_SETTINGS</code>.  Warning:  we've had trouble with this feature under Windows&nbsp;98.
+</p>
+
+
+<p>
+<a name="bug8"><b>8.  Some developers might not have <i>Make</i> installed...</b></a>
+</p>
+
+
+<p>	<i>Make</i> is not necessary to run X3D-Edit, it is only used for X3D-Edit source development.
+The Makefile is being replaced by an Ant build file.
+</p>
+
+<p>
+    <i>Make</i> is available
+    via the Cygnus distribution of GNU Utilities for PCs at 
+    <a href="http://sourceware.cygnus.com/cygwin">http://sourceware.cygnus.com/cygwin</a>.
+    The Cygwin distribution provides Unix command line and utilities on Windows 95/98/NT/2000. 
+    Don't forget to upgrade your PATH with something like 
+    <code>C:\cygnus\cygwin-b20\H-i586-cygwin32\bin;</code>.
+
+    Once <i>Make</i> is installed, edit the Makefile filename/directory
+    definitions to match your local installation.
+
+    There are a bunch of alternate example invocations in the Makefile
+    if you know how to grok <i>Make</i>.
+</p>
+
+	
+<p>
+    <a name="bug9"><b>9.  X3D-Edit can't seem to find the correct version of Java.</b></a>
+</p>
+
+<p>
+		<a href="http://confluence.atlassian.com/display/DOC/Set+JAVA_HOME+variable+in+Windows">Set the JAVA_HOME environment variable</a>
+		to the installation directory for Java on your system and X3D-Edit will use Java accordingly.
+</p>
+	
+<p>
+    <a name="bug10"><b>10.  No X3D scene appears in the browser.</b></a>
+</p>
+
+<p>
+		<a href="help.html#Applications">Install a VRML or X3D plugin</a>
+		in your Web browser.
+</p>
+
+	
+<p>
+    <a name="bug11"><b>11.  Internet Explorer (IE) blocks viewing the 3D scene.</b></a>
+</p>
+
+<p>
+		The following screen snapshots illustrate this problem and 2 solutions.
+</p>
+
+<p>When the plugin is blocked from showing content, the following warning bar appears near the top of the browser.
+Right click and select "<code>Allow blocked content...</code>" then select "Yes" to confirm.
+</p>
+<img src="images/WindowsXpAllowBlockedContentToRunForOneSession.png" alt="Windows Xp Allow Blocked Content To Run For One Session" border="0" width="1208" height="930" />
+
+<p>Correct integration of the plugin then appears:
+</p>
+<img src="images/WindowsXpAllowBlockedContentToRunResult.png" alt="Windows Xp Allow Blocked Content To Run Result" border="0" width="1003" height="605" />
+
+
+<p>You can permanently reset this permission by selecting <i>Internet&nbsp;Explorer -&gt; Tools -&gt; Internet Options... -&gt; Advanced</i>
+and then under <i>Security</i> select "<code>Allow active content to run in files on My Computer</code>" as follows:
+</p>
+<img src="images/WindowsXpAllowBlockedContentToRunInternetOptions.png" alt="Windows Xp Allow Blocked Content To Run Internet Options" border="0" width="671" height="700" />
+<p>Similar selections can be made for automatically running content from a CD, over the Internet, etc.
+</p>
+
+<p>
+    <a name="bug12"><b>12.  How do I quickly update X3D-Edit and examples?</b></a>
+</p>
+
+<p>
+		Menu shortcuts are provided under windows to easily retrieve updates.
+		Always extract all .zip files to the <code>C:\</code> root directory.
+</p>
+
+<p>
+<img src="images/WindowsStartProgramMenusX3dUpdates.png" alt="Windows Start Program Menus X3d Updates" border="0" width="1232" height="422" />
+</p>
+
+<p>
+    <a name="bug12"><b>13.  IBM Haifa was very attentive in responding to bug reports
+    regarding Xeena, the interface tool.</b></a>
+    Unfortunately, despite the popularity of Xeena, their team is no longer working on this tool.
+    We hope to fix known Xeena bugs someday.
+    Nevertheless it still usually works fine for X3D-Edit.
+<!--     X3D/Xeena bug reports/resolution
+    are recorded in test-diagnostic scenes
+    <a href="examples/AllVrml97Nodes.wrl">examples/AllVrml97Nodes.wrl</a>
+		and
+    <a href="examples/AllVrml97Nodes.x3d">examples/AllVrml97Nodes.x3d</a> -->
+</p>
+
+<hr width="50%">
+
+<p>
+Revised:  <a href="build.date.X3D-Edit.txt"><b>7 March 2007</b></a>			<!-- also see line 86 -->
+</p>
+
+<p>
+Maintained by
+<a href="http://web.nps.navy.mil/~brutzman">Don&nbsp;Brutzman</a>
+<a href="mailto:brutzman@nps.navy.mil(Don%20Brutzman)?subject=X3D-Edit%20feedback%20">(<i>brutzman&nbsp;at&nbsp;nps.navy.mil</i>)</a>
+</p>
+
+<p>
+		This page is available online at
+    <a href="http://www.web3d.org/x3d/content/README.X3D-Edit.html">http://www.web3d.org/x3d/content/README.X3D-Edit.html</a>
+</p>
+
+
+</body>
+
+</html>

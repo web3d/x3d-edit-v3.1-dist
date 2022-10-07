@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!--Generated using XSLT processor: SAXON 8.7 from Saxonica--><html xmlns="http://www.w3.org/TR/xhtml1/strict">
+   <head>
+      <title>EventUtilityPrototypes.x3d (X3dToXhtml)</title>
+      <style type="text/css">
+span.element {color: navy}
+span.attribute {color: green}
+span.value {color: teal}
+span.plain {color: black}
+span.gray  {color: gray}
+span.prototype {color: purple}
+a.prototype {color: purple, visited: black}
+span.route {color: red}
+span.nodeName {color: maroon}
+a.nodeName {color: maroon}
+div.center {text-align: center}
+div.indent {margin-left: 25px}
+b.warning {color: #CC5500}
+b.error {color: #CC0000}
+	</style>
+      <meta name="generator" content="http://www.web3d.org/x3d/content/X3dToXhtml.xslt"/>
+      <link rel="shortcut icon"
+            href="http://www.web3d.org/x3d/content/icons/X3DtextIcon16.png"
+            title="X3D"/>
+   </head>
+   <body>
+      <pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN"   "http://www.web3d.org/specifications/x3d-3.0.dtd"&gt;</pre>
+
+&lt;<span class="element">X3D</span>&#160;<span class="attribute">version</span>='<span class="value">3.0</span>'&#160;<span class="attribute">profile</span>='<span class="value">Immersive</span>'&#160;<span class="attribute">xmlns:xsd</span>='<a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank">http://www.w3.org/2001/XMLSchema-instance</a>' <span class="attribute">xsd:noNamespaceSchemaLocation</span>='
+<a href="http://www.web3d.org/specifications/x3d-3.0.xsd">http://www.web3d.org/specifications/x3d-3.0.xsd</a> '&gt;
+<div class="indent">
+&lt;<span class="element">head</span>&gt;
+<div class="indent">
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">title</span>'&#160;<span class="attribute">content</span>='<a href="EventUtilityPrototypes.x3d" target="_blank">EventUtilityPrototypes.x3d</a>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">description</span>'&#160;<span class="attribute">content</span>='<span class="plain">Event utility node prototypes for boolean filtering and other event utility nodes.</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">authors</span>'&#160;<span class="attribute">content</span>='<span class="value">Nick Polys, Tony Parisi, Don Brutzman, Justin Couch</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">created</span>'&#160;<span class="attribute">content</span>='<span class="value">25 September 2002</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">modified</span>'&#160;<span class="attribute">content</span>='<span class="value">28 April 2005</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<b class="warning">warning</b>'&#160;<span class="attribute">content</span>='<b class="warning">Under development, IntegerTrigger example needed.</b>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">reference</span>'&#160;<span class="attribute">content</span>='<a href="EventUtilityExamples.x3d" target="_blank">EventUtilityExamples.x3d</a>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">subject</span>'&#160;<span class="attribute">content</span>='<span class="value">BooleanFilter BooleanToggle BooleanTrigger IntegerTrigger TimeTrigger</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">identifier</span>'&#160;<span class="attribute">content</span>='
+<a href="http://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.x3d">http://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.x3d</a> '/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">generator</span>'&#160;<span class="attribute">content</span>='<span class="value">X3D-Edit, </span>
+            <a href="http://www.web3d.org/x3d/content/README.X3D-Edit.html" target="_blank">http://www.web3d.org/x3d/content/README.X3D-Edit.html</a>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">license</span>'&#160;<span class="attribute">content</span>='<a href="../../license.html" target="_blank">../../license.html</a>'/&gt;
+</div>&lt;/<span class="element">head</span>&gt;
+<br />
+&lt;!--
+<div class="center">
+            <hr width="100%"/>
+            <i>Index for ProtoDeclare definitions</i>: 
+<a href="#ProtoDeclare_BooleanFilter" class="prototype">BooleanFilter</a>,
+<a href="#ProtoDeclare_BooleanToggle" class="prototype">BooleanToggle</a>,
+<a href="#ProtoDeclare_BooleanTrigger" class="prototype">BooleanTrigger</a>,
+<a href="#ProtoDeclare_IntegerTrigger" class="prototype">IntegerTrigger</a>,
+<a href="#ProtoDeclare_TimeTrigger" class="prototype">TimeTrigger</a>
+<br />
+<i>Index for DEF nodes</i>: 
+<a href="#BooleanFilterScript" class="nodeName">BooleanFilterScript</a>,
+<a href="#BooleanToggleScript" class="nodeName">BooleanToggleScript</a>,
+<a href="#IntegerKeyHolder" class="nodeName">IntegerKeyHolder</a>,
+<a href="#TriggerBooleanScript" class="nodeName">TriggerBooleanScript</a>,
+<a href="#TriggerIntegerScript" class="nodeName">TriggerIntegerScript</a>,
+<a href="#TriggerTimeScript" class="nodeName">TriggerTimeScript</a>
+            <hr width="100%"/>
+         </div>
+--&gt;
+<br />
+&lt;<span class="element">Scene</span>&gt;
+<div class="indent">
+            <a name="ProtoDeclare_BooleanFilter"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">BooleanFilter</span>'&#160;<span class="attribute">appinfo</span>='<span class="value">BooleanFilter selectively passes true, false or negated events.</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="BooleanFilterProtoField_set_boolean"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_boolean</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">set_boolean is the input value to be filtered.</span>'/&gt;
+<br /><a name="BooleanFilterProtoField_inputTrue"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">inputTrue</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">inputTrue only passes a true value, when set_boolean input is true.</span>'/&gt;
+<br /><a name="BooleanFilterProtoField_inputFalse"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">inputFalse</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">inputFalse only passes a false value, when set_boolean is false.</span>'/&gt;
+<br /><a name="BooleanFilterProtoField_inputNegate"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">inputNegate</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">inputNegate provides opposite value by negating set_boolean input.</span>'/&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+                  <a name="BooleanFilterScript"> </a> 
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">BooleanFilterScript</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_boolean</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">inputTrue</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">inputFalse</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">inputNegate</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">set_boolean</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanFilterProtoField_set_boolean" class="prototype">set_boolean</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">inputTrue</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanFilterProtoField_inputTrue" class="prototype">inputTrue</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">inputFalse</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanFilterProtoField_inputFalse" class="prototype">inputFalse</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">inputNegate</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanFilterProtoField_inputNegate" class="prototype">inputNegate</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                        <b>&lt;![CDATA[</b>
+                     </code>
+                     <pre>
+          ecmascript:
+
+function set_boolean (value, timestamp)
+{
+	if (value) inputTrue  = value;
+	else       inputFalse = value;
+	inputNegate = !value;
+
+//	if (value) Browser.print ('[BooleanFilter] set_boolean=' + value + ', inputTrue='  + inputTrue  + ', inputNegate=' + inputNegate);
+//	else       Browser.print ('[BooleanFilter] set_boolean=' + value + ', inputFalse=' + inputFalse + ', inputNegate=' + inputNegate);
+}
+      
+        </pre>
+                     <code>
+                        <b>]]&gt;</b>
+                     </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ======================================== --&gt;
+<br /><a name="ProtoDeclare_BooleanToggle"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">BooleanToggle</span>'&#160;<span class="attribute">appinfo</span>='<span class="value">BooleanToggle maintains state and negates output when a true input is provided.</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="BooleanToggleProtoField_set_boolean"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_boolean</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">If set_boolean input is true, toggle state.</span>'/&gt;
+<br />&lt;!-- warning: toggle depends on exposedField functionality in Script node, not compatible with VRML 97. implemented as inputOnly/initializeOnly/outputOnly triplet. --&gt;
+<br /><a name="BooleanToggleProtoField_set_toggle"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_toggle</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Reset persistent state value.</span>'/&gt;
+<br /><a name="BooleanToggleProtoField_toggle"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">toggle</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">false</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Persistent state value that gets toggled or reset.</span>'/&gt;
+<br /><a name="BooleanToggleProtoField_toggle_changed"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">toggle_changed</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Output toggled persistent state value.</span>'/&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+                     <a name="BooleanToggleScript"> </a> 
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">BooleanToggleScript</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_boolean</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_toggle</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">toggle</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">false</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">toggle_changed</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">traceEnabled</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">false</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">set_boolean</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanFilterProtoField_set_boolean" class="prototype">set_boolean</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">set_toggle</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanFilterProtoField_set_toggle" class="prototype">set_toggle</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">toggle_changed</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanFilterProtoField_toggle_changed" class="prototype">toggle_changed</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            ecmascript:
+
+function initialize ()
+{
+	if (traceEnabled) Browser.print ('[BooleanToggle] toggle=' + toggle);
+
+}
+function set_boolean (value, timestamp)
+{
+	if (value == true)  // only toggle on true input
+	{
+		if (toggle == true) toggle = false;
+		else                toggle = true;
+	}
+	toggle_changed = toggle;
+//	Browser.print ('[BooleanToggle] traceEnabled=' + traceEnabled);
+	if (traceEnabled) Browser.print ('[BooleanToggle] set_boolean=' + value + ', toggle=' + toggle);
+}
+function set_toggle (value, timestamp)
+{
+	toggle = value;
+	toggle_changed = toggle;
+	if (traceEnabled) Browser.print ('[BooleanToggle] set_toggle=' + set_toggle);
+}
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ======================================== --&gt;
+<br /><a name="ProtoDeclare_BooleanTrigger"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">BooleanTrigger</span>'&#160;<span class="attribute">appinfo</span>='<span class="value">BooleanTrigger converts time events to boolean true events.</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="BooleanTriggerProtoField_set_triggerTime"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_triggerTime</span>'&#160;<span class="attribute">type</span>='<span class="value">SFTime</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">set_triggerTime provides input time event, typical event sent is TouchSensor touchTime.</span>'/&gt;
+<br /><a name="BooleanTriggerProtoField_triggerTrue"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">triggerTrue</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">triggerTrue outputs a true value whenever a triggerTime event is received.</span>'/&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+                  <a name="TriggerBooleanScript"> </a> 
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">TriggerBooleanScript</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_triggerTime</span>'&#160;<span class="attribute">type</span>='<span class="value">SFTime</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">triggerTrue</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">set_triggerTime</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanFilterProtoField_set_triggerTime" class="prototype">set_triggerTime</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">triggerTrue</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanFilterProtoField_triggerTrue" class="prototype">triggerTrue</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                        <b>&lt;![CDATA[</b>
+                     </code>
+                     <pre>
+          ecmascript:
+
+function set_triggerTime (value, timestamp)
+{
+	triggerTrue = true;
+//	Browser.print ('triggerTrue = true');
+}
+      
+        </pre>
+                     <code>
+                        <b>]]&gt;</b>
+                     </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ======================================== --&gt;
+<br /><a name="ProtoDeclare_IntegerTrigger"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">IntegerTrigger</span>'&#160;<span class="attribute">appinfo</span>='<span class="value">IntegerTrigger converts boolean true or time input events to integer value (suitable for Switch node).</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="IntegerTriggerProtoField_set_boolean"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_boolean</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">If set_boolean input is true, trigger output of integer value.</span>'/&gt;
+<br /><a name="IntegerTriggerProtoField_set_integerKey"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_integerKey</span>'&#160;<span class="attribute">type</span>='<span class="value">SFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Resets value used for output when triggered later.</span>'/&gt;
+<br /><a name="IntegerTriggerProtoField_integerKey"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">integerKey</span>'&#160;<span class="attribute">type</span>='<span class="value">SFInt32</span>'&#160;<span class="attribute">value</span>='<span class="value">-1</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">integerKey is value for output when triggered.</span>'/&gt;
+<br /><a name="IntegerTriggerProtoField_integerKey_changed"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">integerKey_changed</span>'&#160;<span class="attribute">type</span>='<span class="value">SFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Reports change in integerKey value.</span>'/&gt;
+<br /><a name="IntegerTriggerProtoField_triggerValue"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">triggerValue</span>'&#160;<span class="attribute">type</span>='<span class="value">SFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">triggerValue provides integer event output matching integerKey when true set_boolean received.</span>'/&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+                     <a name="IntegerKeyHolder"> </a> 
+&lt;<span class="element">Switch</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">IntegerKeyHolder</span>'&#160;<span class="attribute">whichChoice</span>='<span class="value">-1</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">whichChoice</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanFilterProtoField_integerKey" class="prototype">integerKey</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">Switch</span>&gt;
+<br /><a name="TriggerIntegerScript"> </a> 
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">TriggerIntegerScript</span>'&#160;<span class="attribute">directOutput</span>='<span class="value">true</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_boolean</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_integerKey</span>'&#160;<span class="attribute">type</span>='<span class="value">SFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">integerKeyHolderNode</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">
+&lt;<span class="element">Switch</span>&#160;<span class="attribute">USE</span>='<a href="#IntegerKeyHolder" class="nodeName">IntegerKeyHolder</a>'&#160;<span class="attribute">whichChoice</span>='<span class="value">-1</span>'/&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">integerKey_changed</span>'&#160;<span class="attribute">type</span>='<span class="value">SFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">triggerValue</span>'&#160;<span class="attribute">type</span>='<span class="value">SFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">set_boolean</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanFilterProtoField_set_boolean" class="prototype">set_boolean</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">set_integerKey</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanFilterProtoField_set_integerKey" class="prototype">set_integerKey</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">integerKey_changed</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanFilterProtoField_integerKey_changed" class="prototype">integerKey_changed</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">triggerValue</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanFilterProtoField_triggerValue" class="prototype">triggerValue</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            ecmascript:
+
+function set_boolean (inputValue, timestamp)
+{
+	if (inputValue == true)
+	{
+		integerKey = integerKeyHolderNode.whichChoice;
+		triggerValue = integerKey; // send output event
+	}
+}
+function set_integerKey (inputValue, timestamp)
+{
+	integerKey = inputValue;
+	integerKeyHolderNode.whichChoice = integerKey;
+	integerKey_changed = integerKey; // send output event
+}
+      
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ======================================== --&gt;
+<br /><a name="ProtoDeclare_TimeTrigger"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">TimeTrigger</span>'&#160;<span class="attribute">appinfo</span>='<span class="value">TimeTrigger converts boolean true events to time events.</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="TimeTriggerProtoField_set_boolean"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_boolean</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">If set_boolean input is true, trigger output time value.</span>'/&gt;
+<br /><a name="TimeTriggerProtoField_triggerTime"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">triggerTime</span>'&#160;<span class="attribute">type</span>='<span class="value">SFTime</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">triggerTime is output time event, sent when set_boolean input is true.</span>'/&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+                  <a name="TriggerTimeScript"> </a> 
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">TriggerTimeScript</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_boolean</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">triggerTime</span>'&#160;<span class="attribute">type</span>='<span class="value">SFTime</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">set_boolean</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanFilterProtoField_set_boolean" class="prototype">set_boolean</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">triggerTime</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanFilterProtoField_triggerTime" class="prototype">triggerTime</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                        <b>&lt;![CDATA[</b>
+                     </code>
+                     <pre>
+          ecmascript:
+
+function set_boolean (value, timestamp)
+{
+	if (value) triggerTime = timestamp;
+}
+      
+        </pre>
+                     <code>
+                        <b>]]&gt;</b>
+                     </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ======================================== --&gt;
+<br />
+&lt;<span class="element">Anchor</span>&#160;<span class="attribute">description</span>='<span class="value">EventUtilityExamples</span>'&#160;<span class="attribute">parameter</span>='<span class="value">target=_blank</span>'
+<br />
+&#160;&#160;<span class="attribute">url</span>='
+"<a href="EventUtilityExamples.wrl">EventUtilityExamples.wrl</a>"
+"<a href="http://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityExamples.wrl">http://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityExamples.wrl</a>"
+"<a href="EventUtilityExamples.x3d">EventUtilityExamples.x3d</a>"
+"<a href="http://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityExamples.x3d">http://www.web3d.org/x3d/content/examples/Basic/development/EventUtilityExamples.x3d</a>"
+'&gt;
+<div class="indent">
+&lt;<span class="element">Shape</span>&gt;
+<div class="indent">
+&lt;<span class="element">Text</span>&#160;<span class="attribute">string</span>='<span class="value">"EventUtilityPrototype" 
+"defines prototypes" 
+""
+"Click text to see"
+"EventUtilityExamples"</span>'&#160;<span class="attribute">solid</span>='<span class="value">true</span>'&gt;
+<div class="indent">
+&lt;<span class="element">FontStyle</span>&#160;<span class="attribute">justify</span>='<span class="value">"MIDDLE" "MIDDLE"</span>'&#160;<span class="attribute">size</span>='<span class="value">0.9</span>'/&gt;
+</div>&lt;/<span class="element">Text</span>&gt;
+<br />
+&lt;<span class="element">Appearance</span>&gt;
+<div class="indent">
+&lt;<span class="element">Material</span>&#160;<span class="attribute">diffuseColor</span>='<span class="value">1 1 0.2</span>'/&gt;
+</div>&lt;/<span class="element">Appearance</span>&gt;
+</div>&lt;/<span class="element">Shape</span>&gt;
+</div>&lt;/<span class="element">Anchor</span>&gt;
+</div>&lt;/<span class="element">Scene</span>&gt;
+</div>&lt;/<span class="element">X3D</span>&gt;
+<br />
+&lt;!--
+<div class="center">
+         <hr width="100%"/>
+         <i>Index for ProtoDeclare definitions</i>: 
+<a href="#ProtoDeclare_BooleanFilter" class="prototype">BooleanFilter</a>,
+<a href="#ProtoDeclare_BooleanToggle" class="prototype">BooleanToggle</a>,
+<a href="#ProtoDeclare_BooleanTrigger" class="prototype">BooleanTrigger</a>,
+<a href="#ProtoDeclare_IntegerTrigger" class="prototype">IntegerTrigger</a>,
+<a href="#ProtoDeclare_TimeTrigger" class="prototype">TimeTrigger</a>
+<br />
+<i>Index for DEF nodes</i>: 
+<a href="#BooleanFilterScript" class="nodeName">BooleanFilterScript</a>,
+<a href="#BooleanToggleScript" class="nodeName">BooleanToggleScript</a>,
+<a href="#IntegerKeyHolder" class="nodeName">IntegerKeyHolder</a>,
+<a href="#TriggerBooleanScript" class="nodeName">TriggerBooleanScript</a>,
+<a href="#TriggerIntegerScript" class="nodeName">TriggerIntegerScript</a>,
+<a href="#TriggerTimeScript" class="nodeName">TriggerTimeScript</a>
+         <hr width="100%"/>
+      </div>
+--&gt;
+<p>
+&lt;!-- Tag color codes:
+&lt;<span class="element">Node</span>
+         <span class="nodeName"> DEF</span>='<span class="nodeName">NodeName</span>' <span class="attribute">attribute</span>='<span class="value">value</span>'/&gt;
+&lt;<span class="prototype">Prototype</span> 
+         <span class="attribute">name</span>='<span class="prototype">ProtoName</span>'&gt;
+	&lt;<span class="prototype">field</span>
+         <span class="attribute">name</span>='<span class="prototype">fieldName</span>'/&gt; &lt;/<span class="prototype">Prototype</span>&gt; --&gt;
+</p>
+   </body>
+</html>

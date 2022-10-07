@@ -1,0 +1,1385 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!--Generated using XSLT processor: SAXON 8.7 from Saxonica--><html xmlns="http://www.w3.org/TR/xhtml1/strict">
+   <head>
+      <title>Geometry2dComponentPrototypes.x3d (X3dToXhtml)</title>
+      <style type="text/css">
+span.element {color: navy}
+span.attribute {color: green}
+span.value {color: teal}
+span.plain {color: black}
+span.gray  {color: gray}
+span.prototype {color: purple}
+a.prototype {color: purple, visited: black}
+span.route {color: red}
+span.nodeName {color: maroon}
+a.nodeName {color: maroon}
+div.center {text-align: center}
+div.indent {margin-left: 25px}
+b.warning {color: #CC5500}
+b.error {color: #CC0000}
+	</style>
+      <meta name="generator" content="http://www.web3d.org/x3d/content/X3dToXhtml.xslt"/>
+      <link rel="shortcut icon"
+            href="http://www.web3d.org/x3d/content/icons/X3DtextIcon16.png"
+            title="X3D"/>
+   </head>
+   <body>
+      <pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN"   "http://www.web3d.org/specifications/x3d-3.0.dtd"&gt;</pre>
+
+&lt;<span class="element">X3D</span>&#160;<span class="attribute">profile</span>='<span class="value">Immersive</span>'&#160;<span class="attribute">version</span>='<span class="value">3.0</span>'&#160;<span class="attribute">xmlns:xsd</span>='<a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank">http://www.w3.org/2001/XMLSchema-instance</a>' <span class="attribute">xsd:noNamespaceSchemaLocation</span>='
+<a href="http://www.web3d.org/specifications/x3d-3.0.xsd">http://www.web3d.org/specifications/x3d-3.0.xsd</a> '&gt;
+<div class="indent">
+&lt;<span class="element">head</span>&gt;
+<div class="indent">
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">title</span>'&#160;<span class="attribute">content</span>='<a href="Geometry2dComponentPrototypes.x3d" target="_blank">Geometry2dComponentPrototypes.x3d</a>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">description</span>'&#160;<span class="attribute">content</span>='<span class="plain">X3D Geometry2D component nodes, implemented as prototypes for backwards compatibility with VRML 97.
+Arc2D specifies a 2D linear circular arc.
+ArcClose2D specifies a portion of a circle.
+Circle2D specifies a 2D circular line.
+Disk2D specifies a 2D circular disk.
+Polyline2D specifies 2D line segments.
+Polypoint2D specifies 2D points.
+Rectangle2D specifies a 2D rectangle.
+TriangleSet2D specifies 2D triangles.
+2D nodes are considered particularly helpful for building user interfaces such as Heads-Up Displays (HUDs).</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">authors</span>'&#160;<span class="attribute">content</span>='<span class="value">Christos Kalogrias, Don Brutzman, Ken Curtin, Duane Davis</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">created</span>'&#160;<span class="attribute">content</span>='<span class="value">14 November 2003</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">modified</span>'&#160;<span class="attribute">content</span>='<span class="value">19 December 2005</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">reference</span>'&#160;<span class="attribute">content</span>='<a href="Geometry2dComponentExamples.x3d" target="_blank">Geometry2dComponentExamples.x3d</a>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">reference</span>'&#160;<span class="attribute">content</span>='
+<a href="http://www.web3d.org/spec_editors/abstract/Part01/components/geometry2D.html">http://www.web3d.org/spec_editors/abstract/Part01/components/geometry2D.html</a> '/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">subject</span>'&#160;<span class="attribute">content</span>='<span class="value">Geometry2D component nodes (Arc2D ArcClose2D Circle2D Disk2D Polyline2D Polypoint2D Rectangle2D TriangleSet2D)</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">identifier</span>'&#160;<span class="attribute">content</span>='
+<a href="http://www.web3d.org/x3d/content/examples/Basic/development/Geometry2dComponentPrototypes.x3d">http://www.web3d.org/x3d/content/examples/Basic/development/Geometry2dComponentPrototypes.x3d</a> '/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">generator</span>'&#160;<span class="attribute">content</span>='<span class="value">X3D-Edit, </span>
+            <a href="http://www.web3d.org/x3d/content/README.X3D-Edit.html" target="_blank">http://www.web3d.org/x3d/content/README.X3D-Edit.html</a>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">license</span>'&#160;<span class="attribute">content</span>='<a href="../../license.html" target="_blank">../../license.html</a>'/&gt;
+</div>&lt;/<span class="element">head</span>&gt;
+<br />
+&lt;!--
+<div class="center">
+            <hr width="100%"/>
+            <i>Index for ProtoDeclare definitions</i>: 
+<a href="#ProtoDeclare_Arc2D" class="prototype">Arc2D</a>,
+<a href="#ProtoDeclare_ArcClose2D" class="prototype">ArcClose2D</a>,
+<a href="#ProtoDeclare_ArcClose2DUnfilled" class="prototype">ArcClose2DUnfilled</a>,
+<a href="#ProtoDeclare_Circle2D" class="prototype">Circle2D</a>,
+<a href="#ProtoDeclare_Disk2D" class="prototype">Disk2D</a>,
+<a href="#ProtoDeclare_Polyline2D" class="prototype">Polyline2D</a>,
+<a href="#ProtoDeclare_Polypoint2D" class="prototype">Polypoint2D</a>,
+<a href="#ProtoDeclare_Rectangle2D" class="prototype">Rectangle2D</a>,
+<a href="#ProtoDeclare_Rectangle2DUnfilled" class="prototype">Rectangle2DUnfilled</a>,
+<a href="#ProtoDeclare_TriangleSet2D" class="prototype">TriangleSet2D</a>
+<br />
+<i>Index for DEF nodes</i>: 
+<a href="#Arc2dToFaceSet3d" class="nodeName">Arc2dToFaceSet3d</a>,
+<a href="#Arc3DPoints" class="nodeName">Arc3DPoints</a>,
+<a href="#ArcClose2DFaceCoordinate" class="nodeName">ArcClose2DFaceCoordinate</a>,
+<a href="#ArcClose2DLineCoordinate" class="nodeName">ArcClose2DLineCoordinate</a>,
+<a href="#ArcClose2dToFaceSet3d" class="nodeName">ArcClose2dToFaceSet3d</a>,
+<a href="#ArcClose2dToLineSet3d" class="nodeName">ArcClose2dToLineSet3d</a>,
+<a href="#ArcIndexPoints" class="nodeName">ArcIndexPoints</a>,
+<a href="#ArcPointFaceIndex" class="nodeName">ArcPointFaceIndex</a>,
+<a href="#ArcPointLineIndex" class="nodeName">ArcPointLineIndex</a>,
+<a href="#Circ2dToLineSet3d" class="nodeName">Circ2dToLineSet3d</a>,
+<a href="#Circ3DPoints" class="nodeName">Circ3DPoints</a>,
+<a href="#Circ3DPointsIndex" class="nodeName">Circ3DPointsIndex</a>,
+<a href="#Disk2dToFaceSet3d" class="nodeName">Disk2dToFaceSet3d</a>,
+<a href="#Disk3DPoints" class="nodeName">Disk3DPoints</a>,
+<a href="#DiskPointsIndex" class="nodeName">DiskPointsIndex</a>,
+<a href="#LineSegments2dToLineSet3d" class="nodeName">LineSegments2dToLineSet3d</a>,
+<a href="#LineSegments3DPoints" class="nodeName">LineSegments3DPoints</a>,
+<a href="#LinesSegmentsIndexPoints" class="nodeName">LinesSegmentsIndexPoints</a>,
+<a href="#LinkToExamples" class="nodeName">LinkToExamples</a>,
+<a href="#Points2dToLineSet3d" class="nodeName">Points2dToLineSet3d</a>,
+<a href="#Points3D" class="nodeName">Points3D</a>,
+<a href="#Rect2dToFaceSet3d" class="nodeName">Rect2dToFaceSet3d</a>,
+<a href="#Rect2dToLineSet3d" class="nodeName">Rect2dToLineSet3d</a>,
+<a href="#RectanglePoints" class="nodeName">RectanglePoints</a>,
+<a href="#RectanglePointsLine" class="nodeName">RectanglePointsLine</a>,
+<a href="#TriangleSet2dToLineSet3d" class="nodeName">TriangleSet2dToLineSet3d</a>,
+<a href="#TriangleSet3DPoints" class="nodeName">TriangleSet3DPoints</a>,
+<a href="#TriangleSetIndexPoints" class="nodeName">TriangleSetIndexPoints</a>
+            <hr width="100%"/>
+         </div>
+--&gt;
+<br />
+&lt;<span class="element">Scene</span>&gt;
+<div class="indent">&lt;!-- ==================== --&gt;
+<br /><a name="ProtoDeclare_Arc2D"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">Arc2D</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="Arc2DProtoField_startAngle"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">startAngle</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="Arc2DProtoField_endAngle"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">endAngle</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">1.5707963265</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="Arc2DProtoField_radius"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">radius</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">1</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="Arc2DProtoField_metadata"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Metadata node only</span>'&gt;
+<div class="indent">&lt;!-- default NULL --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">&lt;!-- Only the first node counts as the node type of a prototype. This node must be a geometry node. --&gt;
+<br /><a name="ArcIndexPoints"> </a> 
+&lt;!-- <span class="nodeName">ArcIndexPoints</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_1"><i>from</i>&#160;<span class="nodeName">Arc2dToFaceSet3d</span>.<span class="attribute">arcIndexSet3d</span>&#160;<i>to</i>&#160;<span class="attribute">set_coordIndex</span>
+                  </a>]
+ --&gt;<br />
+&lt;<span class="element">IndexedLineSet</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">ArcIndexPoints</span>'&gt;
+<div class="indent">
+                     <a name="Arc3DPoints"> </a> 
+&lt;!-- <span class="nodeName">Arc3DPoints</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_0"><i>from</i>&#160;<span class="nodeName">Arc2dToFaceSet3d</span>.<span class="attribute">arcSet3d</span>&#160;<i>to</i>&#160;<span class="attribute">point</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Coordinate</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">Arc3DPoints</span>'/&gt;
+</div>&lt;/<span class="element">IndexedLineSet</span>&gt;
+<br />&lt;!-- Any nodes after initial node in a ProtoBody is not rendered. --&gt;
+<br />
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+                     <a name="Arc2dToFaceSet3d"> </a> 
+&lt;!-- <span class="nodeName">Arc2dToFaceSet3d</span> <i>ROUTEs</i>:&#160;
+[<a href="#ROUTE_0"><i>from</i>&#160;<span class="attribute">arcSet3d</span>&#160;<i>to</i>&#160;<span class="nodeName">Arc3DPoints</span>.<span class="attribute">point</span>
+                     </a>]
+[<a href="#ROUTE_1"><i>from</i>&#160;<span class="attribute">arcIndexSet3d</span>&#160;<i>to</i>&#160;<span class="nodeName">ArcIndexPoints</span>.<span class="attribute">set_coordIndex</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">Arc2dToFaceSet3d</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">startAngle</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">endAngle</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">radius</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">arcSet3d</span>'&#160;<span class="attribute">type</span>='<span class="value">MFVec3f</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">arcIndexSet3d</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">startAngle</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#Arc2DProtoField_startAngle" class="prototype">startAngle</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">endAngle</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#Arc2DProtoField_endAngle" class="prototype">endAngle</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">radius</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#Arc2DProtoField_radius" class="prototype">radius</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            
+
+ecmascript:
+
+function initialize()
+{
+   numOfPoints = 100;
+
+   if (radius &lt; 0)
+   {
+      Browser.print ('[Arc2D] Warning:  invalid value, radius=' + value + ' must instead be &gt;= 0');
+   }
+
+   if ((startAngle &lt; 0) || (startAngle &gt;= 2 * Math.PI))
+   {
+	Browser.print ('[Arc2D] Warning: startAngle=' + startAngle +
+		' must be within [0..2pi)');
+   }
+
+   if ((endAngle&lt; 0) || (endAngle&gt;= 2 * Math.PI))
+   {
+	Browser.print ('[Arc2D] Warning: endAngle=' + endAngle+
+		' must be within [0..2pi)');
+    }
+
+    // equal startAngle, endAngle means draw full circle.
+    // (high out-of-range endAngle is OK for local computation.
+   if (startAngle &gt;= endAngle)
+      endAngle = endAngle + 2*Math.PI;
+
+
+   differAng = Math.abs((endAngle - startAngle))/numOfPoints;
+
+   for ( i=0 ; i&lt;=numOfPoints ; i++)
+   {
+	arcSet3d[i] = new SFVec3f ( radius*Math.cos(startAngle + i*differAng), radius*Math.sin(startAngle + i*differAng), 0.0 );
+        arcIndexSet3d[i] = i;
+   }
+
+} // initialize
+
+
+
+
+
+          
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+<br /><a name="ROUTE_0"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#Arc2dToFaceSet3d" class="nodeName">Arc2dToFaceSet3d</a>'&#160;<span class="attribute">fromField</span>='<span class="value">arcSet3d</span>'&#160;<span class="attribute">toNode</span>='<a href="#Arc3DPoints" class="nodeName">Arc3DPoints</a>'&#160;<span class="attribute">toField</span>='<span class="value">point</span>'/&gt;
+<br /><a name="ROUTE_1"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#Arc2dToFaceSet3d" class="nodeName">Arc2dToFaceSet3d</a>'&#160;<span class="attribute">fromField</span>='<span class="value">arcIndexSet3d</span>'&#160;<span class="attribute">toNode</span>='<a href="#ArcIndexPoints" class="nodeName">ArcIndexPoints</a>'&#160;<span class="attribute">toField</span>='<span class="value">set_coordIndex</span>'/&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ==================== --&gt;
+<br /><a name="ProtoDeclare_ArcClose2D"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">ArcClose2D</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="ArcClose2DProtoField_startAngle"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">startAngle</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="ArcClose2DProtoField_endAngle"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">endAngle</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">1.5707963265</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="ArcClose2DProtoField_radius"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">radius</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">1</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="ArcClose2DProtoField_closureType"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">closureType</span>'&#160;<span class="attribute">type</span>='<span class="value">SFString</span>'&#160;<span class="attribute">value</span>='<span class="value">PIE</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="ArcClose2DProtoField_solid"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">solid</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">false</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="ArcClose2DProtoField_metadata"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Metadata node only</span>'&gt;
+<div class="indent">&lt;!-- default NULL --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+                  <a name="ArcPointFaceIndex"> </a> 
+&lt;!-- <span class="nodeName">ArcPointFaceIndex</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_3"><i>from</i>&#160;<span class="nodeName">ArcClose2dToFaceSet3d</span>.<span class="attribute">pointIndex</span>&#160;<i>to</i>&#160;<span class="attribute">set_coordIndex</span>
+                  </a>]
+ --&gt;<br />
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">ArcPointFaceIndex</span>'&gt;
+<div class="indent">
+                     <a name="ArcClose2DFaceCoordinate"> </a> 
+&lt;!-- <span class="nodeName">ArcClose2DFaceCoordinate</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_2"><i>from</i>&#160;<span class="nodeName">ArcClose2dToFaceSet3d</span>.<span class="attribute">arcSet3d</span>&#160;<i>to</i>&#160;<span class="attribute">point</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Coordinate</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">ArcClose2DFaceCoordinate</span>'/&gt;
+</div>&lt;/<span class="element">IndexedFaceSet</span>&gt;
+<br />
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+                     <a name="ArcClose2dToFaceSet3d"> </a> 
+&lt;!-- <span class="nodeName">ArcClose2dToFaceSet3d</span> <i>ROUTEs</i>:&#160;
+[<a href="#ROUTE_2"><i>from</i>&#160;<span class="attribute">arcSet3d</span>&#160;<i>to</i>&#160;<span class="nodeName">ArcClose2DFaceCoordinate</span>.<span class="attribute">point</span>
+                     </a>]
+[<a href="#ROUTE_3"><i>from</i>&#160;<span class="attribute">pointIndex</span>&#160;<i>to</i>&#160;<span class="nodeName">ArcPointFaceIndex</span>.<span class="attribute">set_coordIndex</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">ArcClose2dToFaceSet3d</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">closureType</span>'&#160;<span class="attribute">type</span>='<span class="value">SFString</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">startAngle</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">endAngle</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">radius</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">arcSet3d</span>'&#160;<span class="attribute">type</span>='<span class="value">MFVec3f</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">pointIndex</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">closureType</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#Arc2DProtoField_closureType" class="prototype">closureType</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">startAngle</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#Arc2DProtoField_startAngle" class="prototype">startAngle</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">endAngle</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#Arc2DProtoField_endAngle" class="prototype">endAngle</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">radius</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#Arc2DProtoField_radius" class="prototype">radius</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            ecmascript:
+
+function initialize()
+{
+   if (radius &lt; 0)
+   {
+      Browser.print ('[ArcClose2D] Warning:  invalid value, radius=' + value + ' must instead be &gt;= 0');
+   }
+
+   if ((startAngle &lt; 0) || (startAngle &gt;= 2 * Math.PI))
+   {
+	Browser.print ('[ArcClose2D] Warning: startAngle=' + startAngle +
+		' must be within [0..2pi)');
+   }
+
+   if ((endAngle&lt; 0) || (endAngle&gt;= 2 * Math.PI))
+   {
+	Browser.print ('[ArcClose2D] Warning: endAngle=' + endAngle+
+		' must be within [0..2pi)');
+    }
+
+    // equal startAngle, endAngle means draw full circle.
+    // (high out-of-range endAngle is OK for local computation.
+   if (startAngle &gt;= endAngle)
+      endAngle = endAngle + 2*Math.PI;
+
+   numOfPoints = 100;
+   differAng = Math.abs((endAngle - startAngle))/numOfPoints;
+
+   for ( i=0 ; i&lt;=numOfPoints ; i++)
+   {
+	if ( i == numOfPoints)
+             arcSet3d[i] = new SFVec3f (0.0, 0.0, 0.0);
+        else
+             arcSet3d[i] = new SFVec3f ( radius*Math.cos(startAngle + i*differAng), radius*Math.sin(startAngle + i*differAng), 0.0 );
+   }
+
+   k=0;
+   if (closureType == 'PIE')
+       for ( i=0 ; i&lt;numOfPoints ; i++)
+       {
+        	pointIndex[k]   = numOfPoints;
+        	pointIndex[k+1] = i;
+        	pointIndex[k+2] = i + 1;
+        	pointIndex[k+3]   = numOfPoints;
+        	pointIndex[k+4] = -1;
+        k=k+5;
+	}
+   else
+       for ( i=0 ; i&lt;numOfPoints-1 ; i++)
+       {
+              pointIndex[k]   = 0;
+              pointIndex[k+1] = i;
+              pointIndex[k+2] = i + 1;
+              pointIndex[k+3]   = 0;
+              pointIndex[k+4] = -1;
+        k=k+5;
+	}
+
+} // initialize
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+<br /><a name="ROUTE_2"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#ArcClose2dToFaceSet3d" class="nodeName">ArcClose2dToFaceSet3d</a>'&#160;<span class="attribute">fromField</span>='<span class="value">arcSet3d</span>'&#160;<span class="attribute">toNode</span>='<a href="#ArcClose2DFaceCoordinate" class="nodeName">ArcClose2DFaceCoordinate</a>'&#160;<span class="attribute">toField</span>='<span class="value">point</span>'/&gt;
+<br /><a name="ROUTE_3"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#ArcClose2dToFaceSet3d" class="nodeName">ArcClose2dToFaceSet3d</a>'&#160;<span class="attribute">fromField</span>='<span class="value">pointIndex</span>'&#160;<span class="attribute">toNode</span>='<a href="#ArcPointFaceIndex" class="nodeName">ArcPointFaceIndex</a>'&#160;<span class="attribute">toField</span>='<span class="value">set_coordIndex</span>'/&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ArcClose2DUnfilled also provided since FillProperties not available in VRML 97 --&gt;
+<br /><a name="ProtoDeclare_ArcClose2DUnfilled"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">ArcClose2DUnfilled</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="ArcClose2DUnfilledProtoField_startAngle"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">startAngle</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="ArcClose2DUnfilledProtoField_endAngle"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">endAngle</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">1.5707963265</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="ArcClose2DUnfilledProtoField_radius"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">radius</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">1</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="ArcClose2DUnfilledProtoField_closureType"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">closureType</span>'&#160;<span class="attribute">type</span>='<span class="value">SFString</span>'&#160;<span class="attribute">value</span>='<span class="value">PIE</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="ArcClose2DUnfilledProtoField_solid"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">solid</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">false</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="ArcClose2DUnfilledProtoField_metadata"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Metadata node only</span>'&gt;
+<div class="indent">&lt;!-- default NULL --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+                  <a name="ArcPointLineIndex"> </a> 
+&lt;!-- <span class="nodeName">ArcPointLineIndex</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_5"><i>from</i>&#160;<span class="nodeName">ArcClose2dToLineSet3d</span>.<span class="attribute">pointIndex</span>&#160;<i>to</i>&#160;<span class="attribute">set_coordIndex</span>
+                  </a>]
+ --&gt;<br />
+&lt;<span class="element">IndexedLineSet</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">ArcPointLineIndex</span>'&gt;
+<div class="indent">
+                     <a name="ArcClose2DLineCoordinate"> </a> 
+&lt;!-- <span class="nodeName">ArcClose2DLineCoordinate</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_4"><i>from</i>&#160;<span class="nodeName">ArcClose2dToLineSet3d</span>.<span class="attribute">arcSet3d</span>&#160;<i>to</i>&#160;<span class="attribute">point</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Coordinate</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">ArcClose2DLineCoordinate</span>'/&gt;
+</div>&lt;/<span class="element">IndexedLineSet</span>&gt;
+<br />
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+                     <a name="ArcClose2dToLineSet3d"> </a> 
+&lt;!-- <span class="nodeName">ArcClose2dToLineSet3d</span> <i>ROUTEs</i>:&#160;
+[<a href="#ROUTE_4"><i>from</i>&#160;<span class="attribute">arcSet3d</span>&#160;<i>to</i>&#160;<span class="nodeName">ArcClose2DLineCoordinate</span>.<span class="attribute">point</span>
+                     </a>]
+[<a href="#ROUTE_5"><i>from</i>&#160;<span class="attribute">pointIndex</span>&#160;<i>to</i>&#160;<span class="nodeName">ArcPointLineIndex</span>.<span class="attribute">set_coordIndex</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">ArcClose2dToLineSet3d</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">closureType</span>'&#160;<span class="attribute">type</span>='<span class="value">SFString</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">startAngle</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">endAngle</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">radius</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">arcSet3d</span>'&#160;<span class="attribute">type</span>='<span class="value">MFVec3f</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">pointIndex</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">closureType</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#Arc2DProtoField_closureType" class="prototype">closureType</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">startAngle</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#Arc2DProtoField_startAngle" class="prototype">startAngle</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">endAngle</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#Arc2DProtoField_endAngle" class="prototype">endAngle</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">radius</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#Arc2DProtoField_radius" class="prototype">radius</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            ecmascript:
+
+function initialize()
+{
+
+   if (radius &lt; 0)
+   {
+      Browser.print ('[ArcCloseUnfilled2D] Warning:  invalid value, radius=' + value + ' must instead be &gt;= 0');
+   }
+
+   if ((startAngle &lt; 0) || (startAngle &gt;= 2 * Math.PI))
+   {
+	Browser.print ('[ArcCloseUnfilled2D] Warning: startAngle=' + startAngle +
+		' must be within [0..2pi)');
+   }
+
+   if ((endAngle&lt; 0) || (endAngle&gt;= 2 * Math.PI))
+   {
+	Browser.print ('[ArcCloseUnfilled2D] Warning: endAngle=' + endAngle+
+		' must be within [0..2pi)');
+    }
+
+    // equal startAngle, endAngle means draw full circle.
+    // (high out-of-range endAngle is OK for local computation.
+   if (startAngle &gt;= endAngle)
+      endAngle = endAngle + 2*Math.PI;
+
+   numOfPoints = 100;
+   differAng = Math.abs((endAngle - startAngle))/numOfPoints;
+
+   for ( i=0 ; i&lt;=numOfPoints +1 ; i++)
+   {
+	if ( i == numOfPoints +1)
+             arcSet3d[i] = new SFVec3f (0.0, 0.0, 0.0);
+        else
+             arcSet3d[i] = new SFVec3f ( radius*Math.cos(startAngle + i*differAng), radius*Math.sin(startAngle + i*differAng), 0.0 );
+   }
+
+   if (closureType == 'CHORD')
+   {
+	for ( i=0 ; i&lt;=numOfPoints +1 ; i++)
+	{
+        	if ( i == numOfPoints +1)
+             		pointIndex[i] = 0.0;
+        	else
+             		pointIndex[i] = i;
+	}
+   }
+   else
+   {
+	for ( i=0 ; i&lt;=numOfPoints +1 ; i++)
+	{
+         pointIndex[i] = i;
+	}
+         pointIndex[i] = 0.0;
+   }
+
+} // initialize
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+<br /><a name="ROUTE_4"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#ArcClose2dToLineSet3d" class="nodeName">ArcClose2dToLineSet3d</a>'&#160;<span class="attribute">fromField</span>='<span class="value">arcSet3d</span>'&#160;<span class="attribute">toNode</span>='<a href="#ArcClose2DLineCoordinate" class="nodeName">ArcClose2DLineCoordinate</a>'&#160;<span class="attribute">toField</span>='<span class="value">point</span>'/&gt;
+<br /><a name="ROUTE_5"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#ArcClose2dToLineSet3d" class="nodeName">ArcClose2dToLineSet3d</a>'&#160;<span class="attribute">fromField</span>='<span class="value">pointIndex</span>'&#160;<span class="attribute">toNode</span>='<a href="#ArcPointLineIndex" class="nodeName">ArcPointLineIndex</a>'&#160;<span class="attribute">toField</span>='<span class="value">set_coordIndex</span>'/&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ==================== --&gt;
+<br /><a name="ProtoDeclare_Circle2D"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">Circle2D</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="Circle2DProtoField_radius"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">radius</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">1</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="Circle2DProtoField_solid"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">solid</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">false</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="Circle2DProtoField_metadata"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Metadata node only</span>'&gt;
+<div class="indent">&lt;!-- default NULL --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+                  <a name="Circ3DPointsIndex"> </a> 
+&lt;!-- <span class="nodeName">Circ3DPointsIndex</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_7"><i>from</i>&#160;<span class="nodeName">Circ2dToLineSet3d</span>.<span class="attribute">circIndexSet3d</span>&#160;<i>to</i>&#160;<span class="attribute">set_coordIndex</span>
+                  </a>]
+ --&gt;<br />
+&lt;<span class="element">IndexedLineSet</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">Circ3DPointsIndex</span>'&gt;
+<div class="indent">
+                     <a name="Circ3DPoints"> </a> 
+&lt;!-- <span class="nodeName">Circ3DPoints</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_6"><i>from</i>&#160;<span class="nodeName">Circ2dToLineSet3d</span>.<span class="attribute">circSet3d</span>&#160;<i>to</i>&#160;<span class="attribute">point</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Coordinate</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">Circ3DPoints</span>'/&gt;
+</div>&lt;/<span class="element">IndexedLineSet</span>&gt;
+<br />
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+                     <a name="Circ2dToLineSet3d"> </a> 
+&lt;!-- <span class="nodeName">Circ2dToLineSet3d</span> <i>ROUTEs</i>:&#160;
+[<a href="#ROUTE_6"><i>from</i>&#160;<span class="attribute">circSet3d</span>&#160;<i>to</i>&#160;<span class="nodeName">Circ3DPoints</span>.<span class="attribute">point</span>
+                     </a>]
+[<a href="#ROUTE_7"><i>from</i>&#160;<span class="attribute">circIndexSet3d</span>&#160;<i>to</i>&#160;<span class="nodeName">Circ3DPointsIndex</span>.<span class="attribute">set_coordIndex</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">Circ2dToLineSet3d</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">radius</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">circSet3d</span>'&#160;<span class="attribute">type</span>='<span class="value">MFVec3f</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">circIndexSet3d</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">radius</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#Arc2DProtoField_radius" class="prototype">radius</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            ecmascript:
+
+function initialize()
+{
+    if (radius &lt; 0)
+   {
+      Browser.print ('[Circle2D] Warning:  invalid value, radius=' + value + ' must instead be &gt;= 0');
+   }
+
+
+   numOfPoints = 100;
+   differAng = 2*Math.PI/numOfPoints;
+
+   for ( i=0 ; i&lt;=numOfPoints ; i++)
+   {
+	circSet3d[i] = new SFVec3f ( radius*Math.cos(i*differAng), radius*Math.sin(i*differAng), 0.0 );
+        circIndexSet3d[i] = i;
+   }
+
+} // initialize
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+<br /><a name="ROUTE_6"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#Circ2dToLineSet3d" class="nodeName">Circ2dToLineSet3d</a>'&#160;<span class="attribute">fromField</span>='<span class="value">circSet3d</span>'&#160;<span class="attribute">toNode</span>='<a href="#Circ3DPoints" class="nodeName">Circ3DPoints</a>'&#160;<span class="attribute">toField</span>='<span class="value">point</span>'/&gt;
+<br /><a name="ROUTE_7"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#Circ2dToLineSet3d" class="nodeName">Circ2dToLineSet3d</a>'&#160;<span class="attribute">fromField</span>='<span class="value">circIndexSet3d</span>'&#160;<span class="attribute">toNode</span>='<a href="#Circ3DPointsIndex" class="nodeName">Circ3DPointsIndex</a>'&#160;<span class="attribute">toField</span>='<span class="value">set_coordIndex</span>'/&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ==================== --&gt;
+<br /><a name="ProtoDeclare_Disk2D"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">Disk2D</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="Disk2DProtoField_innerRadius"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">innerRadius</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="Disk2DProtoField_outerRadius"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">outerRadius</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">1</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="Disk2DProtoField_solid"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">solid</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">false</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="Disk2DProtoField_metadata"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Metadata node only</span>'&gt;
+<div class="indent">&lt;!-- default NULL --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+                  <a name="DiskPointsIndex"> </a> 
+&lt;!-- <span class="nodeName">DiskPointsIndex</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_9"><i>from</i>&#160;<span class="nodeName">Disk2dToFaceSet3d</span>.<span class="attribute">diskIndexSet3d</span>&#160;<i>to</i>&#160;<span class="attribute">set_coordIndex</span>
+                  </a>]
+ --&gt;<br />
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">DiskPointsIndex</span>'&gt;
+<div class="indent">
+                     <a name="Disk3DPoints"> </a> 
+&lt;!-- <span class="nodeName">Disk3DPoints</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_8"><i>from</i>&#160;<span class="nodeName">Disk2dToFaceSet3d</span>.<span class="attribute">diskSet3d</span>&#160;<i>to</i>&#160;<span class="attribute">point</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Coordinate</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">Disk3DPoints</span>'/&gt;
+</div>&lt;/<span class="element">IndexedFaceSet</span>&gt;
+<br />
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+                     <a name="Disk2dToFaceSet3d"> </a> 
+&lt;!-- <span class="nodeName">Disk2dToFaceSet3d</span> <i>ROUTEs</i>:&#160;
+[<a href="#ROUTE_8"><i>from</i>&#160;<span class="attribute">diskSet3d</span>&#160;<i>to</i>&#160;<span class="nodeName">Disk3DPoints</span>.<span class="attribute">point</span>
+                     </a>]
+[<a href="#ROUTE_9"><i>from</i>&#160;<span class="attribute">diskIndexSet3d</span>&#160;<i>to</i>&#160;<span class="nodeName">DiskPointsIndex</span>.<span class="attribute">set_coordIndex</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">Disk2dToFaceSet3d</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">innerRadius</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">outerRadius</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">diskSet3d</span>'&#160;<span class="attribute">type</span>='<span class="value">MFVec3f</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">diskIndexSet3d</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">innerRadius</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#Arc2DProtoField_innerRadius" class="prototype">innerRadius</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">outerRadius</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#Arc2DProtoField_outerRadius" class="prototype">outerRadius</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            ecmascript:
+
+function initialize()
+{
+   if (innerRadius &lt; 0)
+   {
+      Browser.print ('[Disk2D] Warning:  invalid value, innerRadius=' + value + ' must instead be &gt;= 0');
+   }
+
+   if (outerRadius &lt; 0)
+   {
+      Browser.print ('[Disk2D] Warning:  invalid value, outerRadius=' + value + ' must instead be &gt;= 0');
+   }
+
+
+
+   numOfPoints    = 100.0;
+   diskSet3d      = new MFVec3f();
+   diskIndexSet3d = new MFInt32();
+   differAng = 2 * Math.PI/numOfPoints;
+
+
+   for ( i=0 ; i&lt;2*numOfPoints ; i++)
+   {
+        if ( i&lt;numOfPoints)
+	     diskSet3d[i] = new SFVec3f ( innerRadius*Math.cos(i*differAng), innerRadius*Math.sin(i*differAng), 0.0 );
+        else
+             diskSet3d[i] = new SFVec3f ( outerRadius*Math.cos((i-numOfPoints-1.0)*differAng), outerRadius*Math.sin((i-numOfPoints-1.0)*differAng), 0.0 );
+   }
+
+
+   k=0;
+   for (i=0 ; i&lt;numOfPoints ; i++)
+   {
+        diskIndexSet3d[k]   = i;
+        diskIndexSet3d[k+1] = i + numOfPoints;
+        diskIndexSet3d[k+2] = i + numOfPoints + 1;
+        diskIndexSet3d[k+3]   = i;
+        diskIndexSet3d[k+4] = -1;
+        diskIndexSet3d[k+5] = i+1;
+        diskIndexSet3d[k+6] = i ;
+        diskIndexSet3d[k+7] = i + numOfPoints +1;
+        diskIndexSet3d[k+8] = i +1;
+        diskIndexSet3d[k+9] = -1;
+
+        if (i == numOfPoints-1)
+        {
+        diskIndexSet3d[k]   = i;
+        diskIndexSet3d[k+1] = i + numOfPoints;
+        diskIndexSet3d[k+2] = numOfPoints;
+        diskIndexSet3d[k+3]   = i;
+        diskIndexSet3d[k+4] = -1;
+        diskIndexSet3d[k+5] = 0;
+        diskIndexSet3d[k+6] = i;
+        diskIndexSet3d[k+7] = numOfPoints;
+        diskIndexSet3d[k+8] = 0;
+        diskIndexSet3d[k+9] = -1;
+        }
+   k=k+10;
+   }
+
+} // initialize
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+<br /><a name="ROUTE_8"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#Disk2dToFaceSet3d" class="nodeName">Disk2dToFaceSet3d</a>'&#160;<span class="attribute">fromField</span>='<span class="value">diskSet3d</span>'&#160;<span class="attribute">toNode</span>='<a href="#Disk3DPoints" class="nodeName">Disk3DPoints</a>'&#160;<span class="attribute">toField</span>='<span class="value">point</span>'/&gt;
+<br /><a name="ROUTE_9"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#Disk2dToFaceSet3d" class="nodeName">Disk2dToFaceSet3d</a>'&#160;<span class="attribute">fromField</span>='<span class="value">diskIndexSet3d</span>'&#160;<span class="attribute">toNode</span>='<a href="#DiskPointsIndex" class="nodeName">DiskPointsIndex</a>'&#160;<span class="attribute">toField</span>='<span class="value">set_coordIndex</span>'/&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ==================== --&gt;
+<br /><a name="ProtoDeclare_Polyline2D"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">Polyline2D</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="Polyline2DProtoField_lineSegments"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">lineSegments</span>'&#160;<span class="attribute">type</span>='<span class="value">MFVec2f</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="Polyline2DProtoField_solid"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">solid</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">false</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="Polyline2DProtoField_metadata"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Metadata node only</span>'/&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+                  <a name="LinesSegmentsIndexPoints"> </a> 
+&lt;!-- <span class="nodeName">LinesSegmentsIndexPoints</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_11"><i>from</i>&#160;<span class="nodeName">LineSegments2dToLineSet3d</span>.<span class="attribute">lineSegmentsIndex</span>&#160;<i>to</i>&#160;<span class="attribute">set_coordIndex</span>
+                  </a>]
+ --&gt;<br />
+&lt;<span class="element">IndexedLineSet</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">LinesSegmentsIndexPoints</span>'&gt;
+<div class="indent">
+                     <a name="LineSegments3DPoints"> </a> 
+&lt;!-- <span class="nodeName">LineSegments3DPoints</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_10"><i>from</i>&#160;<span class="nodeName">LineSegments2dToLineSet3d</span>.<span class="attribute">lineSegments3D</span>&#160;<i>to</i>&#160;<span class="attribute">point</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Coordinate</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">LineSegments3DPoints</span>'/&gt;
+</div>&lt;/<span class="element">IndexedLineSet</span>&gt;
+<br />
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+                     <a name="LineSegments2dToLineSet3d"> </a> 
+&lt;!-- <span class="nodeName">LineSegments2dToLineSet3d</span> <i>ROUTEs</i>:&#160;
+[<a href="#ROUTE_10"><i>from</i>&#160;<span class="attribute">lineSegments3D</span>&#160;<i>to</i>&#160;<span class="nodeName">LineSegments3DPoints</span>.<span class="attribute">point</span>
+                     </a>]
+[<a href="#ROUTE_11"><i>from</i>&#160;<span class="attribute">lineSegmentsIndex</span>&#160;<i>to</i>&#160;<span class="nodeName">LinesSegmentsIndexPoints</span>.<span class="attribute">set_coordIndex</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">LineSegments2dToLineSet3d</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">lineSegments</span>'&#160;<span class="attribute">type</span>='<span class="value">MFVec2f</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">lineSegments3D</span>'&#160;<span class="attribute">type</span>='<span class="value">MFVec3f</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">lineSegmentsIndex</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">lineSegments</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#Arc2DProtoField_lineSegments" class="prototype">lineSegments</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            ecmascript:
+
+function initialize()
+{
+   for ( i=0 ; i&lt;lineSegments.length ; i++)
+   {
+          lineSegments3D[i] = new SFVec3f ( lineSegments[i].x, lineSegments[i].y, 0.0 );
+          lineSegmentsIndex[i] = i;
+   }
+
+     lineSegmentsIndex[i] = -1;
+
+} // initialize
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+<br /><a name="ROUTE_10"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#LineSegments2dToLineSet3d" class="nodeName">LineSegments2dToLineSet3d</a>'&#160;<span class="attribute">fromField</span>='<span class="value">lineSegments3D</span>'&#160;<span class="attribute">toNode</span>='<a href="#LineSegments3DPoints" class="nodeName">LineSegments3DPoints</a>'&#160;<span class="attribute">toField</span>='<span class="value">point</span>'/&gt;
+<br /><a name="ROUTE_11"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#LineSegments2dToLineSet3d" class="nodeName">LineSegments2dToLineSet3d</a>'&#160;<span class="attribute">fromField</span>='<span class="value">lineSegmentsIndex</span>'&#160;<span class="attribute">toNode</span>='<a href="#LinesSegmentsIndexPoints" class="nodeName">LinesSegmentsIndexPoints</a>'&#160;<span class="attribute">toField</span>='<span class="value">set_coordIndex</span>'/&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ==================== --&gt;
+<br /><a name="ProtoDeclare_Polypoint2D"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">Polypoint2D</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="Polypoint2DProtoField_point"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">point</span>'&#160;<span class="attribute">type</span>='<span class="value">MFVec2f</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="Polypoint2DProtoField_metadata"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Metadata node only</span>'&gt;
+<div class="indent">&lt;!-- default NULL --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+&lt;<span class="element">PointSet</span>&gt;
+<div class="indent">
+                     <a name="Points3D"> </a> 
+&lt;!-- <span class="nodeName">Points3D</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_12"><i>from</i>&#160;<span class="nodeName">Points2dToLineSet3d</span>.<span class="attribute">points3D</span>&#160;<i>to</i>&#160;<span class="attribute">point</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Coordinate</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">Points3D</span>'/&gt;
+</div>&lt;/<span class="element">PointSet</span>&gt;
+<br />
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+                     <a name="Points2dToLineSet3d"> </a> 
+&lt;!-- <span class="nodeName">Points2dToLineSet3d</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_12"><i>from</i>&#160;<span class="attribute">points3D</span>&#160;<i>to</i>&#160;<span class="nodeName">Points3D</span>.<span class="attribute">point</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">Points2dToLineSet3d</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">points</span>'&#160;<span class="attribute">type</span>='<span class="value">MFVec2f</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">points3D</span>'&#160;<span class="attribute">type</span>='<span class="value">MFVec3f</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">points</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#Arc2DProtoField_points" class="prototype">points</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            ecmascript:
+
+function initialize()
+{
+
+   for ( i=0 ; i&lt;points.length ; i++)
+   {
+          points3D[i] = new SFVec3f ( points[i].x, points[i].y, 0.0 );
+   }
+
+} // initialize
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+<br /><a name="ROUTE_12"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#Points2dToLineSet3d" class="nodeName">Points2dToLineSet3d</a>'&#160;<span class="attribute">fromField</span>='<span class="value">points3D</span>'&#160;<span class="attribute">toNode</span>='<a href="#Points3D" class="nodeName">Points3D</a>'&#160;<span class="attribute">toField</span>='<span class="value">point</span>'/&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ==================== --&gt;
+<br /><a name="ProtoDeclare_Rectangle2D"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">Rectangle2D</span>'&#160;<span class="attribute">appinfo</span>='<span class="value">Default filled, matching default FillProperties filled=true.</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="Rectangle2DProtoField_size"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">size</span>'&#160;<span class="attribute">type</span>='<span class="value">SFVec2f</span>'&#160;<span class="attribute">value</span>='<span class="value">2 2</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="Rectangle2DProtoField_solid"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">solid</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">false</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="Rectangle2DProtoField_metadata"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Metadata node only</span>'&gt;
+<div class="indent">&lt;!-- default NULL --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">solid</span>='<span class="value">false</span>'&#160;<span class="attribute">coordIndex</span>='<span class="value">0 1 2 0 -1 
+2 3 0 2 </span>'&gt;
+<div class="indent">
+                     <a name="RectanglePoints"> </a> 
+&lt;!-- <span class="nodeName">RectanglePoints</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_13"><i>from</i>&#160;<span class="nodeName">Rect2dToFaceSet3d</span>.<span class="attribute">pointSet3d</span>&#160;<i>to</i>&#160;<span class="attribute">point</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Coordinate</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">RectanglePoints</span>'/&gt;
+</div>&lt;/<span class="element">IndexedFaceSet</span>&gt;
+<br />
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+                     <a name="Rect2dToFaceSet3d"> </a> 
+&lt;!-- <span class="nodeName">Rect2dToFaceSet3d</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_13"><i>from</i>&#160;<span class="attribute">pointSet3d</span>&#160;<i>to</i>&#160;<span class="nodeName">RectanglePoints</span>.<span class="attribute">point</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">Rect2dToFaceSet3d</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">size</span>'&#160;<span class="attribute">type</span>='<span class="value">SFVec2f</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">pointSet3d</span>'&#160;<span class="attribute">type</span>='<span class="value">MFVec3f</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">fillNoFillSelection</span>'&#160;<span class="attribute">type</span>='<span class="value">SFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">size</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#Arc2DProtoField_size" class="prototype">size</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            
+
+ecmascript:
+
+function initialize()
+{
+   xDim = size[0];
+   yDim = size[1];
+
+   pointSet3d[0] = new SFVec3f ( (-xDim / 2.0), (yDim / 2.0), 0.0 );
+   pointSet3d[1] = new SFVec3f ( (-xDim / 2.0), (-yDim / 2.0), 0.0 );
+   pointSet3d[2] = new SFVec3f ( (xDim / 2.0), (-yDim / 2.0), 0.0 );
+   pointSet3d[3] = new SFVec3f ( (xDim / 2.0), (yDim / 2.0), 0.0 );
+
+} // initialize
+
+          
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+<br /><a name="ROUTE_13"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#Rect2dToFaceSet3d" class="nodeName">Rect2dToFaceSet3d</a>'&#160;<span class="attribute">fromField</span>='<span class="value">pointSet3d</span>'&#160;<span class="attribute">toNode</span>='<a href="#RectanglePoints" class="nodeName">RectanglePoints</a>'&#160;<span class="attribute">toField</span>='<span class="value">point</span>'/&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- Rectangle2DUnfilled also provided since FillProperties not available in VRML 97 --&gt;
+<br /><a name="ProtoDeclare_Rectangle2DUnfilled"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">Rectangle2DUnfilled</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="Rectangle2DUnfilledProtoField_size"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">size</span>'&#160;<span class="attribute">type</span>='<span class="value">SFVec2f</span>'&#160;<span class="attribute">value</span>='<span class="value">2 2</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="Rectangle2DUnfilledProtoField_solid"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">solid</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">false</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="Rectangle2DUnfilledProtoField_metadata"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Metadata node only</span>'&gt;
+<div class="indent">&lt;!-- default NULL --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+&lt;<span class="element">IndexedLineSet</span>&#160;<span class="attribute">coordIndex</span>='<span class="value">0 1 2 3 0</span>'&gt;
+<div class="indent">
+                     <a name="RectanglePointsLine"> </a> 
+&lt;!-- <span class="nodeName">RectanglePointsLine</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_14"><i>from</i>&#160;<span class="nodeName">Rect2dToLineSet3d</span>.<span class="attribute">pointSet3d</span>&#160;<i>to</i>&#160;<span class="attribute">point</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Coordinate</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">RectanglePointsLine</span>'/&gt;
+</div>&lt;/<span class="element">IndexedLineSet</span>&gt;
+<br />
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+                     <a name="Rect2dToLineSet3d"> </a> 
+&lt;!-- <span class="nodeName">Rect2dToLineSet3d</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_14"><i>from</i>&#160;<span class="attribute">pointSet3d</span>&#160;<i>to</i>&#160;<span class="nodeName">RectanglePointsLine</span>.<span class="attribute">point</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">Rect2dToLineSet3d</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">size</span>'&#160;<span class="attribute">type</span>='<span class="value">SFVec2f</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">pointSet3d</span>'&#160;<span class="attribute">type</span>='<span class="value">MFVec3f</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">fillNoFillSelection</span>'&#160;<span class="attribute">type</span>='<span class="value">SFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">size</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#Arc2DProtoField_size" class="prototype">size</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            
+
+ecmascript:
+
+function initialize()
+{
+   xDim = size[0];
+   yDim = size[1];
+
+   pointSet3d[0] = new SFVec3f ( (-xDim / 2.0), (yDim / 2.0), 0.0 );
+   pointSet3d[1] = new SFVec3f ( (-xDim / 2.0), (-yDim / 2.0), 0.0 );
+   pointSet3d[2] = new SFVec3f ( (xDim / 2.0), (-yDim / 2.0), 0.0 );
+   pointSet3d[3] = new SFVec3f ( (xDim / 2.0), (yDim / 2.0), 0.0 );
+
+} // initialize
+
+          
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+<br /><a name="ROUTE_14"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#Rect2dToLineSet3d" class="nodeName">Rect2dToLineSet3d</a>'&#160;<span class="attribute">fromField</span>='<span class="value">pointSet3d</span>'&#160;<span class="attribute">toNode</span>='<a href="#RectanglePointsLine" class="nodeName">RectanglePointsLine</a>'&#160;<span class="attribute">toField</span>='<span class="value">point</span>'/&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ==================== --&gt;
+<br /><a name="ProtoDeclare_TriangleSet2D"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">TriangleSet2D</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">
+                  <a name="TriangleSet2DProtoField_vertices"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">vertices</span>'&#160;<span class="attribute">type</span>='<span class="value">MFVec2f</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="TriangleSet2DProtoField_solid"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">solid</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">false</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br /><a name="TriangleSet2DProtoField_metadata"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">metadata</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Metadata node only</span>'&gt;
+<div class="indent">&lt;!-- default NULL --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+                  <a name="TriangleSetIndexPoints"> </a> 
+&lt;!-- <span class="nodeName">TriangleSetIndexPoints</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_16"><i>from</i>&#160;<span class="nodeName">TriangleSet2dToLineSet3d</span>.<span class="attribute">triangleSetIndex</span>&#160;<i>to</i>&#160;<span class="attribute">set_coordIndex</span>
+                  </a>]
+ --&gt;<br />
+&lt;<span class="element">IndexedFaceSet</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">TriangleSetIndexPoints</span>'&#160;<span class="attribute">solid</span>='<span class="value">false</span>'&gt;
+<div class="indent">
+                     <a name="TriangleSet3DPoints"> </a> 
+&lt;!-- <span class="nodeName">TriangleSet3DPoints</span> <i>ROUTE</i>:&#160;
+[<a href="#ROUTE_15"><i>from</i>&#160;<span class="nodeName">TriangleSet2dToLineSet3d</span>.<span class="attribute">triangleSet3D</span>&#160;<i>to</i>&#160;<span class="attribute">point</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Coordinate</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">TriangleSet3DPoints</span>'/&gt;
+</div>&lt;/<span class="element">IndexedFaceSet</span>&gt;
+<br />
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+                     <a name="TriangleSet2dToLineSet3d"> </a> 
+&lt;!-- <span class="nodeName">TriangleSet2dToLineSet3d</span> <i>ROUTEs</i>:&#160;
+[<a href="#ROUTE_15"><i>from</i>&#160;<span class="attribute">triangleSet3D</span>&#160;<i>to</i>&#160;<span class="nodeName">TriangleSet3DPoints</span>.<span class="attribute">point</span>
+                     </a>]
+[<a href="#ROUTE_16"><i>from</i>&#160;<span class="attribute">triangleSetIndex</span>&#160;<i>to</i>&#160;<span class="nodeName">TriangleSetIndexPoints</span>.<span class="attribute">set_coordIndex</span>
+                     </a>]
+ --&gt;<br />
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">TriangleSet2dToLineSet3d</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">vertices</span>'&#160;<span class="attribute">type</span>='<span class="value">MFVec2f</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">triangleSet3D</span>'&#160;<span class="attribute">type</span>='<span class="value">MFVec3f</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">triangleSetIndex</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">vertices</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#Arc2DProtoField_vertices" class="prototype">vertices</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            ecmascript:
+
+function initialize()
+{
+   numbOfTriangles = Math.floor(vertices.length/3);
+
+   for ( i=0 ; i&lt;3*numbOfTriangles ; i++)
+   {
+          triangleSet3D[i] = new SFVec3f ( vertices[i].x, vertices[i].y, 0.0 );
+   }
+
+   k=0;
+   for (i=0; i&lt;numbOfTriangles; i++)
+   {
+        triangleSetIndex[k] = k - i ;
+        triangleSetIndex[k+1] = k - i + 1 ;
+        triangleSetIndex[k+2] = k - i + 2 ;
+        triangleSetIndex[k+3] = -1 ;
+
+        k=k+4;
+    }
+
+} // initialize
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+<br /><a name="ROUTE_15"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#TriangleSet2dToLineSet3d" class="nodeName">TriangleSet2dToLineSet3d</a>'&#160;<span class="attribute">fromField</span>='<span class="value">triangleSet3D</span>'&#160;<span class="attribute">toNode</span>='<a href="#TriangleSet3DPoints" class="nodeName">TriangleSet3DPoints</a>'&#160;<span class="attribute">toField</span>='<span class="value">point</span>'/&gt;
+<br /><a name="ROUTE_16"> </a> 
+&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a href="#TriangleSet2dToLineSet3d" class="nodeName">TriangleSet2dToLineSet3d</a>'&#160;<span class="attribute">fromField</span>='<span class="value">triangleSetIndex</span>'&#160;<span class="attribute">toNode</span>='<a href="#TriangleSetIndexPoints" class="nodeName">TriangleSetIndexPoints</a>'&#160;<span class="attribute">toField</span>='<span class="value">set_coordIndex</span>'/&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ==================== --&gt;
+<br />
+&lt;<span class="element">Background</span>&#160;<span class="attribute">groundColor</span>='<span class="value">0.25 0.25 0.25</span>'&#160;<span class="attribute">skyColor</span>='<span class="value">0.25 0.25 0.25</span>'/&gt;
+<br /><a name="LinkToExamples"> </a> 
+&lt;<span class="element">Anchor</span>&#160;<span class="attribute">DEF</span>='<span class="nodeName">LinkToExamples</span>'&#160;<span class="attribute">description</span>='<span class="value">link to examples</span>'
+<br />
+&#160;&#160;<span class="attribute">url</span>='
+"<a href="Geometry2dComponentExamples.wrl">Geometry2dComponentExamples.wrl</a>"
+"<a href="http://www.web3d.org/x3d/content/examples/Basic/development/Geometry2dComponentExamples.wrl">http://www.web3d.org/x3d/content/examples/Basic/development/Geometry2dComponentExamples.wrl</a>"
+"<a href="Geometry2dComponentExamples.x3d">Geometry2dComponentExamples.x3d</a>"
+"<a href="http://www.web3d.org/x3d/content/examples/Basic/development/Geometry2dComponentExamples.x3d">http://www.web3d.org/x3d/content/examples/Basic/development/Geometry2dComponentExamples.x3d</a>"
+'&gt;
+<div class="indent">
+&lt;<span class="element">Shape</span>&gt;
+<div class="indent">
+&lt;<span class="element">Appearance</span>&gt;
+<div class="indent">
+&lt;<span class="element">Material</span>&#160;<span class="attribute">diffuseColor</span>='<span class="value">0.8 0.6 0.2</span>'/&gt;
+</div>&lt;/<span class="element">Appearance</span>&gt;
+<br />
+&lt;<span class="element">Text</span>&#160;<span class="attribute">string</span>='<span class="value">"Geometry2dComponentPrototypes" "is a developmental file." "Click this text to view" "Geometry2dComponentExamples"</span>'&#160;<span class="attribute">solid</span>='<span class="value">true</span>'&gt;
+<div class="indent">
+&lt;<span class="element">FontStyle</span>&#160;<span class="attribute">justify</span>='<span class="value">"MIDDLE" "MIDDLE"</span>'&#160;<span class="attribute">size</span>='<span class="value">0.75</span>'/&gt;
+</div>&lt;/<span class="element">Text</span>&gt;
+</div>&lt;/<span class="element">Shape</span>&gt;
+</div>&lt;/<span class="element">Anchor</span>&gt;
+</div>&lt;/<span class="element">Scene</span>&gt;
+</div>&lt;/<span class="element">X3D</span>&gt;
+<br />
+&lt;!--
+<div class="center">
+         <hr width="100%"/>
+         <i>Index for ProtoDeclare definitions</i>: 
+<a href="#ProtoDeclare_Arc2D" class="prototype">Arc2D</a>,
+<a href="#ProtoDeclare_ArcClose2D" class="prototype">ArcClose2D</a>,
+<a href="#ProtoDeclare_ArcClose2DUnfilled" class="prototype">ArcClose2DUnfilled</a>,
+<a href="#ProtoDeclare_Circle2D" class="prototype">Circle2D</a>,
+<a href="#ProtoDeclare_Disk2D" class="prototype">Disk2D</a>,
+<a href="#ProtoDeclare_Polyline2D" class="prototype">Polyline2D</a>,
+<a href="#ProtoDeclare_Polypoint2D" class="prototype">Polypoint2D</a>,
+<a href="#ProtoDeclare_Rectangle2D" class="prototype">Rectangle2D</a>,
+<a href="#ProtoDeclare_Rectangle2DUnfilled" class="prototype">Rectangle2DUnfilled</a>,
+<a href="#ProtoDeclare_TriangleSet2D" class="prototype">TriangleSet2D</a>
+<br />
+<i>Index for DEF nodes</i>: 
+<a href="#Arc2dToFaceSet3d" class="nodeName">Arc2dToFaceSet3d</a>,
+<a href="#Arc3DPoints" class="nodeName">Arc3DPoints</a>,
+<a href="#ArcClose2DFaceCoordinate" class="nodeName">ArcClose2DFaceCoordinate</a>,
+<a href="#ArcClose2DLineCoordinate" class="nodeName">ArcClose2DLineCoordinate</a>,
+<a href="#ArcClose2dToFaceSet3d" class="nodeName">ArcClose2dToFaceSet3d</a>,
+<a href="#ArcClose2dToLineSet3d" class="nodeName">ArcClose2dToLineSet3d</a>,
+<a href="#ArcIndexPoints" class="nodeName">ArcIndexPoints</a>,
+<a href="#ArcPointFaceIndex" class="nodeName">ArcPointFaceIndex</a>,
+<a href="#ArcPointLineIndex" class="nodeName">ArcPointLineIndex</a>,
+<a href="#Circ2dToLineSet3d" class="nodeName">Circ2dToLineSet3d</a>,
+<a href="#Circ3DPoints" class="nodeName">Circ3DPoints</a>,
+<a href="#Circ3DPointsIndex" class="nodeName">Circ3DPointsIndex</a>,
+<a href="#Disk2dToFaceSet3d" class="nodeName">Disk2dToFaceSet3d</a>,
+<a href="#Disk3DPoints" class="nodeName">Disk3DPoints</a>,
+<a href="#DiskPointsIndex" class="nodeName">DiskPointsIndex</a>,
+<a href="#LineSegments2dToLineSet3d" class="nodeName">LineSegments2dToLineSet3d</a>,
+<a href="#LineSegments3DPoints" class="nodeName">LineSegments3DPoints</a>,
+<a href="#LinesSegmentsIndexPoints" class="nodeName">LinesSegmentsIndexPoints</a>,
+<a href="#LinkToExamples" class="nodeName">LinkToExamples</a>,
+<a href="#Points2dToLineSet3d" class="nodeName">Points2dToLineSet3d</a>,
+<a href="#Points3D" class="nodeName">Points3D</a>,
+<a href="#Rect2dToFaceSet3d" class="nodeName">Rect2dToFaceSet3d</a>,
+<a href="#Rect2dToLineSet3d" class="nodeName">Rect2dToLineSet3d</a>,
+<a href="#RectanglePoints" class="nodeName">RectanglePoints</a>,
+<a href="#RectanglePointsLine" class="nodeName">RectanglePointsLine</a>,
+<a href="#TriangleSet2dToLineSet3d" class="nodeName">TriangleSet2dToLineSet3d</a>,
+<a href="#TriangleSet3DPoints" class="nodeName">TriangleSet3DPoints</a>,
+<a href="#TriangleSetIndexPoints" class="nodeName">TriangleSetIndexPoints</a>
+         <hr width="100%"/>
+      </div>
+--&gt;
+<p>
+&lt;!-- Tag color codes:
+&lt;<span class="element">Node</span>
+         <span class="nodeName"> DEF</span>='<span class="nodeName">NodeName</span>' <span class="attribute">attribute</span>='<span class="value">value</span>'/&gt;
+&lt;<span class="prototype">Prototype</span> 
+         <span class="attribute">name</span>='<span class="prototype">ProtoName</span>'&gt;
+	&lt;<span class="prototype">field</span>
+         <span class="attribute">name</span>='<span class="prototype">fieldName</span>'/&gt; &lt;/<span class="prototype">Prototype</span>&gt; --&gt;
+</p>
+   </body>
+</html>

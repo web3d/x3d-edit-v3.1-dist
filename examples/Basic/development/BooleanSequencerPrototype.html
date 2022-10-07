@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!--Generated using XSLT processor: SAXON 8.7 from Saxonica--><html xmlns="http://www.w3.org/TR/xhtml1/strict">
+   <head>
+      <title>BooleanSequencerPrototype.x3d (X3dToXhtml)</title>
+      <style type="text/css">
+
+
+span.element {color: navy}
+span.attribute {color: green}
+span.value {color: teal}
+span.plain {color: black}
+span.gray  {color: gray}
+span.idName {color: maroon}
+a.idName {color: maroon}
+div.center {text-align: center}
+div.indent {margin-left: 25px}
+
+span.prototype {color: purple}
+a.prototype {color: purple, visited: black}
+span.route {color: red}
+b.warning {color: #CC5500}
+b.error {color: #CC0000}
+
+	</style>
+      <meta name="generator" content="http://www.web3d.org/x3d/content/X3dToXhtml.xslt"/>
+      <link rel="shortcut icon"
+            href="http://www.web3d.org/x3d/content/icons/X3DtextIcon16.png"
+            title="X3D"/>
+   </head>
+   <body>
+      <pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN"   "http://www.web3d.org/specifications/x3d-3.0.dtd"&gt;</pre>
+
+&lt;<span class="element">X3D</span>&#160;<span class="attribute">profile</span>='<span class="value">Immersive</span>'&#160;<span class="attribute">version</span>='<span class="value">3.0</span>'&#160;<span class="attribute">xmlns:xsd</span>='<a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank">http://www.w3.org/2001/XMLSchema-instance</a>' <span class="attribute">xsd:noNamespaceSchemaLocation</span>='
+<a href="http://www.web3d.org/specifications/x3d-3.0.xsd">http://www.web3d.org/specifications/x3d-3.0.xsd</a> '&gt;
+<div class="indent">
+&lt;<span class="element">head</span>&gt;
+<div class="indent">
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">title</span>'&#160;<span class="attribute">content</span>='<a href="BooleanSequencerPrototype.x3d" target="_blank">BooleanSequencerPrototype.x3d</a>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">description</span>'&#160;<span class="attribute">content</span>='<span class="plain">BooleanSequencer is modeled after ScalarInterpolator and generates true or false values.</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">creator</span>'&#160;<span class="attribute">content</span>='<span class="value">Don Brutzman, Estuko Lippi, Jeff Weekley, Jane Wu</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">created</span>'&#160;<span class="attribute">content</span>='<span class="value">7 August 2001</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">modified</span>'&#160;<span class="attribute">content</span>='<span class="value">25 December 2005</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">reference</span>'&#160;<span class="attribute">content</span>='
+<a href="http://www.web3d.org/technicalinfo/specifications/vrml97/part1/nodesRef.html#ScalarInterpolator">http://www.web3d.org/technicalinfo/specifications/vrml97/part1/nodesRef.html#ScalarInterpolator</a> '/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">subject</span>'&#160;<span class="attribute">content</span>='<span class="value">boolean sequencer</span>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">identifier</span>'&#160;<span class="attribute">content</span>='
+<a href="http://www.web3d.org/x3d/content/examples/Basic/development/BooleanSequencerPrototype.x3d">http://www.web3d.org/x3d/content/examples/Basic/development/BooleanSequencerPrototype.x3d</a> '/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">generator</span>'&#160;<span class="attribute">content</span>='<span class="value">X3D-Edit, </span>
+            <a href="http://www.web3d.org/x3d/content/README.X3D-Edit.html" target="_blank">http://www.web3d.org/x3d/content/README.X3D-Edit.html</a>'/&gt;
+<br />
+&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">license</span>'&#160;<span class="attribute">content</span>='<a href="../../license.html" target="_blank">../../license.html</a>'/&gt;
+</div>&lt;/<span class="element">head</span>&gt;
+<br />
+&lt;!--
+<div class="center">
+            <hr width="100%"/>
+            <i>Index for ProtoDeclare definition</i>: 
+<a href="#ProtoDeclare_BooleanSequencer" class="prototype">BooleanSequencer</a>
+<br />
+<i>Index for DEF nodes</i>: 
+<a href="#KeyHolder" class="idName">KeyHolder</a>,
+<a href="#KeyValueHolder" class="idName">KeyValueHolder</a>,
+<a href="#SequencerScript" class="idName">SequencerScript</a>
+            <hr width="100%"/>
+         </div>
+--&gt;
+<br />
+&lt;<span class="element">Scene</span>&gt;
+<div class="indent">
+            <a name="ProtoDeclare_BooleanSequencer"> </a> 
+&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">BooleanSequencer</span>'&gt;
+<div class="indent">
+&lt;<span class="prototype">ProtoInterface</span>&gt;
+<div class="indent">&lt;!-- Regular interpolator-style input --&gt;
+<br /><a name="BooleanSequencerProtoField_set_fraction"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_fraction</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">typical range [0..1]</span>'/&gt;
+<br /><a name="BooleanSequencerProtoField_set_key"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_key</span>'&#160;<span class="attribute">type</span>='<span class="value">MFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br /><a name="BooleanSequencerProtoField_key"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">key</span>'&#160;<span class="attribute">type</span>='<span class="value">MFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Array sequentially increasing typically [0..1]. Must have the same number of keys as keyValues.</span>'&gt;
+<div class="indent">&lt;!-- NULL initialization value --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="BooleanSequencerProtoField_key_changed"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">key_changed</span>'&#160;<span class="attribute">type</span>='<span class="value">MFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br /><a name="BooleanSequencerProtoField_set_keyValue"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_keyValue</span>'&#160;<span class="attribute">type</span>='<span class="value">MFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br /><a name="BooleanSequencerProtoField_keyValue"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">keyValue</span>'&#160;<span class="attribute">type</span>='<span class="value">MFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Array of true|false values. Must have the same number of keys as keyValues.</span>'&gt;
+<div class="indent">&lt;!-- NULL initialization value --&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br /><a name="BooleanSequencerProtoField_keyValue_changed"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">keyValue_changed</span>'&#160;<span class="attribute">type</span>='<span class="value">MFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />&lt;!-- Regular interpolator-style output --&gt;
+<br /><a name="BooleanSequencerProtoField_value_changed"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">value_changed</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />&lt;!-- Utility methods --&gt;
+<br /><a name="BooleanSequencerProtoField_previous"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">previous</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br /><a name="BooleanSequencerProtoField_next"> </a> 
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">next</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+</div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
+<br />
+&lt;<span class="prototype">ProtoBody</span>&gt;
+<div class="indent">
+&lt;<span class="element">Group</span>&gt;
+<div class="indent">
+                     <a name="KeyHolder"> </a> 
+&lt;<span class="element">ScalarInterpolator</span>&#160;<span class="attribute">DEF</span>='<span class="idName">KeyHolder</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">key</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanSequencerProtoField_key" class="prototype">key</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">ScalarInterpolator</span>&gt;
+<br /><a name="KeyValueHolder"> </a> 
+&lt;<span class="element">Anchor</span>&#160;<span class="attribute">DEF</span>='<span class="idName">KeyValueHolder</span>'&gt;
+<div class="indent">
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">description</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanSequencerProtoField_keyValue" class="prototype">keyValue</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+</div>&lt;/<span class="element">Anchor</span>&gt;
+<br /><a name="SequencerScript"> </a> 
+&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="idName">SequencerScript</span>'&#160;<span class="attribute">directOutput</span>='<span class="value">true</span>'&gt;
+<div class="indent">&lt;!-- Regular interpolator-style input --&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_fraction</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">typical range [0..1]</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_key</span>'&#160;<span class="attribute">type</span>='<span class="value">MFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Array sequentially increasing typically [0..1]. Must have the same number of keys as keyValues.</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">keyHolderNode</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">
+&lt;<span class="element">ScalarInterpolator</span>&#160;<span class="attribute">USE</span>='<a href="#KeyHolder" class="idName">KeyHolder</a>'/&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">key_changed</span>'&#160;<span class="attribute">type</span>='<span class="value">MFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">set_keyValue</span>'&#160;<span class="attribute">type</span>='<span class="value">MFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">Array of true or false values. Must have the same number of keys as keyValues.</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">keyValueHolderNode</span>'&#160;<span class="attribute">type</span>='<span class="value">SFNode</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'&gt;
+<div class="indent">
+&lt;<span class="element">Anchor</span>&#160;<span class="attribute">USE</span>='<a href="#KeyValueHolder" class="idName">KeyValueHolder</a>'/&gt;
+</div>&lt;/<span class="prototype">field</span>&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">keyValue_changed</span>'&#160;<span class="attribute">type</span>='<span class="value">MFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />&lt;!-- Regular interpolator-style output --&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">value_changed</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+<br />&lt;!-- Utility methods --&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">previous</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">next</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br />&lt;!-- Script-specific interfaces, not needed for node definition --&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">traceEnabled</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">false</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">keyValueArray</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">previousFraction</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0.0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">nextIndex</span>'&#160;<span class="attribute">type</span>='<span class="value">SFInt32</span>'&#160;<span class="attribute">value</span>='<span class="value">0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">valid</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">recheckValidity</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">false</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">forward</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'
+<br />
+&#160;<span class="gray">appinfo</span>='<span class="gray">leftToRight</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">key</span>'&#160;<span class="attribute">type</span>='<span class="value">MFFloat</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+<br />
+&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">keyValue</span>'&#160;<span class="attribute">type</span>='<span class="value">MFInt32</span>'&#160;<span class="attribute">accessType</span>='<span class="value">initializeOnly</span>'/&gt;
+<br />
+&lt;<span class="element">IS</span>&gt;
+<div class="indent">
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">set_fraction</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanSequencerProtoField_set_fraction" class="prototype">set_fraction</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">set_key</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanSequencerProtoField_set_key" class="prototype">set_key</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">key_changed</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanSequencerProtoField_key_changed" class="prototype">key_changed</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">set_keyValue</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanSequencerProtoField_set_keyValue" class="prototype">set_keyValue</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">keyValue_changed</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanSequencerProtoField_keyValue_changed" class="prototype">keyValue_changed</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">value_changed</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanSequencerProtoField_value_changed" class="prototype">value_changed</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">previous</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanSequencerProtoField_previous" class="prototype">previous</a></span>'/&gt;
+<br />
+&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype">next</span>'&#160;<span class="attribute">protoField</span>='<span class="prototype"><a href="#BooleanSequencerProtoField_next" class="prototype">next</a></span>'/&gt;
+</div>&lt;/<span class="element">IS</span>&gt;
+<br />
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+</div class="indent">
+<code>
+                           <b>&lt;![CDATA[</b>
+                        </code>
+                        <pre>
+            ecmascript:
+
+var key, keyValue;
+
+function initialize(timeStamp)
+{
+	key      = keyHolderNode.key;
+	keyValue = keyValueHolderNode.description;
+	tracePrint('key = ' + key);
+	tracePrint('keyValue = ' + keyValue);
+	keyValueToKeyValueArray ();
+	tracePrint('keyValueArray = ' + keyValueArray);
+
+	forward = true;
+	tracePrint('Initializing a new BooleanSequencer.  key.length=' + key.length +
+		'; keyValueArray.length=' + keyValueArray.length);
+	validityCheck();
+}
+
+function keyValueToKeyValueArray ()
+{
+	tracePrint('keyValueToKeyValueArray starting');
+	index = 0;
+	complete = false;
+	nextString = keyValue.toLowerCase();
+	tracePrint('initial nextString=' + nextString);
+	tokenCount=0;
+	while ((complete != true) &amp;&amp; (nextString.length &gt; 0))
+	{
+		tracePrint('nextString=' + nextString);
+		while ((nextString.substring(0,1) == ' ') || (nextString.substring(0,1) == ','))
+		       nextString = nextString.slice(1);
+		tracePrint('deblanked nextString=' + nextString);
+		if (nextString.length == 0)
+		{
+			tracePrint ('nextString.length == 0');
+			complete = true;
+		}
+		if (nextString.length &lt; 4)
+		{
+			forcePrint ('*** illegal keyValue input=' + nextString);
+			valid = false;
+			complete = true;
+		}
+		else if (nextString.substring(0,4) == 'true')
+		{
+			keyValueArray[keyValueArray.length] = 1; // append
+			newString = nextString.slice(4);
+			nextString = newString;
+			tokenCount++;
+			tracePrint('found true, nextString=' + nextString + ', tokenCount=' + tokenCount);
+		}
+		else if (nextString.length &lt; 5)
+		{
+			forcePrint ('*** illegal keyValue input=' + nextString);
+			valid = false;
+			complete = true;
+		}
+		else if (nextString.substring(0,5) == 'false')
+		{
+			keyValueArray[keyValueArray.length] = 0; // append
+			newString = nextString.slice(5);
+			nextString = newString;
+			tokenCount++;
+			tracePrint('found false, nextString=' + nextString + ', tokenCount=' + tokenCount);
+		}
+		tracePrint('  intermediate keyValueArray=' + keyValueArray);
+	}
+	tracePrint('keyValueToKeyValueArray complete');
+}
+
+function set_fraction(value, timeStamp)
+{
+	if (recheckValidity) validityCheck();
+
+	if (!valid) return; //BooleanSequencer ignored
+
+	tracePrint('fraction = ' + value);
+	//Bounds checking
+	if (value &lt; 0)
+	{
+		forcePrint('*** warning: fraction is less than 0.  fraction reset to 0 ***');
+		value = 0;
+	}
+	else if (value &gt; 1)
+	{
+		forcePrint('*** warning: fraction is greater than 1.  fraction reset to 1 ***');
+		value = 1;
+	}
+
+	//Check animation direction
+	if (value &lt; previousFraction &amp;&amp; forward == true)
+	{
+		forward = false;
+		nextIndex = nextIndex - 1;
+		tracePrint('Animate backward');
+	}
+	else if (value &gt; previousFraction &amp;&amp; forward == false)
+	{
+		forward = true;
+		//nextIndex = 0;
+		tracePrint('Animate forward');
+	}
+
+	previousFraction = value;
+
+	if (forward == true)
+	{
+		for (i = nextIndex; i &lt; key.length; i++)
+		{
+			if (value &lt; key[i])
+				return;
+
+			nextIndex = i + 1;
+			tracePrint('nextIndex = ' + nextIndex);
+			if (nextIndex &lt; key.length)
+			{
+				if (value &lt;= key[nextIndex])
+				{
+					//Fire event
+					if (keyValueArray[nextIndex-1] == 0)
+						value_changed = false;
+					else
+						value_changed = true;
+					tracePrint('value_changed eventOut is: ' + value_changed);
+				}
+			}
+			else if (nextIndex == key.length)
+			{
+				//Fire event
+				if (keyValueArray[nextIndex-1] == 0)
+					value_changed = false;
+				else
+					value_changed = true;
+				tracePrint('value_changed eventOut is: ' + value_changed);
+			}
+			else //nextIndex &gt; key.length
+			{
+				//nextIndex = 0;
+				break;
+			}
+		}
+	}
+	else //backward
+	{
+		for (i = nextIndex; i &gt; 0; i--)
+		{
+			if (value &gt;= key[i])
+				return;
+
+			nextIndex = i - 1;
+			tracePrint('nextIndex = ' + nextIndex);
+			if (nextIndex &gt;= 0)
+			{
+				if (value &gt;= key[nextIndex])
+				{
+					//Fire event
+					if (keyValueArray[nextIndex] == 0)
+						value_changed = false;
+					else
+						value_changed = true;
+					tracePrint('value_changed eventOut is: ' + value_changed);
+				}
+			}
+			else //nextIndex &lt; 0
+			{
+				//nextIndex = key.length;
+				break;
+			}
+		}
+	}
+}
+
+function set_key(value, timeStamp)
+{
+	key = value;
+	keyHolderNode.key  = key;
+	recheckValidity = true;
+}
+
+function set_keyValue(value, timeStamp)
+{
+	keyValue = value;
+	keyValueHolderNode.description = keyValue;
+	recheckValidity = true;
+	keyValueToKeyValueArray ();
+	keyValue_changed = keyValue;
+}
+
+function validityCheck()
+{
+	//Check if key &amp; keyValueArray array length matches
+	if (key.length != keyValueArray.length)
+	{
+		forcePrint('*** error: key and keyValue arrays must be of the same length.  BooleanSequencer ignored ***');
+		valid = false;
+		return;
+	}
+
+	//Check if key array has values in the range of [0..1] in an increasing order
+	if (key[0] &lt; 0 || key[0] &gt; 1)
+	{
+		forcePrint('*** error: key[0] value is NOT in the range of [0..1].  BooleanSequencer ignored ***');
+		valid = false;
+		return;
+	}
+	for (i = 1; i &lt; key.length; i++)
+	{
+		if (key[i] &lt; 0 || key[i] &gt; 1)
+		{
+			forcePrint('*** error: key[' + i + '] value is NOT in the range of [0..1].  BooleanSequencer ignored ***');
+			valid = false;
+			return;
+		}
+
+		if (key[i] &lt;= key [i-1])
+		{
+			forcePrint('*** error: values for key[] array must be listed in an increasing order.  BooleanSequencer ignored ***');
+			valid = false;
+			return;
+		}
+	}
+	recheckValidity = false;
+	key_changed = key;
+	return;
+}
+function previous (SFBoolValue, timestamp)
+{
+	nextIndex = nextIndex - 1;
+	if (nextIndex == 0) nextIndex = key.length - 1;
+}
+function next (SFBoolValue, timestamp)
+{
+	nextIndex = nextIndex + 1;
+	if (nextIndex == key.length) nextIndex = 0;
+}
+
+function tracePrint(outputString)
+{
+	if (traceEnabled) Browser.print ('[ BooleanSequencer ] ' + outputString);
+}
+
+function forcePrint(outputString)
+{
+	Browser.print ('[ BooleanSequencer ] ' + outputString);
+}
+          </pre>
+                        <code>
+                           <b>]]&gt;</b>
+                        </code>
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+<div class="indent">
+</div>&lt;/<span class="element">Script</span>&gt;
+</div>&lt;/<span class="element">Group</span>&gt;
+</div>&lt;/<span class="prototype">ProtoBody</span>&gt;
+</div>&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+<br />&lt;!-- ===============Example============== --&gt;
+<br />
+&lt;<span class="element">Anchor</span>&#160;<span class="attribute">description</span>='<span class="value">BooleanSequencerExample</span>'&#160;<span class="attribute">parameter</span>='<span class="value">target=_blank</span>'
+<br />
+&#160;&#160;<span class="attribute">url</span>='
+"<a href="BooleanSequencerExample.wrl">BooleanSequencerExample.wrl</a>"
+"<a href="https://savage.nps.edu/Savage/Tools/Animation/BooleanSequencerExample.wrl">https://savage.nps.edu/Savage/Tools/Animation/BooleanSequencerExample.wrl</a>"
+"<a href="http://www.web3d.org/x3d/content/examples/Basic/development/BooleanSequencerExample.wrl">http://www.web3d.org/x3d/content/examples/Basic/development/BooleanSequencerExample.wrl</a>"
+"<a href="BooleanSequencerExample.x3d">BooleanSequencerExample.x3d</a>"
+"<a href="https://savage.nps.edu/Savage/Tools/Animation/BooleanSequencerExample.x3d">https://savage.nps.edu/Savage/Tools/Animation/BooleanSequencerExample.x3d</a>"
+"<a href="http://www.web3d.org/x3d/content/examples/Basic/development/BooleanSequencerExample.x3d">http://www.web3d.org/x3d/content/examples/Basic/development/BooleanSequencerExample.x3d</a>"
+'&gt;
+<div class="indent">
+&lt;<span class="element">Shape</span>&gt;
+<div class="indent">
+&lt;<span class="element">Text</span>&#160;<span class="attribute">solid</span>='<span class="value">true</span>'&gt;
+<div class="indent">
+&lt;<span class="element">FontStyle</span>&#160;<span class="attribute">justify</span>='<span class="value">"MIDDLE" "MIDDLE"</span>'/&gt;
+</div>&lt;/<span class="element">Text</span>&gt;
+<br />
+&lt;<span class="element">Appearance</span>&gt;
+<div class="indent">
+&lt;<span class="element">Material</span>&#160;<span class="attribute">diffuseColor</span>='<span class="value">1 1 0.2</span>'/&gt;
+</div>&lt;/<span class="element">Appearance</span>&gt;
+</div>&lt;/<span class="element">Shape</span>&gt;
+</div>&lt;/<span class="element">Anchor</span>&gt;
+</div>&lt;/<span class="element">Scene</span>&gt;
+</div>&lt;/<span class="element">X3D</span>&gt;
+<br />
+&lt;!--
+<div class="center">
+         <hr width="100%"/>
+         <i>Index for ProtoDeclare definition</i>: 
+<a href="#ProtoDeclare_BooleanSequencer" class="prototype">BooleanSequencer</a>
+<br />
+<i>Index for DEF nodes</i>: 
+<a href="#KeyHolder" class="idName">KeyHolder</a>,
+<a href="#KeyValueHolder" class="idName">KeyValueHolder</a>,
+<a href="#SequencerScript" class="idName">SequencerScript</a>
+         <hr width="100%"/>
+      </div>
+--&gt;
+<p>
+&lt;!-- Tag color codes:
+&lt;<span class="element">Node</span>
+         <span class="idName"> DEF</span>='<span class="idName">idName</span>' <span class="attribute">attribute</span>='<span class="value">value</span>'/&gt;
+&lt;<span class="prototype">Prototype</span> 
+         <span class="attribute">name</span>='<span class="prototype">ProtoName</span>'&gt;
+	&lt;<span class="prototype">field</span>
+         <span class="attribute">name</span>='<span class="prototype">fieldName</span>'/&gt; &lt;/<span class="prototype">Prototype</span>&gt; --&gt;
+</p>
+   </body>
+</html>
