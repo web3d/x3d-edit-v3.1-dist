@@ -1,0 +1,7 @@
+com.ibm.hrl.xmleditor.extension
+com.ibm.hrl.xmleditor.extension.bml
+com.ibm.hrl.xmleditor.extension.exporter
+com.ibm.hrl.xmleditor.extension.importer
+com.ibm.hrl.xmleditor.extension.msg
+com.ibm.hrl.xmleditor.extension.tool
+com.ibm.hrl.xmleditor.extension.xsl

@@ -1,3 +1,8 @@
+# X3D-Edit v3.1
+
+![X3D-EditSampleScreenSnapshot](docs/X3D-EditSampleScreenSnapshot.png)
+
+
 this file now replaced by
 
     http://www.web3d.org/TaskGroups/x3d/translation/README.X3D-Edit.html
@@ -10,7 +15,9 @@ this file now replaced by
 
 
 
-Purpose:     X3D-Edit is an Extensible 3D (X3D) graphics file editor that
+## Purpose:
+
+X3D-Edit is an Extensible 3D (X3D) graphics file editor that
              uses the X3D Document Type Definition (DTD) in combination
              with Sun's Java, IBM's Xeena XML editor, and an editor profile
              configuration file.  X3D-Edit enables simple error-free editing,
@@ -26,68 +33,75 @@ Version:     1.4 beta now with GeoVRML and H-Anim node support, using
 Author:      Don Brutzman     brutzman@nps.navy.mil
 
 
-Distribution:
+### Distribution:
     http://www.web3d.org/x3d/translation/X3D-Edit.zip
     http://www.web3d.org/x3d/translation/X3D-Edit.tar.gz
 
-Example content:
+### Example content:
     http://www.web3d.org/x3d/translation/X3D-Examples.zip
     http://www.web3d.org/x3d/translation/X3D-Examples.tar.gz
 
 
-Screen snapshots:
+### Screen snapshots:
     X3D-EditSampleScreenSnapshot.png
     http://www.web3d.org/x3d/translation/X3D-EditSampleScreenSnapshot.png
     http://www.web3d.org/x3d/translation/examples/GeoVrml/newGeoVrmlScene.png
 
 
-Features:
-    Intuitive user interface
-    Always creates well-formed scene graphs:  nodes only fit where allowed
-    Validates X3D scenes for VRML 97 profile and Core profile
-    Platform independence using Java
-    Tool tips and hints help you learn how VRML/X3D scene graphs really work
-    GeoVRML 1.0 profile support http://www.geovrml.org/1.0/doc
-    H-Anim  1.1 profile support http://ece.uwaterloo.ca:80/~h-anim/spec1.1
-    Automatically translate into VRML and launch browser to view results
-    Extensible Style Sheet (XSL) translation:  X3dToVrml97.xsl, X3dToHtml.xsl
-       X3dUnwrap.xsl and X3dWrap (for wrapper tag addition/removal)
-    Design testing & evaluation of MultiTexture extension nodes included
+## Features:
+
+ *    Intuitive user interface
+ *    Always creates well-formed scene graphs:  nodes only fit where allowed
+ *    Validates X3D scenes for VRML 97 profile and Core profile
+ *    Platform independence using Java
+ *    Tool tips and hints help you learn how VRML/X3D scene graphs really work
+ *    GeoVRML 1.0 profile support http://www.geovrml.org/1.0/doc
+ *    H-Anim  1.1 profile support http://ece.uwaterloo.ca:80/~h-anim/spec1.1
+ *    Automatically translate into VRML and launch browser to view results
+ *    Extensible Style Sheet (XSL) translation:  X3dToVrml97.xsl, X3dToHtml.xsl
+ *       X3dUnwrap.xsl and X3dWrap (for wrapper tag addition/removal)
+ *    Design testing & evaluation of MultiTexture extension nodes included
 
 
-Icon summary sheets:
-    icons/IconSheet-1.pdf   icons/IconSheet-2.pdf   icons/IconSheet-3.pdf
+### Icon summary sheets:
+
+icons/IconSheet-1.pdf
+icons/IconSheet-2.pdf
+icons/IconSheet-3.pdf
+
     http://www.web3d.org/x3d/translation/icons/IconSheet-1.pdf
     http://www.web3d.org/x3d/translation/icons/IconSheet-2.pdf
     http://www.web3d.org/x3d/translation/icons/IconSheet-3.pdf
 
 
-Status:
-    X3D-Edit is being used to develop and test the Extensible 3D (X3D)
+## Status:
+
+X3D-Edit is being used to develop and test the Extensible 3D (X3D)
     Document Type Definition (DTD) tagset.  X3D-Edit also exercises
     various X3D graphics rendering and translation implementations.
 
-    We're using X3D-Edit to teach a VRML class - it works great!  Suggestions
+We're using X3D-Edit to teach a VRML class - it works great!  Suggestions
     and improvements regarding X3D-Edit installation/usability are welcome.
 
-    Additional instructions for Mac are available in README.X3D-Edit.Mac.txt
+Additional instructions for Mac are available in README.X3D-Edit.Mac.txt
     thanks to the ever mac-nificent Steve Guynup <guynups@gra.com>
     
-    Information about X3D & next-generation VRML graphics is available at
+Information about X3D & next-generation VRML graphics is available at
     http://www.web3d.org/x3d.html
 
-    Version 1.4 corresponds to x3d-compromise.dtd (July     2000) + extensions
-    Version 1.3 corresponds to x3d-compromise.dtd (May      2000)
-    Version 1.2 corresponds to x3d-compromise.dtd (April    2000)
-    Version 1.1 corresponds to x3d-draft.dtd      (February 2000)
+* Version 1.4 corresponds to x3d-compromise.dtd (July     2000) + extensions
+* Version 1.3 corresponds to x3d-compromise.dtd (May      2000)
+* Version 1.2 corresponds to x3d-compromise.dtd (April    2000)
+* Version 1.1 corresponds to x3d-draft.dtd      (February 2000)
 
-Licensing:
-    X3D-Edit files are open-source public-domain products from the X3D
+## Licensing:
+
+X3D-Edit files are open-source public-domain products from the X3D
     Task Group.  The Sun license for Java and the nonrestrictive IBM 
     license for Xeena are provided when downloading/installing those tools.
 
 
-Installation instructions:
+## Installation instructions:
 
 1.  Download and install Xeena from IBM Alphaworks
     http://www.alphaWorks.ibm.com/tech/xeena
